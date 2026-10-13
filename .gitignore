@@ -1,0 +1,5 @@
+# Foundry LevelDB çalışma dosyaları
+packs/**/LOCK
+packs/**/LOG
+packs/**/LOG.old
+node_modules/
