@@ -98,7 +98,11 @@
           "special": "",
           "override": false
         },
-        "effects": [],
+        "effects": [
+          {
+            "_id": "VaeEffEYNBYWQqvh"
+          }
+        ],
         "range": {
           "units": "self",
           "special": "",
@@ -146,13 +150,154 @@
           },
           "identifier": ""
         },
-        "appliedEffects": []
+        "appliedEffects": [],
+        "flags": {
+          "vaelora-potions": {
+            "original": {
+              "_id": "VaeAct0000000157",
+              "type": "utility",
+              "activation": {
+                "type": "bonus",
+                "value": null,
+                "condition": "",
+                "override": false
+              },
+              "consumption": {
+                "targets": [
+                  {
+                    "type": "itemUses",
+                    "value": "1",
+                    "target": ""
+                  }
+                ],
+                "scaling": {
+                  "allowed": false,
+                  "max": ""
+                },
+                "spellSlot": true
+              },
+              "description": {
+                "chatFlavor": "Güneş Mührü İksiri içilir."
+              },
+              "duration": {
+                "concentration": false,
+                "value": "10",
+                "units": "minute",
+                "special": "",
+                "override": false
+              },
+              "effects": [],
+              "range": {
+                "units": "self",
+                "special": "",
+                "override": false
+              },
+              "target": {
+                "template": {
+                  "count": "",
+                  "contiguous": false,
+                  "type": "",
+                  "size": "",
+                  "width": "",
+                  "height": "",
+                  "units": "ft",
+                  "stationary": false
+                },
+                "affects": {
+                  "count": "",
+                  "type": "creature",
+                  "choice": false,
+                  "special": ""
+                },
+                "prompt": true,
+                "override": false
+              },
+              "roll": {
+                "formula": "",
+                "name": "",
+                "prompt": false,
+                "visible": false
+              },
+              "uses": {
+                "spent": 0,
+                "recovery": [],
+                "max": ""
+              },
+              "sort": 0,
+              "name": "İç",
+              "img": "icons/consumables/potions/bottle-round-corked-green.webp",
+              "visibility": {
+                "requireMagic": true,
+                "level": {
+                  "min": null,
+                  "max": null
+                },
+                "identifier": ""
+              },
+              "appliedEffects": []
+            }
+          }
+        }
       }
     },
     "attuned": false,
     "identifier": "gunes-muhru-iksiri"
   },
-  "effects": [],
+  "effects": [
+    {
+      "_id": "VaeEffEYNBYWQqvh",
+      "name": "Güneş Mührü İksiri",
+      "img": "icons/consumables/potions/bottle-round-corked-green.webp",
+      "origin": null,
+      "transfer": false,
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "ATL.light.bright",
+          "mode": 4,
+          "value": "30",
+          "priority": null
+        },
+        {
+          "key": "ATL.light.dim",
+          "mode": 4,
+          "value": "60",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 600,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "vaelora-potions": {
+          "auto": true
+        }
+      },
+      "_stats": {
+        "duplicateSource": null,
+        "coreVersion": "13.351",
+        "systemId": "dnd5e",
+        "systemVersion": "5.3.3",
+        "createdTime": 1790110800157,
+        "modifiedTime": 1790110800157,
+        "lastModifiedBy": null,
+        "exportSource": null,
+        "compendiumSource": null
+      }
+    }
+  ],
   "folder": "VaeFldRare000001",
   "sort": 15700000,
   "ownership": {

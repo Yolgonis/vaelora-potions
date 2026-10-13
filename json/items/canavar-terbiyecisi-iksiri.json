@@ -32,7 +32,7 @@
     "uses": {
       "max": "1",
       "recovery": [],
-      "autoDestroy": true,
+      "autoDestroy": false,
       "spent": 0
     },
     "damage": {
@@ -146,7 +146,181 @@
           },
           "identifier": ""
         },
-        "appliedEffects": []
+        "appliedEffects": [],
+        "flags": {
+          "vaelora-potions": {
+            "original": {
+              "_id": "VaeAct0000000168",
+              "type": "utility",
+              "activation": {
+                "type": "bonus",
+                "value": null,
+                "condition": "",
+                "override": false
+              },
+              "consumption": {
+                "targets": [
+                  {
+                    "type": "itemUses",
+                    "value": "1",
+                    "target": ""
+                  }
+                ],
+                "scaling": {
+                  "allowed": false,
+                  "max": ""
+                },
+                "spellSlot": true
+              },
+              "description": {
+                "chatFlavor": "Canavar Terbiyecisi İksiri içilir."
+              },
+              "duration": {
+                "concentration": false,
+                "value": "1",
+                "units": "hour",
+                "special": "",
+                "override": false
+              },
+              "effects": [],
+              "range": {
+                "units": "self",
+                "special": "",
+                "override": false
+              },
+              "target": {
+                "template": {
+                  "count": "",
+                  "contiguous": false,
+                  "type": "",
+                  "size": "",
+                  "width": "",
+                  "height": "",
+                  "units": "ft",
+                  "stationary": false
+                },
+                "affects": {
+                  "count": "",
+                  "type": "creature",
+                  "choice": false,
+                  "special": ""
+                },
+                "prompt": true,
+                "override": false
+              },
+              "roll": {
+                "formula": "",
+                "name": "",
+                "prompt": false,
+                "visible": false
+              },
+              "uses": {
+                "spent": 0,
+                "recovery": [],
+                "max": ""
+              },
+              "sort": 0,
+              "name": "İç",
+              "img": "icons/consumables/potions/bottle-round-corked-blue.webp",
+              "visibility": {
+                "requireMagic": true,
+                "level": {
+                  "min": null,
+                  "max": null
+                },
+                "identifier": ""
+              },
+              "appliedEffects": []
+            }
+          }
+        }
+      },
+      "VaeAutifKYF5LifU": {
+        "_id": "VaeAutifKYF5LifU",
+        "type": "save",
+        "name": "Canavarı Yatıştır",
+        "sort": 100000,
+        "img": "",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "condition": "",
+          "override": false
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "activityUses",
+              "value": "1",
+              "target": "",
+              "scaling": {}
+            }
+          ],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "ft",
+          "special": "",
+          "value": "30"
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": "",
+            "size": "",
+            "width": "",
+            "height": "",
+            "count": "",
+            "stationary": false
+          },
+          "affects": {
+            "choice": false,
+            "count": "",
+            "type": "creature",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": "1"
+        },
+        "appliedEffects": [],
+        "flags": {
+          "vaelora-potions": {
+            "auto": true
+          }
+        },
+        "damage": {
+          "parts": [],
+          "onSave": "none"
+        },
+        "save": {
+          "ability": [
+            "wis"
+          ],
+          "dc": {
+            "calculation": "",
+            "formula": "16"
+          }
+        }
       }
     },
     "attuned": false,

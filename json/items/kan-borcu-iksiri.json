@@ -67,7 +67,7 @@
     "activities": {
       "VaeAct0000000077": {
         "_id": "VaeAct0000000077",
-        "type": "utility",
+        "type": "heal",
         "activation": {
           "type": "bonus",
           "value": null,
@@ -100,9 +100,10 @@
         },
         "effects": [],
         "range": {
-          "units": "self",
+          "override": false,
+          "units": "ft",
           "special": "",
-          "override": false
+          "value": "5"
         },
         "target": {
           "template": {
@@ -116,19 +117,13 @@
             "stationary": false
           },
           "affects": {
-            "count": "",
+            "count": "1",
             "type": "creature",
             "choice": false,
             "special": ""
           },
           "prompt": true,
           "override": false
-        },
-        "roll": {
-          "formula": "",
-          "name": "",
-          "prompt": false,
-          "visible": false
         },
         "uses": {
           "spent": 0,
@@ -146,7 +141,109 @@
           },
           "identifier": ""
         },
-        "appliedEffects": []
+        "appliedEffects": [],
+        "flags": {
+          "vaelora-potions": {
+            "original": {
+              "_id": "VaeAct0000000077",
+              "type": "utility",
+              "activation": {
+                "type": "bonus",
+                "value": null,
+                "condition": "",
+                "override": false
+              },
+              "consumption": {
+                "targets": [
+                  {
+                    "type": "itemUses",
+                    "value": "1",
+                    "target": ""
+                  }
+                ],
+                "scaling": {
+                  "allowed": false,
+                  "max": ""
+                },
+                "spellSlot": true
+              },
+              "description": {
+                "chatFlavor": "Kan Borcu İksiri içilir."
+              },
+              "duration": {
+                "concentration": false,
+                "value": "",
+                "units": "inst",
+                "special": "",
+                "override": false
+              },
+              "effects": [],
+              "range": {
+                "units": "self",
+                "special": "",
+                "override": false
+              },
+              "target": {
+                "template": {
+                  "count": "",
+                  "contiguous": false,
+                  "type": "",
+                  "size": "",
+                  "width": "",
+                  "height": "",
+                  "units": "ft",
+                  "stationary": false
+                },
+                "affects": {
+                  "count": "",
+                  "type": "creature",
+                  "choice": false,
+                  "special": ""
+                },
+                "prompt": true,
+                "override": false
+              },
+              "roll": {
+                "formula": "",
+                "name": "",
+                "prompt": false,
+                "visible": false
+              },
+              "uses": {
+                "spent": 0,
+                "recovery": [],
+                "max": ""
+              },
+              "sort": 0,
+              "name": "İç",
+              "img": "icons/consumables/potions/potion-bottle-corked-labeled-green.webp",
+              "visibility": {
+                "requireMagic": true,
+                "level": {
+                  "min": null,
+                  "max": null
+                },
+                "identifier": ""
+              },
+              "appliedEffects": []
+            }
+          }
+        },
+        "healing": {
+          "number": 8,
+          "denomination": 4,
+          "bonus": "8",
+          "custom": {
+            "enabled": false,
+            "formula": ""
+          },
+          "types": [
+            "healing"
+          ],
+          "scaling": {
+            "number": 1
+          }
+        }
       }
     },
     "attuned": false,

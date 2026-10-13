@@ -67,7 +67,7 @@
     "activities": {
       "VaeAct0000000019": {
         "_id": "VaeAct0000000019",
-        "type": "utility",
+        "type": "heal",
         "activation": {
           "type": "bonus",
           "value": null,
@@ -124,12 +124,6 @@
           "prompt": true,
           "override": false
         },
-        "roll": {
-          "formula": "",
-          "name": "",
-          "prompt": false,
-          "visible": false
-        },
         "uses": {
           "spent": 0,
           "recovery": [],
@@ -146,7 +140,109 @@
           },
           "identifier": ""
         },
-        "appliedEffects": []
+        "appliedEffects": [],
+        "flags": {
+          "vaelora-potions": {
+            "original": {
+              "_id": "VaeAct0000000019",
+              "type": "utility",
+              "activation": {
+                "type": "bonus",
+                "value": null,
+                "condition": "",
+                "override": false
+              },
+              "consumption": {
+                "targets": [
+                  {
+                    "type": "itemUses",
+                    "value": "1",
+                    "target": ""
+                  }
+                ],
+                "scaling": {
+                  "allowed": false,
+                  "max": ""
+                },
+                "spellSlot": true
+              },
+              "description": {
+                "chatFlavor": "İlk Şafağın Gözyaşı içilir."
+              },
+              "duration": {
+                "concentration": false,
+                "value": "",
+                "units": "inst",
+                "special": "",
+                "override": false
+              },
+              "effects": [],
+              "range": {
+                "units": "self",
+                "special": "",
+                "override": false
+              },
+              "target": {
+                "template": {
+                  "count": "",
+                  "contiguous": false,
+                  "type": "",
+                  "size": "",
+                  "width": "",
+                  "height": "",
+                  "units": "ft",
+                  "stationary": false
+                },
+                "affects": {
+                  "count": "",
+                  "type": "creature",
+                  "choice": false,
+                  "special": ""
+                },
+                "prompt": true,
+                "override": false
+              },
+              "roll": {
+                "formula": "",
+                "name": "",
+                "prompt": false,
+                "visible": false
+              },
+              "uses": {
+                "spent": 0,
+                "recovery": [],
+                "max": ""
+              },
+              "sort": 0,
+              "name": "İç",
+              "img": "icons/consumables/potions/bottle-round-corked-yellow.webp",
+              "visibility": {
+                "requireMagic": true,
+                "level": {
+                  "min": null,
+                  "max": null
+                },
+                "identifier": ""
+              },
+              "appliedEffects": []
+            }
+          }
+        },
+        "healing": {
+          "number": null,
+          "denomination": null,
+          "bonus": "",
+          "custom": {
+            "enabled": true,
+            "formula": "@attributes.hp.max"
+          },
+          "types": [
+            "healing"
+          ],
+          "scaling": {
+            "number": 1
+          }
+        }
       }
     },
     "attuned": false,

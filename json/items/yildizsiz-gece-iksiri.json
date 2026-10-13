@@ -98,7 +98,11 @@
           "special": "",
           "override": false
         },
-        "effects": [],
+        "effects": [
+          {
+            "_id": "VaeEffdf6siZZaqs"
+          }
+        ],
         "range": {
           "units": "self",
           "special": "",
@@ -146,13 +150,148 @@
           },
           "identifier": ""
         },
-        "appliedEffects": []
+        "appliedEffects": [],
+        "flags": {
+          "vaelora-potions": {
+            "original": {
+              "_id": "VaeAct0000000008",
+              "type": "utility",
+              "activation": {
+                "type": "bonus",
+                "value": null,
+                "condition": "",
+                "override": false
+              },
+              "consumption": {
+                "targets": [
+                  {
+                    "type": "itemUses",
+                    "value": "1",
+                    "target": ""
+                  }
+                ],
+                "scaling": {
+                  "allowed": false,
+                  "max": ""
+                },
+                "spellSlot": true
+              },
+              "description": {
+                "chatFlavor": "Yıldızsız Gece İksiri içilir."
+              },
+              "duration": {
+                "concentration": false,
+                "value": "1",
+                "units": "hour",
+                "special": "",
+                "override": false
+              },
+              "effects": [],
+              "range": {
+                "units": "self",
+                "special": "",
+                "override": false
+              },
+              "target": {
+                "template": {
+                  "count": "",
+                  "contiguous": false,
+                  "type": "",
+                  "size": "",
+                  "width": "",
+                  "height": "",
+                  "units": "ft",
+                  "stationary": false
+                },
+                "affects": {
+                  "count": "",
+                  "type": "creature",
+                  "choice": false,
+                  "special": ""
+                },
+                "prompt": true,
+                "override": false
+              },
+              "roll": {
+                "formula": "",
+                "name": "",
+                "prompt": false,
+                "visible": false
+              },
+              "uses": {
+                "spent": 0,
+                "recovery": [],
+                "max": ""
+              },
+              "sort": 0,
+              "name": "İç",
+              "img": "icons/consumables/potions/potion-vial-corked-labeled-purple.webp",
+              "visibility": {
+                "requireMagic": true,
+                "level": {
+                  "min": null,
+                  "max": null
+                },
+                "identifier": ""
+              },
+              "appliedEffects": []
+            }
+          }
+        }
       }
     },
     "attuned": false,
     "identifier": "yildizsiz-gece-iksiri"
   },
-  "effects": [],
+  "effects": [
+    {
+      "_id": "VaeEffdf6siZZaqs",
+      "name": "Yıldızsız Gece İksiri",
+      "img": "icons/consumables/potions/potion-vial-corked-labeled-purple.webp",
+      "origin": null,
+      "transfer": false,
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.attributes.senses.ranges.darkvision",
+          "mode": 4,
+          "value": "120",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 3600,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "vaelora-potions": {
+          "auto": true
+        }
+      },
+      "_stats": {
+        "duplicateSource": null,
+        "coreVersion": "13.351",
+        "systemId": "dnd5e",
+        "systemVersion": "5.3.3",
+        "createdTime": 1788973200007,
+        "modifiedTime": 1790110800000,
+        "lastModifiedBy": null,
+        "exportSource": null,
+        "compendiumSource": null
+      }
+    }
+  ],
   "folder": "VaeFldRare000001",
   "sort": 700000,
   "ownership": {
