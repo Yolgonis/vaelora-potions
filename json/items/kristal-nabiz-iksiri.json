@@ -258,6 +258,12 @@
           "mode": 2,
           "value": "30",
           "priority": null
+        },
+        {
+          "key": "system.traits.dv.value",
+          "mode": 2,
+          "value": "thunder",
+          "priority": null
         }
       ],
       "disabled": false,

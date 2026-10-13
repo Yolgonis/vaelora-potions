@@ -267,6 +267,12 @@
           "mode": 2,
           "value": "prone",
           "priority": null
+        },
+        {
+          "key": "system.attributes.movement.walk",
+          "mode": 2,
+          "value": "-10",
+          "priority": null
         }
       ],
       "disabled": false,

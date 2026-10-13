@@ -258,6 +258,12 @@
           "mode": 2,
           "value": "fire",
           "priority": null
+        },
+        {
+          "key": "system.traits.dv.value",
+          "mode": 2,
+          "value": "cold",
+          "priority": null
         }
       ],
       "disabled": false,

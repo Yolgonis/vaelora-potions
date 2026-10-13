@@ -258,6 +258,12 @@
           "mode": 5,
           "value": "0",
           "priority": null
+        },
+        {
+          "key": "system.traits.dr.value",
+          "mode": 2,
+          "value": "ALL",
+          "priority": null
         }
       ],
       "disabled": false,

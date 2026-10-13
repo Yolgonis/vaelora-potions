@@ -264,6 +264,12 @@
           "mode": 2,
           "value": "cold",
           "priority": null
+        },
+        {
+          "key": "system.attributes.movement.walk",
+          "mode": 5,
+          "value": "15",
+          "priority": null
         }
       ],
       "disabled": false,

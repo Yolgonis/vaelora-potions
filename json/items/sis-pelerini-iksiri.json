@@ -264,6 +264,18 @@
           "mode": 0,
           "value": "1",
           "priority": null
+        },
+        {
+          "key": "flags.midi-qol.disadvantage.attack.rwak",
+          "mode": 0,
+          "value": "1",
+          "priority": null
+        },
+        {
+          "key": "flags.midi-qol.disadvantage.attack.rsak",
+          "mode": 0,
+          "value": "1",
+          "priority": null
         }
       ],
       "disabled": false,

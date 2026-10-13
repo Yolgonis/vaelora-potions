@@ -264,6 +264,12 @@
           "mode": 2,
           "value": "1d4[necrotic]",
           "priority": null
+        },
+        {
+          "key": "system.traits.dv.value",
+          "mode": 2,
+          "value": "radiant",
+          "priority": null
         }
       ],
       "disabled": false,

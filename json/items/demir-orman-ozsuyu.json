@@ -270,6 +270,24 @@
           "mode": 2,
           "value": "prone",
           "priority": null
+        },
+        {
+          "key": "system.attributes.movement.walk",
+          "mode": 5,
+          "value": "15",
+          "priority": null
+        },
+        {
+          "key": "system.attributes.movement.fly",
+          "mode": 5,
+          "value": "0",
+          "priority": null
+        },
+        {
+          "key": "system.attributes.movement.swim",
+          "mode": 5,
+          "value": "0",
+          "priority": null
         }
       ],
       "disabled": false,

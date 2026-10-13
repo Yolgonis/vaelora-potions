@@ -452,6 +452,12 @@
             "mode": 2,
             "value": "prone",
             "priority": null
+          },
+          {
+            "key": "system.attributes.movement.walk",
+            "mode": 2,
+            "value": "-10",
+            "priority": null
           }
         ],
         "disabled": false,
@@ -2998,6 +3004,12 @@
             "key": "system.bonuses.rwak.damage",
             "mode": 2,
             "value": "1d4[necrotic]",
+            "priority": null
+          },
+          {
+            "key": "system.traits.dv.value",
+            "mode": 2,
+            "value": "radiant",
             "priority": null
           }
         ],
@@ -6263,6 +6275,12 @@
             "mode": 2,
             "value": "1",
             "priority": null
+          },
+          {
+            "key": "system.skills.ath.roll.mode",
+            "mode": 2,
+            "value": "-1",
+            "priority": null
           }
         ],
         "disabled": false,
@@ -6585,6 +6603,12 @@
             "key": "system.skills.ins.roll.mode",
             "mode": 2,
             "value": "1",
+            "priority": null
+          },
+          {
+            "key": "system.skills.dec.roll.mode",
+            "mode": 2,
+            "value": "-1",
             "priority": null
           }
         ],
@@ -7669,7 +7693,11 @@
             "special": "",
             "override": false
           },
-          "effects": [],
+          "effects": [
+            {
+              "_id": "VaeEffsfwHXZkzjm"
+            }
+          ],
           "range": {
             "units": "self",
             "special": "",
@@ -7717,13 +7745,148 @@
             },
             "identifier": ""
           },
-          "appliedEffects": []
+          "appliedEffects": [],
+          "flags": {
+            "vaelora-potions": {
+              "original": {
+                "_id": "VaeAct0000000033",
+                "type": "utility",
+                "activation": {
+                  "type": "bonus",
+                  "value": null,
+                  "condition": "",
+                  "override": false
+                },
+                "consumption": {
+                  "targets": [
+                    {
+                      "type": "itemUses",
+                      "value": "1",
+                      "target": ""
+                    }
+                  ],
+                  "scaling": {
+                    "allowed": false,
+                    "max": ""
+                  },
+                  "spellSlot": true
+                },
+                "description": {
+                  "chatFlavor": "Cüce Midesi Şurubu içilir."
+                },
+                "duration": {
+                  "concentration": false,
+                  "value": "1",
+                  "units": "hour",
+                  "special": "",
+                  "override": false
+                },
+                "effects": [],
+                "range": {
+                  "units": "self",
+                  "special": "",
+                  "override": false
+                },
+                "target": {
+                  "template": {
+                    "count": "",
+                    "contiguous": false,
+                    "type": "",
+                    "size": "",
+                    "width": "",
+                    "height": "",
+                    "units": "ft",
+                    "stationary": false
+                  },
+                  "affects": {
+                    "count": "",
+                    "type": "creature",
+                    "choice": false,
+                    "special": ""
+                  },
+                  "prompt": true,
+                  "override": false
+                },
+                "roll": {
+                  "formula": "",
+                  "name": "",
+                  "prompt": false,
+                  "visible": false
+                },
+                "uses": {
+                  "spent": 0,
+                  "recovery": [],
+                  "max": ""
+                },
+                "sort": 0,
+                "name": "İç",
+                "img": "icons/consumables/potions/bottle-bulb-corked-labeled-blue.webp",
+                "visibility": {
+                  "requireMagic": true,
+                  "level": {
+                    "min": null,
+                    "max": null
+                  },
+                  "identifier": ""
+                },
+                "appliedEffects": []
+              }
+            }
+          }
         }
       },
       "attuned": false,
       "identifier": "cuce-midesi-surubu"
     },
-    "effects": [],
+    "effects": [
+      {
+        "_id": "VaeEffsfwHXZkzjm",
+        "name": "Cüce Midesi Şurubu",
+        "img": "icons/consumables/potions/bottle-bulb-corked-labeled-blue.webp",
+        "origin": null,
+        "transfer": false,
+        "type": "base",
+        "system": {},
+        "changes": [
+          {
+            "key": "system.skills.ste.roll.mode",
+            "mode": 2,
+            "value": "-1",
+            "priority": null
+          }
+        ],
+        "disabled": false,
+        "duration": {
+          "startTime": null,
+          "seconds": 3600,
+          "combat": null,
+          "rounds": null,
+          "turns": null,
+          "startRound": null,
+          "startTurn": null
+        },
+        "description": "",
+        "tint": "#ffffff",
+        "statuses": [],
+        "sort": 0,
+        "flags": {
+          "vaelora-potions": {
+            "auto": true
+          }
+        },
+        "_stats": {
+          "duplicateSource": null,
+          "coreVersion": "13.351",
+          "systemId": "dnd5e",
+          "systemVersion": "5.3.3",
+          "createdTime": 1788973200032,
+          "modifiedTime": 1790110800000,
+          "lastModifiedBy": null,
+          "exportSource": null,
+          "compendiumSource": null
+        }
+      }
+    ],
     "folder": "VaeFldCommon0001",
     "sort": 3200000,
     "ownership": {
@@ -8520,6 +8683,12 @@
             "mode": 2,
             "value": "1",
             "priority": null
+          },
+          {
+            "key": "system.skills.dec.roll.mode",
+            "mode": 2,
+            "value": "-1",
+            "priority": null
           }
         ],
         "disabled": false,
@@ -8683,7 +8852,11 @@
             "special": "",
             "override": false
           },
-          "effects": [],
+          "effects": [
+            {
+              "_id": "VaeEffHUBzzpB5fM"
+            }
+          ],
           "range": {
             "units": "self",
             "special": "",
@@ -8731,13 +8904,148 @@
             },
             "identifier": ""
           },
-          "appliedEffects": []
+          "appliedEffects": [],
+          "flags": {
+            "vaelora-potions": {
+              "original": {
+                "_id": "VaeAct0000000037",
+                "type": "utility",
+                "activation": {
+                  "type": "bonus",
+                  "value": null,
+                  "condition": "",
+                  "override": false
+                },
+                "consumption": {
+                  "targets": [
+                    {
+                      "type": "itemUses",
+                      "value": "1",
+                      "target": ""
+                    }
+                  ],
+                  "scaling": {
+                    "allowed": false,
+                    "max": ""
+                  },
+                  "spellSlot": true
+                },
+                "description": {
+                  "chatFlavor": "Kurtkulak Özütü içilir."
+                },
+                "duration": {
+                  "concentration": false,
+                  "value": "1",
+                  "units": "hour",
+                  "special": "",
+                  "override": false
+                },
+                "effects": [],
+                "range": {
+                  "units": "self",
+                  "special": "",
+                  "override": false
+                },
+                "target": {
+                  "template": {
+                    "count": "",
+                    "contiguous": false,
+                    "type": "",
+                    "size": "",
+                    "width": "",
+                    "height": "",
+                    "units": "ft",
+                    "stationary": false
+                  },
+                  "affects": {
+                    "count": "",
+                    "type": "creature",
+                    "choice": false,
+                    "special": ""
+                  },
+                  "prompt": true,
+                  "override": false
+                },
+                "roll": {
+                  "formula": "",
+                  "name": "",
+                  "prompt": false,
+                  "visible": false
+                },
+                "uses": {
+                  "spent": 0,
+                  "recovery": [],
+                  "max": ""
+                },
+                "sort": 0,
+                "name": "İç",
+                "img": "icons/consumables/potions/potion-bottle-corked-labeled-green.webp",
+                "visibility": {
+                  "requireMagic": true,
+                  "level": {
+                    "min": null,
+                    "max": null
+                  },
+                  "identifier": ""
+                },
+                "appliedEffects": []
+              }
+            }
+          }
         }
       },
       "attuned": false,
       "identifier": "kurtkulak-ozutu"
     },
-    "effects": [],
+    "effects": [
+      {
+        "_id": "VaeEffHUBzzpB5fM",
+        "name": "Kurtkulak Özütü",
+        "img": "icons/consumables/potions/potion-bottle-corked-labeled-green.webp",
+        "origin": null,
+        "transfer": false,
+        "type": "base",
+        "system": {},
+        "changes": [
+          {
+            "key": "system.traits.dv.value",
+            "mode": 2,
+            "value": "thunder",
+            "priority": null
+          }
+        ],
+        "disabled": false,
+        "duration": {
+          "startTime": null,
+          "seconds": 3600,
+          "combat": null,
+          "rounds": null,
+          "turns": null,
+          "startRound": null,
+          "startTurn": null
+        },
+        "description": "",
+        "tint": "#ffffff",
+        "statuses": [],
+        "sort": 0,
+        "flags": {
+          "vaelora-potions": {
+            "auto": true
+          }
+        },
+        "_stats": {
+          "duplicateSource": null,
+          "coreVersion": "13.351",
+          "systemId": "dnd5e",
+          "systemVersion": "5.3.3",
+          "createdTime": 1788973200036,
+          "modifiedTime": 1790110800000,
+          "lastModifiedBy": null,
+          "exportSource": null,
+          "compendiumSource": null
+        }
+      }
+    ],
     "folder": "VaeFldUncommon01",
     "sort": 3600000,
     "ownership": {
@@ -9902,6 +10210,12 @@
             "mode": 2,
             "value": "fire",
             "priority": null
+          },
+          {
+            "key": "system.traits.dv.value",
+            "mode": 2,
+            "value": "cold",
+            "priority": null
           }
         ],
         "disabled": false,
@@ -10224,6 +10538,12 @@
             "key": "system.traits.dr.value",
             "mode": 2,
             "value": "cold",
+            "priority": null
+          },
+          {
+            "key": "system.traits.dv.value",
+            "mode": 2,
+            "value": "fire",
             "priority": null
           }
         ],
@@ -11194,6 +11514,12 @@
             "mode": 2,
             "value": "+1",
             "priority": null
+          },
+          {
+            "key": "system.skills.ste.roll.mode",
+            "mode": 2,
+            "value": "-1",
+            "priority": null
           }
         ],
         "disabled": false,
@@ -11707,6 +12033,12 @@
             "mode": 2,
             "value": "1",
             "priority": null
+          },
+          {
+            "key": "system.abilities.wis.check.roll.mode",
+            "mode": 2,
+            "value": "-1",
+            "priority": null
           }
         ],
         "disabled": false,
@@ -12054,7 +12386,11 @@
             "special": "",
             "override": false
           },
-          "effects": [],
+          "effects": [
+            {
+              "_id": "VaeEff5tAgOJT436"
+            }
+          ],
           "range": {
             "units": "self",
             "special": "",
@@ -12102,13 +12438,143 @@
             },
             "identifier": ""
           },
-          "appliedEffects": []
+          "appliedEffects": [],
+          "flags": {
+            "vaelora-potions": {
+              "original": {
+                "_id": "VaeAct0000000050",
+                "type": "utility",
+                "activation": {
+                  "type": "bonus",
+                  "value": null,
+                  "condition": "",
+                  "override": false
+                },
+                "consumption": {
+                  "targets": [
+                    {
+                      "type": "itemUses",
+                      "value": "1",
+                      "target": ""
+                    }
+                  ],
+                  "scaling": {
+                    "allowed": false,
+                    "max": ""
+                  },
+                  "spellSlot": true
+                },
+                "description": {
+                  "chatFlavor": "Yankı Nefesi İksiri içilir."
+                },
+                "duration": {
+                  "concentration": false,
+                  "value": "10",
+                  "units": "minute",
+                  "special": "",
+                  "override": false
+                },
+                "effects": [],
+                "range": {
+                  "units": "self",
+                  "special": "",
+                  "override": false
+                },
+                "target": {
+                  "template": {
+                    "count": "",
+                    "contiguous": false,
+                    "type": "",
+                    "size": "",
+                    "width": "",
+                    "height": "",
+                    "units": "ft",
+                    "stationary": false
+                  },
+                  "affects": {
+                    "count": "",
+                    "type": "creature",
+                    "choice": false,
+                    "special": ""
+                  },
+                  "prompt": true,
+                  "override": false
+                },
+                "roll": {
+                  "formula": "",
+                  "name": "",
+                  "prompt": false,
+                  "visible": false
+                },
+                "uses": {
+                  "spent": 0,
+                  "recovery": [],
+                  "max": ""
+                },
+                "sort": 0,
+                "name": "İç",
+                "img": "icons/consumables/potions/bottle-round-corked-green.webp",
+                "visibility": {
+                  "requireMagic": true,
+                  "level": {
+                    "min": null,
+                    "max": null
+                  },
+                  "identifier": ""
+                },
+                "appliedEffects": []
+              }
+            }
+          }
         }
       },
       "attuned": false,
       "identifier": "yanki-nefesi-iksiri"
     },
-    "effects": [],
+    "effects": [
+      {
+        "_id": "VaeEff5tAgOJT436",
+        "name": "Yankı Nefesi İksiri",
+        "img": "icons/consumables/potions/bottle-round-corked-green.webp",
+        "origin": null,
+        "transfer": false,
+        "type": "base",
+        "system": {},
+        "changes": [],
+        "disabled": false,
+        "duration": {
+          "startTime": null,
+          "seconds": 600,
+          "combat": null,
+          "rounds": null,
+          "turns": null,
+          "startRound": null,
+          "startTurn": null
+        },
+        "description": "",
+        "tint": "#ffffff",
+        "statuses": [
+          "deafened"
+        ],
+        "sort": 0,
+        "flags": {
+          "vaelora-potions": {
+            "auto": true
+          }
+        },
+        "_stats": {
+          "duplicateSource": null,
+          "coreVersion": "13.351",
+          "systemId": "dnd5e",
+          "systemVersion": "5.3.3",
+          "createdTime": 1788973200049,
+          "modifiedTime": 1790110800000,
+          "lastModifiedBy": null,
+          "exportSource": null,
+          "compendiumSource": null
+        }
+      }
+    ],
     "folder": "VaeFldUncommon01",
     "sort": 4900000,
     "ownership": {
@@ -12949,6 +13415,18 @@
             "key": "system.traits.dr.value",
             "mode": 2,
             "value": "radiant",
+            "priority": null
+          },
+          {
+            "key": "ATL.light.bright",
+            "mode": 4,
+            "value": "10",
+            "priority": null
+          },
+          {
+            "key": "ATL.light.dim",
+            "mode": 4,
+            "value": "20",
             "priority": null
           }
         ],
@@ -14655,6 +15133,12 @@
             "mode": 2,
             "value": "1",
             "priority": null
+          },
+          {
+            "key": "system.attributes.init.roll.mode",
+            "mode": 2,
+            "value": "-1",
+            "priority": null
           }
         ],
         "disabled": false,
@@ -14977,6 +15461,12 @@
             "key": "system.attributes.movement.swim",
             "mode": 4,
             "value": "40",
+            "priority": null
+          },
+          {
+            "key": "system.attributes.movement.walk",
+            "mode": 2,
+            "value": "-10",
             "priority": null
           }
         ],
@@ -16068,7 +16558,11 @@
             "special": "",
             "override": false
           },
-          "effects": [],
+          "effects": [
+            {
+              "_id": "VaeEffgWbtf3PoDE"
+            }
+          ],
           "range": {
             "units": "self",
             "special": "",
@@ -16116,13 +16610,148 @@
             },
             "identifier": ""
           },
-          "appliedEffects": []
+          "appliedEffects": [],
+          "flags": {
+            "vaelora-potions": {
+              "original": {
+                "_id": "VaeAct0000000067",
+                "type": "utility",
+                "activation": {
+                  "type": "bonus",
+                  "value": null,
+                  "condition": "",
+                  "override": false
+                },
+                "consumption": {
+                  "targets": [
+                    {
+                      "type": "itemUses",
+                      "value": "1",
+                      "target": ""
+                    }
+                  ],
+                  "scaling": {
+                    "allowed": false,
+                    "max": ""
+                  },
+                  "spellSlot": true
+                },
+                "description": {
+                  "chatFlavor": "Ruh Avcısı İksiri içilir."
+                },
+                "duration": {
+                  "concentration": false,
+                  "value": "1",
+                  "units": "hour",
+                  "special": "",
+                  "override": false
+                },
+                "effects": [],
+                "range": {
+                  "units": "self",
+                  "special": "",
+                  "override": false
+                },
+                "target": {
+                  "template": {
+                    "count": "",
+                    "contiguous": false,
+                    "type": "",
+                    "size": "",
+                    "width": "",
+                    "height": "",
+                    "units": "ft",
+                    "stationary": false
+                  },
+                  "affects": {
+                    "count": "",
+                    "type": "creature",
+                    "choice": false,
+                    "special": ""
+                  },
+                  "prompt": true,
+                  "override": false
+                },
+                "roll": {
+                  "formula": "",
+                  "name": "",
+                  "prompt": false,
+                  "visible": false
+                },
+                "uses": {
+                  "spent": 0,
+                  "recovery": [],
+                  "max": ""
+                },
+                "sort": 0,
+                "name": "İç",
+                "img": "icons/consumables/potions/potion-flask-stopped-red.webp",
+                "visibility": {
+                  "requireMagic": true,
+                  "level": {
+                    "min": null,
+                    "max": null
+                  },
+                  "identifier": ""
+                },
+                "appliedEffects": []
+              }
+            }
+          }
         }
       },
       "attuned": false,
       "identifier": "ruh-avcisi-iksiri"
     },
-    "effects": [],
+    "effects": [
+      {
+        "_id": "VaeEffgWbtf3PoDE",
+        "name": "Ruh Avcısı İksiri",
+        "img": "icons/consumables/potions/potion-flask-stopped-red.webp",
+        "origin": null,
+        "transfer": false,
+        "type": "base",
+        "system": {},
+        "changes": [
+          {
+            "key": "system.traits.dv.value",
+            "mode": 2,
+            "value": "necrotic",
+            "priority": null
+          }
+        ],
+        "disabled": false,
+        "duration": {
+          "startTime": null,
+          "seconds": 3600,
+          "combat": null,
+          "rounds": null,
+          "turns": null,
+          "startRound": null,
+          "startTurn": null
+        },
+        "description": "",
+        "tint": "#ffffff",
+        "statuses": [],
+        "sort": 0,
+        "flags": {
+          "vaelora-potions": {
+            "auto": true
+          }
+        },
+        "_stats": {
+          "duplicateSource": null,
+          "coreVersion": "13.351",
+          "systemId": "dnd5e",
+          "systemVersion": "5.3.3",
+          "createdTime": 1788973200066,
+          "modifiedTime": 1790110800000,
+          "lastModifiedBy": null,
+          "exportSource": null,
+          "compendiumSource": null
+        }
+      }
+    ],
     "folder": "VaeFldRare000001",
     "sort": 6600000,
     "ownership": {
@@ -16436,7 +17065,11 @@
             "special": "",
             "override": false
           },
-          "effects": [],
+          "effects": [
+            {
+              "_id": "VaeEffQeHK5GYC9a"
+            }
+          ],
           "range": {
             "units": "self",
             "special": "",
@@ -16484,13 +17117,143 @@
             },
             "identifier": ""
           },
-          "appliedEffects": []
+          "appliedEffects": [],
+          "flags": {
+            "vaelora-potions": {
+              "original": {
+                "_id": "VaeAct0000000069",
+                "type": "utility",
+                "activation": {
+                  "type": "bonus",
+                  "value": null,
+                  "condition": "",
+                  "override": false
+                },
+                "consumption": {
+                  "targets": [
+                    {
+                      "type": "itemUses",
+                      "value": "1",
+                      "target": ""
+                    }
+                  ],
+                  "scaling": {
+                    "allowed": false,
+                    "max": ""
+                  },
+                  "spellSlot": true
+                },
+                "description": {
+                  "chatFlavor": "Rüya Yürüyüşü İksiri içilir."
+                },
+                "duration": {
+                  "concentration": false,
+                  "value": "10",
+                  "units": "minute",
+                  "special": "",
+                  "override": false
+                },
+                "effects": [],
+                "range": {
+                  "units": "self",
+                  "special": "",
+                  "override": false
+                },
+                "target": {
+                  "template": {
+                    "count": "",
+                    "contiguous": false,
+                    "type": "",
+                    "size": "",
+                    "width": "",
+                    "height": "",
+                    "units": "ft",
+                    "stationary": false
+                  },
+                  "affects": {
+                    "count": "",
+                    "type": "creature",
+                    "choice": false,
+                    "special": ""
+                  },
+                  "prompt": true,
+                  "override": false
+                },
+                "roll": {
+                  "formula": "",
+                  "name": "",
+                  "prompt": false,
+                  "visible": false
+                },
+                "uses": {
+                  "spent": 0,
+                  "recovery": [],
+                  "max": ""
+                },
+                "sort": 0,
+                "name": "İç",
+                "img": "icons/consumables/potions/bottle-round-corked-blue.webp",
+                "visibility": {
+                  "requireMagic": true,
+                  "level": {
+                    "min": null,
+                    "max": null
+                  },
+                  "identifier": ""
+                },
+                "appliedEffects": []
+              }
+            }
+          }
         }
       },
       "attuned": false,
       "identifier": "ruya-yuruyusu-iksiri"
     },
-    "effects": [],
+    "effects": [
+      {
+        "_id": "VaeEffQeHK5GYC9a",
+        "name": "Rüya Yürüyüşü İksiri",
+        "img": "icons/consumables/potions/bottle-round-corked-blue.webp",
+        "origin": null,
+        "transfer": false,
+        "type": "base",
+        "system": {},
+        "changes": [],
+        "disabled": false,
+        "duration": {
+          "startTime": null,
+          "seconds": 600,
+          "combat": null,
+          "rounds": null,
+          "turns": null,
+          "startRound": null,
+          "startTurn": null
+        },
+        "description": "",
+        "tint": "#ffffff",
+        "statuses": [
+          "unconscious"
+        ],
+        "sort": 0,
+        "flags": {
+          "vaelora-potions": {
+            "auto": true
+          }
+        },
+        "_stats": {
+          "duplicateSource": null,
+          "coreVersion": "13.351",
+          "systemId": "dnd5e",
+          "systemVersion": "5.3.3",
+          "createdTime": 1788973200068,
+          "modifiedTime": 1790110800000,
+          "lastModifiedBy": null,
+          "exportSource": null,
+          "compendiumSource": null
+        }
+      }
+    ],
     "folder": "VaeFldRare000001",
     "sort": 6800000,
     "ownership": {
@@ -18522,6 +19285,12 @@
             "key": "system.attributes.movement.walk",
             "mode": 5,
             "value": "0",
+            "priority": null
+          },
+          {
+            "key": "system.traits.dr.value",
+            "mode": 2,
+            "value": "ALL",
             "priority": null
           }
         ],
@@ -23511,7 +24280,11 @@
             "special": "",
             "override": false
           },
-          "effects": [],
+          "effects": [
+            {
+              "_id": "VaeEffqDteDgcLhp"
+            }
+          ],
           "range": {
             "units": "self",
             "special": "",
@@ -23559,13 +24332,148 @@
             },
             "identifier": ""
           },
-          "appliedEffects": []
+          "appliedEffects": [],
+          "flags": {
+            "vaelora-potions": {
+              "original": {
+                "_id": "VaeAct0000000098",
+                "type": "utility",
+                "activation": {
+                  "type": "bonus",
+                  "value": null,
+                  "condition": "",
+                  "override": false
+                },
+                "consumption": {
+                  "targets": [
+                    {
+                      "type": "itemUses",
+                      "value": "1",
+                      "target": ""
+                    }
+                  ],
+                  "scaling": {
+                    "allowed": false,
+                    "max": ""
+                  },
+                  "spellSlot": true
+                },
+                "description": {
+                  "chatFlavor": "Dünya Kökü Özsuyu içilir."
+                },
+                "duration": {
+                  "concentration": false,
+                  "value": "1",
+                  "units": "day",
+                  "special": "",
+                  "override": false
+                },
+                "effects": [],
+                "range": {
+                  "units": "self",
+                  "special": "",
+                  "override": false
+                },
+                "target": {
+                  "template": {
+                    "count": "",
+                    "contiguous": false,
+                    "type": "",
+                    "size": "",
+                    "width": "",
+                    "height": "",
+                    "units": "ft",
+                    "stationary": false
+                  },
+                  "affects": {
+                    "count": "",
+                    "type": "creature",
+                    "choice": false,
+                    "special": ""
+                  },
+                  "prompt": true,
+                  "override": false
+                },
+                "roll": {
+                  "formula": "",
+                  "name": "",
+                  "prompt": false,
+                  "visible": false
+                },
+                "uses": {
+                  "spent": 0,
+                  "recovery": [],
+                  "max": ""
+                },
+                "sort": 0,
+                "name": "İç",
+                "img": "icons/consumables/potions/potion-flask-corked-labeled-pink.webp",
+                "visibility": {
+                  "requireMagic": true,
+                  "level": {
+                    "min": null,
+                    "max": null
+                  },
+                  "identifier": ""
+                },
+                "appliedEffects": []
+              }
+            }
+          }
         }
       },
       "attuned": false,
       "identifier": "dunya-koku-ozsuyu"
     },
-    "effects": [],
+    "effects": [
+      {
+        "_id": "VaeEffqDteDgcLhp",
+        "name": "Dünya Kökü Özsuyu",
+        "img": "icons/consumables/potions/potion-flask-corked-labeled-pink.webp",
+        "origin": null,
+        "transfer": false,
+        "type": "base",
+        "system": {},
+        "changes": [
+          {
+            "key": "system.attributes.movement.walk",
+            "mode": 2,
+            "value": "-10",
+            "priority": null
+          }
+        ],
+        "disabled": false,
+        "duration": {
+          "startTime": null,
+          "seconds": 86400,
+          "combat": null,
+          "rounds": null,
+          "turns": null,
+          "startRound": null,
+          "startTurn": null
+        },
+        "description": "",
+        "tint": "#ffffff",
+        "statuses": [],
+        "sort": 0,
+        "flags": {
+          "vaelora-potions": {
+            "auto": true
+          }
+        },
+        "_stats": {
+          "duplicateSource": null,
+          "coreVersion": "13.351",
+          "systemId": "dnd5e",
+          "systemVersion": "5.3.3",
+          "createdTime": 1788973200097,
+          "modifiedTime": 1790110800000,
+          "lastModifiedBy": null,
+          "exportSource": null,
+          "compendiumSource": null
+        }
+      }
+    ],
     "folder": "VaeFldLegendary1",
     "sort": 9700000,
     "ownership": {
@@ -24362,6 +25270,12 @@
             "key": "ATL.light.dim",
             "mode": 4,
             "value": "40",
+            "priority": null
+          },
+          {
+            "key": "system.skills.ste.roll.mode",
+            "mode": 2,
+            "value": "-1",
             "priority": null
           }
         ],
@@ -25630,7 +26544,11 @@
             "special": "",
             "override": false
           },
-          "effects": [],
+          "effects": [
+            {
+              "_id": "VaeEff3lMGR9dJxa"
+            }
+          ],
           "range": {
             "units": "self",
             "special": "",
@@ -25678,13 +26596,148 @@
             },
             "identifier": ""
           },
-          "appliedEffects": []
+          "appliedEffects": [],
+          "flags": {
+            "vaelora-potions": {
+              "original": {
+                "_id": "VaeAct0000000108",
+                "type": "utility",
+                "activation": {
+                  "type": "bonus",
+                  "value": null,
+                  "condition": "",
+                  "override": false
+                },
+                "consumption": {
+                  "targets": [
+                    {
+                      "type": "itemUses",
+                      "value": "1",
+                      "target": ""
+                    }
+                  ],
+                  "scaling": {
+                    "allowed": false,
+                    "max": ""
+                  },
+                  "spellSlot": true
+                },
+                "description": {
+                  "chatFlavor": "Kül Parmağı Yağı içilir."
+                },
+                "duration": {
+                  "concentration": false,
+                  "value": "1",
+                  "units": "hour",
+                  "special": "",
+                  "override": false
+                },
+                "effects": [],
+                "range": {
+                  "units": "self",
+                  "special": "",
+                  "override": false
+                },
+                "target": {
+                  "template": {
+                    "count": "",
+                    "contiguous": false,
+                    "type": "",
+                    "size": "",
+                    "width": "",
+                    "height": "",
+                    "units": "ft",
+                    "stationary": false
+                  },
+                  "affects": {
+                    "count": "",
+                    "type": "creature",
+                    "choice": false,
+                    "special": ""
+                  },
+                  "prompt": true,
+                  "override": false
+                },
+                "roll": {
+                  "formula": "",
+                  "name": "",
+                  "prompt": false,
+                  "visible": false
+                },
+                "uses": {
+                  "spent": 0,
+                  "recovery": [],
+                  "max": ""
+                },
+                "sort": 0,
+                "name": "İç",
+                "img": "icons/consumables/potions/bottle-round-corked-blue.webp",
+                "visibility": {
+                  "requireMagic": true,
+                  "level": {
+                    "min": null,
+                    "max": null
+                  },
+                  "identifier": ""
+                },
+                "appliedEffects": []
+              }
+            }
+          }
         }
       },
       "attuned": false,
       "identifier": "kul-parmagi-yagi"
     },
-    "effects": [],
+    "effects": [
+      {
+        "_id": "VaeEff3lMGR9dJxa",
+        "name": "Kül Parmağı Yağı",
+        "img": "icons/consumables/potions/bottle-round-corked-blue.webp",
+        "origin": null,
+        "transfer": false,
+        "type": "base",
+        "system": {},
+        "changes": [
+          {
+            "key": "system.skills.slt.bonuses.check",
+            "mode": 2,
+            "value": "-1",
+            "priority": null
+          }
+        ],
+        "disabled": false,
+        "duration": {
+          "startTime": null,
+          "seconds": 3600,
+          "combat": null,
+          "rounds": null,
+          "turns": null,
+          "startRound": null,
+          "startTurn": null
+        },
+        "description": "",
+        "tint": "#ffffff",
+        "statuses": [],
+        "sort": 0,
+        "flags": {
+          "vaelora-potions": {
+            "auto": true
+          }
+        },
+        "_stats": {
+          "duplicateSource": null,
+          "coreVersion": "13.351",
+          "systemId": "dnd5e",
+          "systemVersion": "5.3.3",
+          "createdTime": 1790110800108,
+          "modifiedTime": 1790110800108,
+          "lastModifiedBy": null,
+          "exportSource": null,
+          "compendiumSource": null
+        }
+      }
+    ],
     "folder": "VaeFldCommon0001",
     "sort": 10800000,
     "ownership": {
@@ -31185,6 +32238,12 @@
             "mode": 2,
             "value": "+2",
             "priority": null
+          },
+          {
+            "key": "system.skills.per.bonuses.check",
+            "mode": 2,
+            "value": "-2",
+            "priority": null
           }
         ],
         "disabled": false,
@@ -31511,6 +32570,18 @@
           },
           {
             "key": "flags.midi-qol.grants.disadvantage.attack.rsak",
+            "mode": 0,
+            "value": "1",
+            "priority": null
+          },
+          {
+            "key": "flags.midi-qol.disadvantage.attack.rwak",
+            "mode": 0,
+            "value": "1",
+            "priority": null
+          },
+          {
+            "key": "flags.midi-qol.disadvantage.attack.rsak",
             "mode": 0,
             "value": "1",
             "priority": null
@@ -36886,6 +37957,12 @@
             "mode": 2,
             "value": "cold",
             "priority": null
+          },
+          {
+            "key": "system.attributes.movement.walk",
+            "mode": 5,
+            "value": "15",
+            "priority": null
           }
         ],
         "disabled": false,
@@ -38240,6 +39317,24 @@
             "key": "system.traits.ci.value",
             "mode": 2,
             "value": "prone",
+            "priority": null
+          },
+          {
+            "key": "system.attributes.movement.walk",
+            "mode": 5,
+            "value": "15",
+            "priority": null
+          },
+          {
+            "key": "system.attributes.movement.fly",
+            "mode": 5,
+            "value": "0",
+            "priority": null
+          },
+          {
+            "key": "system.attributes.movement.swim",
+            "mode": 5,
+            "value": "0",
             "priority": null
           }
         ],
@@ -40538,6 +41633,12 @@
             "mode": 2,
             "value": "30",
             "priority": null
+          },
+          {
+            "key": "system.traits.dv.value",
+            "mode": 2,
+            "value": "thunder",
+            "priority": null
           }
         ],
         "disabled": false,
@@ -40701,7 +41802,11 @@
             "special": "",
             "override": false
           },
-          "effects": [],
+          "effects": [
+            {
+              "_id": "VaeEffXJBn4PLh8A"
+            }
+          ],
           "range": {
             "units": "self",
             "special": "",
@@ -40749,13 +41854,148 @@
             },
             "identifier": ""
           },
-          "appliedEffects": []
+          "appliedEffects": [],
+          "flags": {
+            "vaelora-potions": {
+              "original": {
+                "_id": "VaeAct0000000170",
+                "type": "utility",
+                "activation": {
+                  "type": "bonus",
+                  "value": null,
+                  "condition": "",
+                  "override": false
+                },
+                "consumption": {
+                  "targets": [
+                    {
+                      "type": "itemUses",
+                      "value": "1",
+                      "target": ""
+                    }
+                  ],
+                  "scaling": {
+                    "allowed": false,
+                    "max": ""
+                  },
+                  "spellSlot": true
+                },
+                "description": {
+                  "chatFlavor": "Yerçekimi Çivisi İksiri içilir."
+                },
+                "duration": {
+                  "concentration": false,
+                  "value": "1",
+                  "units": "minute",
+                  "special": "",
+                  "override": false
+                },
+                "effects": [],
+                "range": {
+                  "units": "self",
+                  "special": "",
+                  "override": false
+                },
+                "target": {
+                  "template": {
+                    "count": "",
+                    "contiguous": false,
+                    "type": "",
+                    "size": "",
+                    "width": "",
+                    "height": "",
+                    "units": "ft",
+                    "stationary": false
+                  },
+                  "affects": {
+                    "count": "",
+                    "type": "creature",
+                    "choice": false,
+                    "special": ""
+                  },
+                  "prompt": true,
+                  "override": false
+                },
+                "roll": {
+                  "formula": "",
+                  "name": "",
+                  "prompt": false,
+                  "visible": false
+                },
+                "uses": {
+                  "spent": 0,
+                  "recovery": [],
+                  "max": ""
+                },
+                "sort": 0,
+                "name": "İç",
+                "img": "icons/consumables/potions/bottle-round-corked-red.webp",
+                "visibility": {
+                  "requireMagic": true,
+                  "level": {
+                    "min": null,
+                    "max": null
+                  },
+                  "identifier": ""
+                },
+                "appliedEffects": []
+              }
+            }
+          }
         }
       },
       "attuned": false,
       "identifier": "yercekimi-civisi-iksiri"
     },
-    "effects": [],
+    "effects": [
+      {
+        "_id": "VaeEffXJBn4PLh8A",
+        "name": "Yerçekimi Çivisi İksiri",
+        "img": "icons/consumables/potions/bottle-round-corked-red.webp",
+        "origin": null,
+        "transfer": false,
+        "type": "base",
+        "system": {},
+        "changes": [
+          {
+            "key": "system.attributes.movement.walk",
+            "mode": 2,
+            "value": "-10",
+            "priority": null
+          }
+        ],
+        "disabled": false,
+        "duration": {
+          "startTime": null,
+          "seconds": 60,
+          "combat": null,
+          "rounds": null,
+          "turns": null,
+          "startRound": null,
+          "startTurn": null
+        },
+        "description": "",
+        "tint": "#ffffff",
+        "statuses": [],
+        "sort": 0,
+        "flags": {
+          "vaelora-potions": {
+            "auto": true
+          }
+        },
+        "_stats": {
+          "duplicateSource": null,
+          "coreVersion": "13.351",
+          "systemId": "dnd5e",
+          "systemVersion": "5.3.3",
+          "createdTime": 1790110800170,
+          "modifiedTime": 1790110800170,
+          "lastModifiedBy": null,
+          "exportSource": null,
+          "compendiumSource": null
+        }
+      }
+    ],
     "folder": "VaeFldRare000001",
     "sort": 17000000,
     "ownership": {
@@ -41588,7 +42828,11 @@
             "special": "",
             "override": false
           },
-          "effects": [],
+          "effects": [
+            {
+              "_id": "VaeEffRNOGWbmN2f"
+            }
+          ],
           "range": {
             "units": "self",
             "special": "",
@@ -41636,13 +42880,148 @@
             },
             "identifier": ""
           },
-          "appliedEffects": []
+          "appliedEffects": [],
+          "flags": {
+            "vaelora-potions": {
+              "original": {
+                "_id": "VaeAct0000000174",
+                "type": "utility",
+                "activation": {
+                  "type": "bonus",
+                  "value": null,
+                  "condition": "",
+                  "override": false
+                },
+                "consumption": {
+                  "targets": [
+                    {
+                      "type": "itemUses",
+                      "value": "1",
+                      "target": ""
+                    }
+                  ],
+                  "scaling": {
+                    "allowed": false,
+                    "max": ""
+                  },
+                  "spellSlot": true
+                },
+                "description": {
+                  "chatFlavor": "Cehennem Soğuğu İksiri içilir."
+                },
+                "duration": {
+                  "concentration": false,
+                  "value": "1",
+                  "units": "minute",
+                  "special": "",
+                  "override": false
+                },
+                "effects": [],
+                "range": {
+                  "units": "self",
+                  "special": "",
+                  "override": false
+                },
+                "target": {
+                  "template": {
+                    "count": "",
+                    "contiguous": false,
+                    "type": "",
+                    "size": "",
+                    "width": "",
+                    "height": "",
+                    "units": "ft",
+                    "stationary": false
+                  },
+                  "affects": {
+                    "count": "",
+                    "type": "creature",
+                    "choice": false,
+                    "special": ""
+                  },
+                  "prompt": true,
+                  "override": false
+                },
+                "roll": {
+                  "formula": "",
+                  "name": "",
+                  "prompt": false,
+                  "visible": false
+                },
+                "uses": {
+                  "spent": 0,
+                  "recovery": [],
+                  "max": ""
+                },
+                "sort": 0,
+                "name": "İç",
+                "img": "icons/consumables/potions/bottle-round-corked-blue.webp",
+                "visibility": {
+                  "requireMagic": true,
+                  "level": {
+                    "min": null,
+                    "max": null
+                  },
+                  "identifier": ""
+                },
+                "appliedEffects": []
+              }
+            }
+          }
         }
       },
       "attuned": false,
       "identifier": "cehennem-sogugu-iksiri"
     },
-    "effects": [],
+    "effects": [
+      {
+        "_id": "VaeEffRNOGWbmN2f",
+        "name": "Cehennem Soğuğu İksiri",
+        "img": "icons/consumables/potions/bottle-round-corked-blue.webp",
+        "origin": null,
+        "transfer": false,
+        "type": "base",
+        "system": {},
+        "changes": [
+          {
+            "key": "system.traits.dv.value",
+            "mode": 2,
+            "value": "fire",
+            "priority": null
+          }
+        ],
+        "disabled": false,
+        "duration": {
+          "startTime": null,
+          "seconds": 60,
+          "combat": null,
+          "rounds": null,
+          "turns": null,
+          "startRound": null,
+          "startTurn": null
+        },
+        "description": "",
+        "tint": "#ffffff",
+        "statuses": [],
+        "sort": 0,
+        "flags": {
+          "vaelora-potions": {
+            "auto": true
+          }
+        },
+        "_stats": {
+          "duplicateSource": null,
+          "coreVersion": "13.351",
+          "systemId": "dnd5e",
+          "systemVersion": "5.3.3",
+          "createdTime": 1790110800174,
+          "modifiedTime": 1790110800174,
+          "lastModifiedBy": null,
+          "exportSource": null,
+          "compendiumSource": null
+        }
+      }
+    ],
     "folder": "VaeFldRare000001",
     "sort": 17400000,
     "ownership": {
@@ -43608,6 +44987,12 @@
             "key": "system.attributes.movement.swim",
             "mode": 4,
             "value": "90",
+            "priority": null
+          },
+          {
+            "key": "system.traits.dv.value",
+            "mode": 2,
+            "value": "fire",
             "priority": null
           }
         ],

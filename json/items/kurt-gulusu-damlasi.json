@@ -258,6 +258,12 @@
           "mode": 2,
           "value": "+2",
           "priority": null
+        },
+        {
+          "key": "system.skills.per.bonuses.check",
+          "mode": 2,
+          "value": "-2",
+          "priority": null
         }
       ],
       "disabled": false,

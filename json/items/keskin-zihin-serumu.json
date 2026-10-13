@@ -264,6 +264,12 @@
           "mode": 2,
           "value": "1",
           "priority": null
+        },
+        {
+          "key": "system.abilities.wis.check.roll.mode",
+          "mode": 2,
+          "value": "-1",
+          "priority": null
         }
       ],
       "disabled": false,

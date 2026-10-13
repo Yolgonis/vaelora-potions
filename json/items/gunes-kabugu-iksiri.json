@@ -258,6 +258,18 @@
           "mode": 2,
           "value": "radiant",
           "priority": null
+        },
+        {
+          "key": "ATL.light.bright",
+          "mode": 4,
+          "value": "10",
+          "priority": null
+        },
+        {
+          "key": "ATL.light.dim",
+          "mode": 4,
+          "value": "20",
+          "priority": null
         }
       ],
       "disabled": false,

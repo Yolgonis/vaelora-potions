@@ -258,6 +258,12 @@
           "mode": 2,
           "value": "1",
           "priority": null
+        },
+        {
+          "key": "system.attributes.init.roll.mode",
+          "mode": 2,
+          "value": "-1",
+          "priority": null
         }
       ],
       "disabled": false,
