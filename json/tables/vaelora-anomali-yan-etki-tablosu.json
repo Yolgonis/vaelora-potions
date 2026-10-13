@@ -1,0 +1,611 @@
+{
+  "_id": "VaeTbl0000000001",
+  "name": "Vaelora Anomali Yan Etki Tablosu",
+  "img": "icons/magic/unholy/orb-glowing-purple.webp",
+  "description": "<p><strong>Anomali Çözücüsü</strong> kontrolünde doğal 1 atıldığında bu tabloda 1d20 atılır. Sonuçlar GM tarafından uygulanır.</p>",
+  "results": [
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        1,
+        1
+      ],
+      "drawn": false,
+      "_id": "VaeRes0000000001",
+      "img": "icons/svg/d20-black.svg",
+      "name": "Zihinsel Geri Tepme",
+      "description": "İksiri içen [[/damage 4d6 psychic]] hasar alır.",
+      "flags": {
+        "vaelora-potions": {
+          "version": "3.0.0"
+        }
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      }
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        2,
+        2
+      ],
+      "drawn": false,
+      "_id": "VaeRes0000000002",
+      "img": "icons/svg/d20-black.svg",
+      "name": "Mekânsal Kayma",
+      "description": "İçen, GM’in belirlediği rastgele bir yönde 30 ft ışınlanır. Geçerli bir alan yoksa Yere Düşmüş olur.",
+      "flags": {
+        "vaelora-potions": {
+          "version": "3.0.0"
+        }
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      }
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        3,
+        3
+      ],
+      "drawn": false,
+      "_id": "VaeRes0000000003",
+      "img": "icons/svg/d20-black.svg",
+      "name": "Zaman Atlaması",
+      "description": "İçen bir sonraki turunun sonuna kadar Sersemlemiş olur. Ona göre dünya bir anlığına ileri sıçramıştır.",
+      "flags": {
+        "vaelora-potions": {
+          "version": "3.0.0"
+        }
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      }
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        4,
+        4
+      ],
+      "drawn": false,
+      "_id": "VaeRes0000000004",
+      "img": "icons/svg/d20-black.svg",
+      "name": "Ayrılan Gölge",
+      "description": "İçenin gölgesi bedeninden ayrılır ve 1 dakika boyunca düşman bir Shadow olarak hareket eder. Gölge yok edilirse normal hâline döner.",
+      "flags": {
+        "vaelora-potions": {
+          "version": "3.0.0"
+        }
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      }
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        5,
+        5
+      ],
+      "drawn": false,
+      "_id": "VaeRes0000000005",
+      "img": "icons/svg/d20-black.svg",
+      "name": "Düzlemsel Çınlama",
+      "description": "İçen 10 dakika boyunca Sağır olur ve yakın düzlemlerden gelen anlaşılmaz fısıltılar duyar.",
+      "flags": {
+        "vaelora-potions": {
+          "version": "3.0.0"
+        }
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      }
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        6,
+        6
+      ],
+      "drawn": false,
+      "_id": "VaeRes0000000006",
+      "img": "icons/svg/d20-black.svg",
+      "name": "Ters Yerçekimi",
+      "description": "İçen 20 ft yukarı savrulur, ardından düşer. Tavan varsa normal biçimde çarpar.",
+      "flags": {
+        "vaelora-potions": {
+          "version": "3.0.0"
+        }
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      }
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        7,
+        7
+      ],
+      "drawn": false,
+      "_id": "VaeRes0000000007",
+      "img": "icons/svg/d20-black.svg",
+      "name": "Büyü Boşalması",
+      "description": "İçen, sahip olduğu en yüksek seviyeli harcanmamış büyü yuvalarından birini kaybeder. büyü yuvası yoksa [[/damage 3d6 force]] hasar alır.",
+      "flags": {
+        "vaelora-potions": {
+          "version": "3.0.0"
+        }
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      }
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        8,
+        8
+      ],
+      "drawn": false,
+      "_id": "VaeRes0000000008",
+      "img": "icons/svg/d20-black.svg",
+      "name": "Yanlış Arınma",
+      "description": "Bitirilmek istenen büyülü etki sona ermez; kalan süresi iki katına çıkar. Toplam süre ilk sürenin iki katını aşamaz.",
+      "flags": {
+        "vaelora-potions": {
+          "version": "3.0.0"
+        }
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      }
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        9,
+        9
+      ],
+      "drawn": false,
+      "_id": "VaeRes0000000009",
+      "img": "icons/svg/d20-black.svg",
+      "name": "Anomali Ateşi",
+      "description": "İçen 1 dakika boyunca 10 ft Parlak Işık ve ilave 10 ft Loş Işık yayar. Görünmez olamaz.",
+      "flags": {
+        "vaelora-potions": {
+          "version": "3.0.0"
+        }
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      }
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        10,
+        10
+      ],
+      "drawn": false,
+      "_id": "VaeRes0000000010",
+      "img": "icons/svg/d20-black.svg",
+      "name": "Renk Kayması",
+      "description": "1d6 at: 1 asit, 2 soğuk, 3 ateş, 4 yıldırım, 5 zehir, 6 gök gürültüsü. İçen 10 dakika bu hasar türü için direnç, GM’in belirlediği karşıt bir hasar türü için zayıflık kazanır.",
+      "flags": {
+        "vaelora-potions": {
+          "version": "3.0.0"
+        }
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      }
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        11,
+        11
+      ],
+      "drawn": false,
+      "_id": "VaeRes0000000011",
+      "img": "icons/svg/d20-black.svg",
+      "name": "Hafıza Sızıntısı",
+      "description": "İçen son 1 saati bulanık hatırlar ve 1 saat boyunca Zekâ ile Bilgelik Yetenek Kontrollerinde dezavantaj alır.",
+      "flags": {
+        "vaelora-potions": {
+          "version": "3.0.0"
+        }
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      }
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        12,
+        12
+      ],
+      "drawn": false,
+      "_id": "VaeRes0000000012",
+      "img": "icons/svg/d20-black.svg",
+      "name": "Ethereal Titreme",
+      "description": "İçen bir sonraki turunun başlangıcına kadar Eterik Düzlem’e geçer. Geri döndüğünde [[/damage 2d6 force]] hasar alır.",
+      "flags": {
+        "vaelora-potions": {
+          "version": "3.0.0"
+        }
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      }
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        13,
+        13
+      ],
+      "drawn": false,
+      "_id": "VaeRes0000000013",
+      "img": "icons/svg/d20-black.svg",
+      "name": "Anlık Yaşlanma",
+      "description": "İçenin biyolojik yaşı [[/roll 1d10]] yıl ilerler. Greater Restoration bu yaşlanmayı 24 saat içinde geri çevirebilir.",
+      "flags": {
+        "vaelora-potions": {
+          "version": "3.0.0"
+        }
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      }
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        14,
+        14
+      ],
+      "drawn": false,
+      "_id": "VaeRes0000000014",
+      "img": "icons/svg/d20-black.svg",
+      "name": "Bozuk Kopya",
+      "description": "İçenin 1 Can Puanıne sahip bir kopyası 5 ft içinde belirir. Kopya içenin oyun istatistiklerini taşır fakat Saldırı yapamaz ve 1 dakika sonra erir.",
+      "flags": {
+        "vaelora-potions": {
+          "version": "3.0.0"
+        }
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      }
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        15,
+        15
+      ],
+      "drawn": false,
+      "_id": "VaeRes0000000015",
+      "img": "icons/svg/d20-black.svg",
+      "name": "Büyüsel Kör Nokta",
+      "description": "İçenin çevresinde 10 ft yarıçap bir alan oluşur. Alandaki 3rd-level veya daha düşük büyüler 1 dakika boyunca bastırılır.",
+      "flags": {
+        "vaelora-potions": {
+          "version": "3.0.0"
+        }
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      }
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        16,
+        16
+      ],
+      "drawn": false,
+      "_id": "VaeRes0000000016",
+      "img": "icons/svg/d20-black.svg",
+      "name": "Açılan Çatlak",
+      "description": "30 ft içinde boş bir alanda GM’in parti seviyesine uygun seçtiği düşman bir Aberasyon belirir. Yaratık 1 dakika sonra kendi düzlemine çekilir.",
+      "flags": {
+        "vaelora-potions": {
+          "version": "3.0.0"
+        }
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      }
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        17,
+        17
+      ],
+      "drawn": false,
+      "_id": "VaeRes0000000017",
+      "img": "icons/svg/d20-black.svg",
+      "name": "Yer Değiştiren Nabız",
+      "description": "İçen ile 60 ft içindeki rastgele bir yaratık yer değiştirir. İkisi de [[/save dexterity dc=15]] Kurtarma Atışı yapar; başarısız olan Yere Düşmüş olur.",
+      "flags": {
+        "vaelora-potions": {
+          "version": "3.0.0"
+        }
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      }
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        18,
+        18
+      ],
+      "drawn": false,
+      "_id": "VaeRes0000000018",
+      "img": "icons/svg/d20-black.svg",
+      "name": "Etki Yankısı",
+      "description": "Kaldırılmak istenen büyülü etki sona erer fakat 30 ft içindeki rastgele bir yaratığa kalan süresiyle aktarılır. Geçerli hedef yoksa içene geri döner.",
+      "flags": {
+        "vaelora-potions": {
+          "version": "3.0.0"
+        }
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      }
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        19,
+        19
+      ],
+      "drawn": false,
+      "_id": "VaeRes0000000019",
+      "img": "icons/svg/d20-black.svg",
+      "name": "Anomali İzi",
+      "description": "İçenin teninde kalıcı, hafif parlayan bir işaret oluşur. Aberasyon ve düzlem dışı yaratıklar onu 60 ft içinde hissedebilir. Laneti Kaldır işareti kaldırır.",
+      "flags": {
+        "vaelora-potions": {
+          "version": "3.0.0"
+        }
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      }
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        20,
+        20
+      ],
+      "drawn": false,
+      "_id": "VaeRes0000000020",
+      "img": "icons/svg/d20-black.svg",
+      "name": "Kusursuz Arınma",
+      "description": "Arındırılmak istenen etki otomatik olarak sona erer. İçen ayrıca [[/healing 4d6 temp]] Geçici Can Puanı kazanır.",
+      "flags": {
+        "vaelora-potions": {
+          "version": "3.0.0"
+        }
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      }
+    }
+  ],
+  "formula": "1d20",
+  "replacement": true,
+  "displayRoll": true,
+  "flags": {
+    "vaelora-potions": {
+      "version": "3.0.0"
+    }
+  },
+  "sort": 0,
+  "folder": null,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.351",
+    "systemId": "dnd5e",
+    "systemVersion": "5.3.3",
+    "createdTime": 1788973200200,
+    "modifiedTime": 1790110800000,
+    "lastModifiedBy": null,
+    "exportSource": null
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "id": "vaelora-potions",
+  "title": "Vaelora İksirleri",
+  "description": "Vaelora evrenine özel 200 adet D&D 5e iksirinden oluşan, nadirliğe göre klasörlenmiş Türkçe compendium.",
+  "version": "3.0.0",
+  "authors": [
+    {
+      "name": "Yolgonis"
+    }
+  ],
+  "compatibility": {
+    "minimum": "13",
+    "verified": "13"
+  },
+  "relationships": {
+    "systems": [
+      {
+        "id": "dnd5e",
+        "type": "system",
+        "compatibility": {
+          "minimum": "5.3.3"
+        }
+      }
+    ]
+  },
+  "packs": [
+    {
+      "name": "vaelora-potions",
+      "label": "Vaelora İksirleri",
+      "path": "packs/vaelora-potions",
+      "type": "Item",
+      "system": "dnd5e",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "vaelora-tables",
+      "label": "Vaelora GM Tabloları",
+      "path": "packs/vaelora-tables",
+      "type": "RollTable",
+      "system": "dnd5e",
+      "ownership": {
+        "PLAYER": "NONE",
+        "ASSISTANT": "OWNER"
+      }
+    }
+  ]
+}

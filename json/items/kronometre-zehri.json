@@ -1,0 +1,184 @@
+{
+  "_id": "VaePot0000000085",
+  "name": "Kronometre Zehri",
+  "type": "consumable",
+  "img": "icons/consumables/potions/potion-flask-corked-capped-green.webp",
+  "system": {
+    "description": {
+      "value": "<p><em>Altın sıvı, şişenin içindeki zamanı görünür biçimde hızlandırır.</em></p><p><strong>Etki.</strong> Her turunda normal Aksiyonuna ek olarak bir ilave Aksiyon kazanırsın. Bu Aksiyon yalnızca Saldırı (tek saldırı), Atılma, Sıyrılma, Saklanma, Use an Object veya Büyü Aksiyonu için kullanılabilir.</p><p><strong>Süre.</strong> 3 tur</p><section class=\"secret\"><p><strong>Bedel / Yan Etki.</strong> Etki sona erdiğinde 1 tur Sersemlemiş olursun ve biyolojik yaşın 1d6 ay ilerler.</p></section>",
+      "chat": ""
+    },
+    "source": {
+      "custom": "Vaelora İksirleri",
+      "book": "",
+      "page": "",
+      "license": "",
+      "rules": "2024",
+      "revision": 1
+    },
+    "quantity": 1,
+    "weight": {
+      "value": 0.5,
+      "units": "lb"
+    },
+    "price": {
+      "value": 20000,
+      "denomination": "gp"
+    },
+    "attunement": "",
+    "equipped": false,
+    "rarity": "veryRare",
+    "identified": true,
+    "uses": {
+      "max": "1",
+      "recovery": [],
+      "autoDestroy": true,
+      "spent": 0
+    },
+    "damage": {
+      "base": {
+        "number": null,
+        "denomination": null,
+        "types": [],
+        "custom": {
+          "enabled": false,
+          "formula": ""
+        },
+        "scaling": {
+          "mode": "",
+          "number": null,
+          "formula": ""
+        }
+      },
+      "replace": false
+    },
+    "type": {
+      "value": "potion",
+      "subtype": ""
+    },
+    "unidentified": {
+      "description": ""
+    },
+    "container": null,
+    "properties": [
+      "mgc"
+    ],
+    "magicalBonus": null,
+    "activities": {
+      "VaeAct0000000085": {
+        "_id": "VaeAct0000000085",
+        "type": "utility",
+        "activation": {
+          "type": "bonus",
+          "value": null,
+          "condition": "",
+          "override": false
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            }
+          ],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": "Kronometre Zehri içilir."
+        },
+        "duration": {
+          "concentration": false,
+          "value": "3",
+          "units": "round",
+          "special": "",
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "units": "self",
+          "special": "",
+          "override": false
+        },
+        "target": {
+          "template": {
+            "count": "",
+            "contiguous": false,
+            "type": "",
+            "size": "",
+            "width": "",
+            "height": "",
+            "units": "ft",
+            "stationary": false
+          },
+          "affects": {
+            "count": "",
+            "type": "creature",
+            "choice": false,
+            "special": ""
+          },
+          "prompt": true,
+          "override": false
+        },
+        "roll": {
+          "formula": "",
+          "name": "",
+          "prompt": false,
+          "visible": false
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "sort": 0,
+        "name": "İç",
+        "img": "icons/consumables/potions/potion-flask-corked-capped-green.webp",
+        "visibility": {
+          "requireMagic": true,
+          "level": {
+            "min": null,
+            "max": null
+          },
+          "identifier": ""
+        },
+        "appliedEffects": []
+      }
+    },
+    "attuned": false,
+    "identifier": "kronometre-zehri"
+  },
+  "effects": [],
+  "folder": "VaeFldVeryRare01",
+  "sort": 8400000,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "vaelora-potions": {
+      "version": "3.0.0",
+      "powerScore": 1,
+      "priceBand": 3
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.351",
+    "systemId": "dnd5e",
+    "systemVersion": "5.3.3",
+    "createdTime": 1788973200084,
+    "modifiedTime": 1790110800000,
+    "lastModifiedBy": null,
+    "exportSource": null
+  }
+}
