@@ -1,11 +1,11 @@
 {
-  "_id": "VaePot0000000037",
-  "name": "Kurtkulak Özütü",
+  "_id": "VaePot0000000021",
+  "name": "Kayıp Eşya Tuzu",
   "type": "consumable",
-  "img": "icons/consumables/potions/potion-bottle-corked-labeled-green.webp",
+  "img": "icons/consumables/potions/potion-tube-corked-blue.webp",
   "system": {
     "description": {
-      "value": "<p><em>Dumanlı sıvının içinde ses dalgalarını andıran halkalar genişler.</em></p><p><strong>Etki.</strong> İşitmeye dayalı Bilgelik (Algı) kontrollerinde avantaj kazanır ve 60 ft içindeki fısıltıları duyabilirsin.</p><p><strong>Süre.</strong> 1 saat</p><section class=\"secret\"><p><strong>Bedel / Yan Etki.</strong> Gök Gürültüsü hasar türüne karşı zayıflık kazanırsın.</p></section>",
+      "value": "<p><em>Avuçta eriyen gri tuz taneleri ağızda paslı bir anahtar tadı bırakır.</em></p><p><strong>Etki.</strong> Son 24 saat içinde dokunduğun bir nesnenin adını söylersin. Nesne 1000 ft içindeyse süre boyunca yönünü ve yaklaşık uzaklığını bilirsin.</p><p><strong>Süre.</strong> 10 dakika</p><section class=\"secret\"><p><strong>Bedel / Yan Etki.</strong> Aklın nesneden ayrılmaz: Bilgelik (Algı) kontrollerinde dezavantaj alırsın.</p></section>",
       "chat": ""
     },
     "source": {
@@ -22,12 +22,12 @@
       "units": "lb"
     },
     "price": {
-      "value": 200,
+      "value": 90,
       "denomination": "gp"
     },
     "attunement": "",
     "equipped": false,
-    "rarity": "uncommon",
+    "rarity": "common",
     "identified": true,
     "uses": {
       "max": "1",
@@ -65,8 +65,8 @@
     ],
     "magicalBonus": null,
     "activities": {
-      "VaeAct0000000037": {
-        "_id": "VaeAct0000000037",
+      "VaeAct0000000021": {
+        "_id": "VaeAct0000000021",
         "type": "utility",
         "activation": {
           "type": "bonus",
@@ -89,18 +89,18 @@
           "spellSlot": true
         },
         "description": {
-          "chatFlavor": "Kurtkulak Özütü içilir."
+          "chatFlavor": "Kıvılcım Yudumu içilir."
         },
         "duration": {
           "concentration": false,
-          "value": "1",
-          "units": "hour",
+          "value": "10",
+          "units": "minute",
           "special": "",
           "override": false
         },
         "effects": [
           {
-            "_id": "VaeEffHUBzzpB5fM"
+            "_id": "VaeEffTVDGbacLBV"
           }
         ],
         "range": {
@@ -141,7 +141,7 @@
         },
         "sort": 0,
         "name": "İç",
-        "img": "icons/consumables/potions/potion-bottle-corked-labeled-green.webp",
+        "img": "icons/consumables/potions/potion-tube-corked-blue.webp",
         "visibility": {
           "requireMagic": true,
           "level": {
@@ -154,7 +154,7 @@
         "flags": {
           "vaelora-potions": {
             "original": {
-              "_id": "VaeAct0000000037",
+              "_id": "VaeAct0000000021",
               "type": "utility",
               "activation": {
                 "type": "bonus",
@@ -177,12 +177,12 @@
                 "spellSlot": true
               },
               "description": {
-                "chatFlavor": "Kurtkulak Özütü içilir."
+                "chatFlavor": "Kıvılcım Yudumu içilir."
               },
               "duration": {
                 "concentration": false,
-                "value": "1",
-                "units": "hour",
+                "value": "10",
+                "units": "minute",
                 "special": "",
                 "override": false
               },
@@ -225,7 +225,7 @@
               },
               "sort": 0,
               "name": "İç",
-              "img": "icons/consumables/potions/potion-bottle-corked-labeled-green.webp",
+              "img": "icons/consumables/potions/potion-tube-corked-blue.webp",
               "visibility": {
                 "requireMagic": true,
                 "level": {
@@ -241,29 +241,29 @@
       }
     },
     "attuned": false,
-    "identifier": "kurtkulak-ozutu"
+    "identifier": "kayip-esya-tuzu"
   },
   "effects": [
     {
-      "_id": "VaeEffHUBzzpB5fM",
-      "name": "Kurtkulak Özütü",
-      "img": "icons/consumables/potions/potion-bottle-corked-labeled-green.webp",
+      "_id": "VaeEffTVDGbacLBV",
+      "name": "Kayıp Eşya Tuzu",
+      "img": "icons/consumables/potions/potion-tube-corked-blue.webp",
       "origin": null,
       "transfer": false,
       "type": "base",
       "system": {},
       "changes": [
         {
-          "key": "system.traits.dv.value",
+          "key": "system.skills.prc.roll.mode",
           "mode": 2,
-          "value": "thunder",
+          "value": "-1",
           "priority": null
         }
       ],
       "disabled": false,
       "duration": {
         "startTime": null,
-        "seconds": 3600,
+        "seconds": 600,
         "combat": null,
         "rounds": null,
         "turns": null,
@@ -284,7 +284,7 @@
         "coreVersion": "13.351",
         "systemId": "dnd5e",
         "systemVersion": "5.3.3",
-        "createdTime": 1788973200036,
+        "createdTime": 1788973200020,
         "modifiedTime": 1790110800000,
         "lastModifiedBy": null,
         "exportSource": null,
@@ -292,15 +292,15 @@
       }
     }
   ],
-  "folder": "VaeFldUncommon01",
-  "sort": 3600000,
+  "folder": "VaeFldCommon0001",
+  "sort": 2000000,
   "ownership": {
     "default": 0
   },
   "flags": {
     "vaelora-potions": {
       "version": "3.0.0",
-      "powerScore": 1.1,
+      "powerScore": 1.25,
       "priceBand": 3
     },
     "dnd5e": {
@@ -315,7 +315,7 @@
     "coreVersion": "13.351",
     "systemId": "dnd5e",
     "systemVersion": "5.3.3",
-    "createdTime": 1788973200036,
+    "createdTime": 1788973200020,
     "modifiedTime": 1790110800000,
     "lastModifiedBy": null,
     "exportSource": null

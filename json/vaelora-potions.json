@@ -4952,12 +4952,12 @@
   },
   {
     "_id": "VaePot0000000021",
-    "name": "Kıvılcım Yudumu",
+    "name": "Kayıp Eşya Tuzu",
     "type": "consumable",
     "img": "icons/consumables/potions/potion-tube-corked-blue.webp",
     "system": {
       "description": {
-        "value": "<p><em>Kehribar sıvının içinde, söndürülmeyen tek bir kıvılcım yüzer.</em></p><p><strong>Etki.</strong> Bedenin 20 ft Parlak Işık ve ilave 20 ft Loş Işık yayar. Bonus Aksiyon kullanarak ışığı açıp kapatabilirsin.</p><p><strong>Süre.</strong> 1 saat</p><section class=\"secret\"><p><strong>Bedel / Yan Etki.</strong> Işık açıkken Darkness içinde saklanamazsın.</p></section>",
+        "value": "<p><em>Avuçta eriyen gri tuz taneleri ağızda paslı bir anahtar tadı bırakır.</em></p><p><strong>Etki.</strong> Son 24 saat içinde dokunduğun bir nesnenin adını söylersin. Nesne 1000 ft içindeyse süre boyunca yönünü ve yaklaşık uzaklığını bilirsin.</p><p><strong>Süre.</strong> 10 dakika</p><section class=\"secret\"><p><strong>Bedel / Yan Etki.</strong> Aklın nesneden ayrılmaz: Bilgelik (Algı) kontrollerinde dezavantaj alırsın.</p></section>",
         "chat": ""
       },
       "source": {
@@ -4974,7 +4974,7 @@
         "units": "lb"
       },
       "price": {
-        "value": 70,
+        "value": 90,
         "denomination": "gp"
       },
       "attunement": "",
@@ -5045,14 +5045,14 @@
           },
           "duration": {
             "concentration": false,
-            "value": "1",
-            "units": "hour",
+            "value": "10",
+            "units": "minute",
             "special": "",
             "override": false
           },
           "effects": [
             {
-              "_id": "VaeEffsWxvDNMNi8"
+              "_id": "VaeEffTVDGbacLBV"
             }
           ],
           "range": {
@@ -5133,8 +5133,8 @@
                 },
                 "duration": {
                   "concentration": false,
-                  "value": "1",
-                  "units": "hour",
+                  "value": "10",
+                  "units": "minute",
                   "special": "",
                   "override": false
                 },
@@ -5193,12 +5193,12 @@
         }
       },
       "attuned": false,
-      "identifier": "kivilcim-yudumu"
+      "identifier": "kayip-esya-tuzu"
     },
     "effects": [
       {
-        "_id": "VaeEffsWxvDNMNi8",
-        "name": "Kıvılcım Yudumu",
+        "_id": "VaeEffTVDGbacLBV",
+        "name": "Kayıp Eşya Tuzu",
         "img": "icons/consumables/potions/potion-tube-corked-blue.webp",
         "origin": null,
         "transfer": false,
@@ -5206,22 +5206,16 @@
         "system": {},
         "changes": [
           {
-            "key": "ATL.light.bright",
-            "mode": 4,
-            "value": "20",
-            "priority": null
-          },
-          {
-            "key": "ATL.light.dim",
-            "mode": 4,
-            "value": "40",
+            "key": "system.skills.prc.roll.mode",
+            "mode": 2,
+            "value": "-1",
             "priority": null
           }
         ],
         "disabled": false,
         "duration": {
           "startTime": null,
-          "seconds": 3600,
+          "seconds": 600,
           "combat": null,
           "rounds": null,
           "turns": null,
@@ -8754,12 +8748,12 @@
   },
   {
     "_id": "VaePot0000000037",
-    "name": "Kurtkulak Özütü",
+    "name": "Ödünç Ses Şurubu",
     "type": "consumable",
     "img": "icons/consumables/potions/potion-bottle-corked-labeled-green.webp",
     "system": {
       "description": {
-        "value": "<p><em>Dumanlı sıvının içinde ses dalgalarını andıran halkalar genişler.</em></p><p><strong>Etki.</strong> İşitmeye dayalı Bilgelik (Algı) kontrollerinde avantaj kazanır ve 60 ft içindeki fısıltıları duyabilirsin.</p><p><strong>Süre.</strong> 1 saat</p><section class=\"secret\"><p><strong>Bedel / Yan Etki.</strong> Gök Gürültüsü hasar türüne karşı zayıflık kazanırsın.</p></section>",
+        "value": "<p><em>Bal kıvamındaki şurup boğazdan inerken kısa bir yankı bırakır.</em></p><p><strong>Etki.</strong> Son 24 saat içinde duyduğun herhangi bir yaratığın sesini kusursuz taklit edebilirsin. Taklidi fark etmek için Bilgelik (Sezgi) DC 18 gerekir.</p><p><strong>Süre.</strong> 1 saat</p><section class=\"secret\"><p><strong>Bedel / Yan Etki.</strong> Süre boyunca kendi sesinle konuşamazsın; ağzından yalnızca ödünç aldığın sesler çıkar.</p></section>",
         "chat": ""
       },
       "source": {
@@ -8776,7 +8770,7 @@
         "units": "lb"
       },
       "price": {
-        "value": 200,
+        "value": 250,
         "denomination": "gp"
       },
       "attunement": "",
@@ -8852,11 +8846,7 @@
             "special": "",
             "override": false
           },
-          "effects": [
-            {
-              "_id": "VaeEffHUBzzpB5fM"
-            }
-          ],
+          "effects": [],
           "range": {
             "units": "self",
             "special": "",
@@ -8904,148 +8894,13 @@
             },
             "identifier": ""
           },
-          "appliedEffects": [],
-          "flags": {
-            "vaelora-potions": {
-              "original": {
-                "_id": "VaeAct0000000037",
-                "type": "utility",
-                "activation": {
-                  "type": "bonus",
-                  "value": null,
-                  "condition": "",
-                  "override": false
-                },
-                "consumption": {
-                  "targets": [
-                    {
-                      "type": "itemUses",
-                      "value": "1",
-                      "target": ""
-                    }
-                  ],
-                  "scaling": {
-                    "allowed": false,
-                    "max": ""
-                  },
-                  "spellSlot": true
-                },
-                "description": {
-                  "chatFlavor": "Kurtkulak Özütü içilir."
-                },
-                "duration": {
-                  "concentration": false,
-                  "value": "1",
-                  "units": "hour",
-                  "special": "",
-                  "override": false
-                },
-                "effects": [],
-                "range": {
-                  "units": "self",
-                  "special": "",
-                  "override": false
-                },
-                "target": {
-                  "template": {
-                    "count": "",
-                    "contiguous": false,
-                    "type": "",
-                    "size": "",
-                    "width": "",
-                    "height": "",
-                    "units": "ft",
-                    "stationary": false
-                  },
-                  "affects": {
-                    "count": "",
-                    "type": "creature",
-                    "choice": false,
-                    "special": ""
-                  },
-                  "prompt": true,
-                  "override": false
-                },
-                "roll": {
-                  "formula": "",
-                  "name": "",
-                  "prompt": false,
-                  "visible": false
-                },
-                "uses": {
-                  "spent": 0,
-                  "recovery": [],
-                  "max": ""
-                },
-                "sort": 0,
-                "name": "İç",
-                "img": "icons/consumables/potions/potion-bottle-corked-labeled-green.webp",
-                "visibility": {
-                  "requireMagic": true,
-                  "level": {
-                    "min": null,
-                    "max": null
-                  },
-                  "identifier": ""
-                },
-                "appliedEffects": []
-              }
-            }
-          }
+          "appliedEffects": []
         }
       },
       "attuned": false,
-      "identifier": "kurtkulak-ozutu"
+      "identifier": "odunc-ses-surubu"
     },
-    "effects": [
-      {
-        "_id": "VaeEffHUBzzpB5fM",
-        "name": "Kurtkulak Özütü",
-        "img": "icons/consumables/potions/potion-bottle-corked-labeled-green.webp",
-        "origin": null,
-        "transfer": false,
-        "type": "base",
-        "system": {},
-        "changes": [
-          {
-            "key": "system.traits.dv.value",
-            "mode": 2,
-            "value": "thunder",
-            "priority": null
-          }
-        ],
-        "disabled": false,
-        "duration": {
-          "startTime": null,
-          "seconds": 3600,
-          "combat": null,
-          "rounds": null,
-          "turns": null,
-          "startRound": null,
-          "startTurn": null
-        },
-        "description": "",
-        "tint": "#ffffff",
-        "statuses": [],
-        "sort": 0,
-        "flags": {
-          "vaelora-potions": {
-            "auto": true
-          }
-        },
-        "_stats": {
-          "duplicateSource": null,
-          "coreVersion": "13.351",
-          "systemId": "dnd5e",
-          "systemVersion": "5.3.3",
-          "createdTime": 1788973200036,
-          "modifiedTime": 1790110800000,
-          "lastModifiedBy": null,
-          "exportSource": null,
-          "compendiumSource": null
-        }
-      }
-    ],
+    "effects": [],
     "folder": "VaeFldUncommon01",
     "sort": 3600000,
     "ownership": {
@@ -9957,7 +9812,7 @@
     "img": "icons/consumables/potions/potion-tube-corked-bubbling-green.webp",
     "system": {
       "description": {
-        "value": "<p><em>Koyu turuncu sıvının içinde sönmeyen közler dolaşır.</em></p><p><strong>Etki.</strong> Ateş hasar türüne direnç kazanırsın.</p><p><strong>Süre.</strong> 10 dakika</p><section class=\"secret\"><p><strong>Bedel / Yan Etki.</strong> Soğuk hasar türüne karşı zayıflık kazanırsın.</p></section>",
+        "value": "<p><em>Koyu turuncu sıvının içinde sönmeyen közler dolaşır.</em></p><p><strong>Etki.</strong> Ateş hasar türüne direnç kazanırsın. Ateş hasarı aldığın turda yaptığın bir sonraki silah saldırısı isabet ederse ilave 1d4 ateş hasarı verir.</p><p><strong>Süre.</strong> 10 dakika</p><section class=\"secret\"><p><strong>Bedel / Yan Etki.</strong> Soğuk hasar türüne karşı zayıflık kazanırsın.</p></section>",
         "chat": ""
       },
       "source": {
@@ -9974,7 +9829,7 @@
         "units": "lb"
       },
       "price": {
-        "value": 150,
+        "value": 225,
         "denomination": "gp"
       },
       "attunement": "",
@@ -10286,7 +10141,7 @@
     "img": "icons/consumables/potions/potion-tube-corked-red.webp",
     "system": {
       "description": {
-        "value": "<p><em>Buz mavisi sıvı damar biçimli kırağı çizgileri oluşturur.</em></p><p><strong>Etki.</strong> Soğuk hasar türüne direnç kazanırsın.</p><p><strong>Süre.</strong> 10 dakika</p><section class=\"secret\"><p><strong>Bedel / Yan Etki.</strong> Ateş hasar türüne karşı zayıflık kazanırsın.</p></section>",
+        "value": "<p><em>Buz mavisi sıvı damar biçimli kırağı çizgileri oluşturur.</em></p><p><strong>Etki.</strong> Soğuk hasar türüne direnç kazanırsın. Buz ve kar seni yavaşlatmaz; buzlu zeminde kaymaz, bu yüzden Yere Düşmüş olmazsın.</p><p><strong>Süre.</strong> 10 dakika</p><section class=\"secret\"><p><strong>Bedel / Yan Etki.</strong> Ateş hasar türüne karşı zayıflık kazanırsın.</p></section>",
         "chat": ""
       },
       "source": {
@@ -10303,7 +10158,7 @@
         "units": "lb"
       },
       "price": {
-        "value": 125,
+        "value": 175,
         "denomination": "gp"
       },
       "attunement": "",
@@ -10615,7 +10470,7 @@
     "img": "icons/consumables/potions/potion-flask-corked-blue.webp",
     "system": {
       "description": {
-        "value": "<p><em>Sarı sıvının içinde sessiz şimşekler çakar.</em></p><p><strong>Etki.</strong> Yıldırım hasar türüne direnç kazanırsın.</p><p><strong>Süre.</strong> 10 dakika</p><section class=\"secret\"><p><strong>Bedel / Yan Etki.</strong> Metal armor giyiyorsan Reaksiyon kullanamazsın.</p></section>",
+        "value": "<p><em>Sarı sıvının içinde sessiz şimşekler çakar.</em></p><p><strong>Etki.</strong> Yıldırım hasar türüne direnç kazanırsın. Tur başına bir kez yıldırım hasarı aldığında 5 ft içindeki bir yaratığa 1d6 yıldırım hasarı yansıtırsın.</p><p><strong>Süre.</strong> 10 dakika</p><section class=\"secret\"><p><strong>Bedel / Yan Etki.</strong> Metal armor giyiyorsan Reaksiyon kullanamazsın.</p></section>",
         "chat": ""
       },
       "source": {
@@ -10632,7 +10487,7 @@
         "units": "lb"
       },
       "price": {
-        "value": 200,
+        "value": 275,
         "denomination": "gp"
       },
       "attunement": "",
@@ -10933,12 +10788,12 @@
   },
   {
     "_id": "VaePot0000000045",
-    "name": "Zehirçiçeği İksiri",
+    "name": "Yalancı Nabız Damlası",
     "type": "consumable",
     "img": "icons/consumables/potions/potion-flask-corked-capped-green.webp",
     "system": {
       "description": {
-        "value": "<p><em>Yeşil sıvının yüzeyinde mor bir çiçek açıp kapanır.</em></p><p><strong>Etki.</strong> Zehir hasar türüne direnç ve Zehirlenmiş durumuna karşı Kurtarma Atışlarında avantaj kazanırsın.</p><p><strong>Süre.</strong> 1 saat</p><section class=\"secret\"><p><strong>Bedel / Yan Etki.</strong> Her iyileşme kaynağından kazandığın Can Puanı 1 azalır; bu azaltma Can Puanı kazanımını 0’ın altına indiremez.</p></section>",
+        "value": "<p><em>Tadı yoktur; dilin üstünde yalnızca soğuk bir ağırlık bırakır.</em></p><p><strong>Etki.</strong> Süre içinde bir Aksiyonla ölü taklidi yaparsın: nefesin ve nabzın duyulmaz, bedenin soğur. Ölü olmadığını anlamak için Bilgelik (Tıp) DC 20 gerekir. Bu hâldeyken bilincin açıktır, çevreni duyarsın ve psişik dışındaki bütün hasara direnç kazanırsın. Taklidi Bonus Aksiyonla bitirirsin.</p><p><strong>Süre.</strong> 1 saat</p><section class=\"secret\"><p><strong>Bedel / Yan Etki.</strong> Taklit sürerken Kör olursun. Taklit bittiğinde bir sonraki turunun sonuna kadar Zehirlenmiş olursun.</p></section>",
         "chat": ""
       },
       "source": {
@@ -10955,7 +10810,7 @@
         "units": "lb"
       },
       "price": {
-        "value": 500,
+        "value": 400,
         "denomination": "gp"
       },
       "attunement": "",
@@ -11031,11 +10886,7 @@
             "special": "",
             "override": false
           },
-          "effects": [
-            {
-              "_id": "VaeEffyiONUhokMJ"
-            }
-          ],
+          "effects": [],
           "range": {
             "units": "self",
             "special": "",
@@ -11083,148 +10934,13 @@
             },
             "identifier": ""
           },
-          "appliedEffects": [],
-          "flags": {
-            "vaelora-potions": {
-              "original": {
-                "_id": "VaeAct0000000045",
-                "type": "utility",
-                "activation": {
-                  "type": "bonus",
-                  "value": null,
-                  "condition": "",
-                  "override": false
-                },
-                "consumption": {
-                  "targets": [
-                    {
-                      "type": "itemUses",
-                      "value": "1",
-                      "target": ""
-                    }
-                  ],
-                  "scaling": {
-                    "allowed": false,
-                    "max": ""
-                  },
-                  "spellSlot": true
-                },
-                "description": {
-                  "chatFlavor": "Zehirçiçeği İksiri içilir."
-                },
-                "duration": {
-                  "concentration": false,
-                  "value": "1",
-                  "units": "hour",
-                  "special": "",
-                  "override": false
-                },
-                "effects": [],
-                "range": {
-                  "units": "self",
-                  "special": "",
-                  "override": false
-                },
-                "target": {
-                  "template": {
-                    "count": "",
-                    "contiguous": false,
-                    "type": "",
-                    "size": "",
-                    "width": "",
-                    "height": "",
-                    "units": "ft",
-                    "stationary": false
-                  },
-                  "affects": {
-                    "count": "",
-                    "type": "creature",
-                    "choice": false,
-                    "special": ""
-                  },
-                  "prompt": true,
-                  "override": false
-                },
-                "roll": {
-                  "formula": "",
-                  "name": "",
-                  "prompt": false,
-                  "visible": false
-                },
-                "uses": {
-                  "spent": 0,
-                  "recovery": [],
-                  "max": ""
-                },
-                "sort": 0,
-                "name": "İç",
-                "img": "icons/consumables/potions/potion-flask-corked-capped-green.webp",
-                "visibility": {
-                  "requireMagic": true,
-                  "level": {
-                    "min": null,
-                    "max": null
-                  },
-                  "identifier": ""
-                },
-                "appliedEffects": []
-              }
-            }
-          }
+          "appliedEffects": []
         }
       },
       "attuned": false,
-      "identifier": "zehircicegi-iksiri"
+      "identifier": "yalanci-nabiz-damlasi"
     },
-    "effects": [
-      {
-        "_id": "VaeEffyiONUhokMJ",
-        "name": "Zehirçiçeği İksiri",
-        "img": "icons/consumables/potions/potion-flask-corked-capped-green.webp",
-        "origin": null,
-        "transfer": false,
-        "type": "base",
-        "system": {},
-        "changes": [
-          {
-            "key": "system.traits.dr.value",
-            "mode": 2,
-            "value": "poison",
-            "priority": null
-          }
-        ],
-        "disabled": false,
-        "duration": {
-          "startTime": null,
-          "seconds": 3600,
-          "combat": null,
-          "rounds": null,
-          "turns": null,
-          "startRound": null,
-          "startTurn": null
-        },
-        "description": "",
-        "tint": "#ffffff",
-        "statuses": [],
-        "sort": 0,
-        "flags": {
-          "vaelora-potions": {
-            "auto": true
-          }
-        },
-        "_stats": {
-          "duplicateSource": null,
-          "coreVersion": "13.351",
-          "systemId": "dnd5e",
-          "systemVersion": "5.3.3",
-          "createdTime": 1788973200044,
-          "modifiedTime": 1790110800000,
-          "lastModifiedBy": null,
-          "exportSource": null,
-          "compendiumSource": null
-        }
-      }
-    ],
+    "effects": [],
     "folder": "VaeFldUncommon01",
     "sort": 4400000,
     "ownership": {
@@ -12104,12 +11820,12 @@
   },
   {
     "_id": "VaePot0000000049",
-    "name": "Sessiz Ayak İksiri",
+    "name": "Paylaşılan Gölge İksiri",
     "type": "consumable",
     "img": "icons/consumables/potions/bottle-round-corked-blue.webp",
     "system": {
       "description": {
-        "value": "<p><em>Gri sıvı dökülürken bile hiçbir ses çıkarmaz.</em></p><p><strong>Etki.</strong> Adımların ses çıkarmaz ve hareket ederken yaptığın Çeviklik (Gizlilik) kontrollerinde avantaj kazanırsın.</p><p><strong>Süre.</strong> 10 dakika</p><section class=\"secret\"><p><strong>Bedel / Yan Etki.</strong> Atılma Aksiyonu kullanamazsın.</p></section>",
+        "value": "<p><em>İçildiği an içenin gölgesi üçe bölünür, sonra yeniden birleşir.</em></p><p><strong>Etki.</strong> İçtiğinde 30 ft içinde görebildiğin en fazla iki istekli dost seçersin. Süre boyunca bağlı yaratıklardan biri Bonus Aksiyon kullanarak bir sonraki turunun başına kadar diğer bağlılardan birinin gördüğünü görebilir. Bağ 1 mil uzaklığa kadar sürer.</p><p><strong>Süre.</strong> 1 saat</p><section class=\"secret\"><p><strong>Bedel / Yan Etki.</strong> Bağlı yaratıklardan biri hasar aldığında diğerleri 1d4 psişik hasar alır.</p></section>",
         "chat": ""
       },
       "source": {
@@ -12126,7 +11842,7 @@
         "units": "lb"
       },
       "price": {
-        "value": 150,
+        "value": 450,
         "denomination": "gp"
       },
       "attunement": "",
@@ -12197,8 +11913,8 @@
           },
           "duration": {
             "concentration": false,
-            "value": "10",
-            "units": "minute",
+            "value": "1",
+            "units": "hour",
             "special": "",
             "override": false
           },
@@ -12254,7 +11970,7 @@
         }
       },
       "attuned": false,
-      "identifier": "sessiz-ayak-iksiri"
+      "identifier": "paylasilan-golge-iksiri"
     },
     "effects": [],
     "folder": "VaeFldUncommon01",
@@ -13163,7 +12879,7 @@
     "img": "icons/consumables/potions/bottle-bulb-corked-green.webp",
     "system": {
       "description": {
-        "value": "<p><em>Altın sıvı ten üzerinde ince ışık pulları bırakır.</em></p><p><strong>Etki.</strong> Işınsal hasar türüne direnç kazanırsın.</p><p><strong>Süre.</strong> 10 dakika</p><section class=\"secret\"><p><strong>Bedel / Yan Etki.</strong> 10 ft Parlak Işık ve ilave 10 ft Loş Işık yayarsın; Görünmez olamazsın.</p></section>",
+        "value": "<p><em>Altın sıvı ten üzerinde ince ışık pulları bırakır.</em></p><p><strong>Etki.</strong> Işınsal hasar türüne direnç kazanırsın. 5 ft içindeki büyülü karanlık bastırılır; bu alanda büyülü Darkness ışığı söndüremez.</p><p><strong>Süre.</strong> 10 dakika</p><section class=\"secret\"><p><strong>Bedel / Yan Etki.</strong> 10 ft Parlak Işık ve ilave 10 ft Loş Işık yayarsın; Görünmez olamazsın.</p></section>",
         "chat": ""
       },
       "source": {
@@ -13180,7 +12896,7 @@
         "units": "lb"
       },
       "price": {
-        "value": 200,
+        "value": 250,
         "denomination": "gp"
       },
       "attunement": "",
@@ -13498,7 +13214,7 @@
     "img": "icons/consumables/potions/bottle-bulb-corked-glowing-red.webp",
     "system": {
       "description": {
-        "value": "<p><em>Kül rengi sıvının dibinde siyah tuz kristalleri vardır.</em></p><p><strong>Etki.</strong> Nekrotik hasar türüne direnç kazanırsın.</p><p><strong>Süre.</strong> 10 dakika</p><section class=\"secret\"><p><strong>Bedel / Yan Etki.</strong> Kazandığın Can Puanı miktarı yarıya iner.</p></section>",
+        "value": "<p><em>Kül rengi sıvının dibinde siyah tuz kristalleri vardır.</em></p><p><strong>Etki.</strong> Nekrotik hasar türüne direnç kazanırsın. Can Puanı maksimumunu düşüren etkilere bağışık olursun.</p><p><strong>Süre.</strong> 10 dakika</p><section class=\"secret\"><p><strong>Bedel / Yan Etki.</strong> Kazandığın Can Puanı miktarı yarıya iner.</p></section>",
         "chat": ""
       },
       "source": {
@@ -13515,7 +13231,7 @@
         "units": "lb"
       },
       "price": {
-        "value": 200,
+        "value": 250,
         "denomination": "gp"
       },
       "attunement": "",

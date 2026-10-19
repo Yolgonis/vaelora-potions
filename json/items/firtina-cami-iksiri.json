@@ -5,7 +5,7 @@
   "img": "icons/consumables/potions/potion-flask-corked-blue.webp",
   "system": {
     "description": {
-      "value": "<p><em>Sarı sıvının içinde sessiz şimşekler çakar.</em></p><p><strong>Etki.</strong> Yıldırım hasar türüne direnç kazanırsın.</p><p><strong>Süre.</strong> 10 dakika</p><section class=\"secret\"><p><strong>Bedel / Yan Etki.</strong> Metal armor giyiyorsan Reaksiyon kullanamazsın.</p></section>",
+      "value": "<p><em>Sarı sıvının içinde sessiz şimşekler çakar.</em></p><p><strong>Etki.</strong> Yıldırım hasar türüne direnç kazanırsın. Tur başına bir kez yıldırım hasarı aldığında 5 ft içindeki bir yaratığa 1d6 yıldırım hasarı yansıtırsın.</p><p><strong>Süre.</strong> 10 dakika</p><section class=\"secret\"><p><strong>Bedel / Yan Etki.</strong> Metal armor giyiyorsan Reaksiyon kullanamazsın.</p></section>",
       "chat": ""
     },
     "source": {
@@ -22,7 +22,7 @@
       "units": "lb"
     },
     "price": {
-      "value": 200,
+      "value": 275,
       "denomination": "gp"
     },
     "attunement": "",

@@ -1,11 +1,11 @@
 {
-  "_id": "VaePot0000000049",
-  "name": "Sessiz Ayak İksiri",
+  "_id": "VaePot0000000037",
+  "name": "Ödünç Ses Şurubu",
   "type": "consumable",
-  "img": "icons/consumables/potions/bottle-round-corked-blue.webp",
+  "img": "icons/consumables/potions/potion-bottle-corked-labeled-green.webp",
   "system": {
     "description": {
-      "value": "<p><em>Gri sıvı dökülürken bile hiçbir ses çıkarmaz.</em></p><p><strong>Etki.</strong> Adımların ses çıkarmaz ve hareket ederken yaptığın Çeviklik (Gizlilik) kontrollerinde avantaj kazanırsın.</p><p><strong>Süre.</strong> 10 dakika</p><section class=\"secret\"><p><strong>Bedel / Yan Etki.</strong> Atılma Aksiyonu kullanamazsın.</p></section>",
+      "value": "<p><em>Bal kıvamındaki şurup boğazdan inerken kısa bir yankı bırakır.</em></p><p><strong>Etki.</strong> Son 24 saat içinde duyduğun herhangi bir yaratığın sesini kusursuz taklit edebilirsin. Taklidi fark etmek için Bilgelik (Sezgi) DC 18 gerekir.</p><p><strong>Süre.</strong> 1 saat</p><section class=\"secret\"><p><strong>Bedel / Yan Etki.</strong> Süre boyunca kendi sesinle konuşamazsın; ağzından yalnızca ödünç aldığın sesler çıkar.</p></section>",
       "chat": ""
     },
     "source": {
@@ -22,7 +22,7 @@
       "units": "lb"
     },
     "price": {
-      "value": 150,
+      "value": 250,
       "denomination": "gp"
     },
     "attunement": "",
@@ -65,8 +65,8 @@
     ],
     "magicalBonus": null,
     "activities": {
-      "VaeAct0000000049": {
-        "_id": "VaeAct0000000049",
+      "VaeAct0000000037": {
+        "_id": "VaeAct0000000037",
         "type": "utility",
         "activation": {
           "type": "bonus",
@@ -89,12 +89,12 @@
           "spellSlot": true
         },
         "description": {
-          "chatFlavor": "Sessiz Ayak İksiri içilir."
+          "chatFlavor": "Kurtkulak Özütü içilir."
         },
         "duration": {
           "concentration": false,
-          "value": "10",
-          "units": "minute",
+          "value": "1",
+          "units": "hour",
           "special": "",
           "override": false
         },
@@ -137,7 +137,7 @@
         },
         "sort": 0,
         "name": "İç",
-        "img": "icons/consumables/potions/bottle-round-corked-blue.webp",
+        "img": "icons/consumables/potions/potion-bottle-corked-labeled-green.webp",
         "visibility": {
           "requireMagic": true,
           "level": {
@@ -150,19 +150,19 @@
       }
     },
     "attuned": false,
-    "identifier": "sessiz-ayak-iksiri"
+    "identifier": "odunc-ses-surubu"
   },
   "effects": [],
   "folder": "VaeFldUncommon01",
-  "sort": 4800000,
+  "sort": 3600000,
   "ownership": {
     "default": 0
   },
   "flags": {
     "vaelora-potions": {
       "version": "3.0.0",
-      "powerScore": 1,
-      "priceBand": 2
+      "powerScore": 1.1,
+      "priceBand": 3
     },
     "dnd5e": {
       "riders": {
@@ -176,7 +176,7 @@
     "coreVersion": "13.351",
     "systemId": "dnd5e",
     "systemVersion": "5.3.3",
-    "createdTime": 1788973200048,
+    "createdTime": 1788973200036,
     "modifiedTime": 1790110800000,
     "lastModifiedBy": null,
     "exportSource": null

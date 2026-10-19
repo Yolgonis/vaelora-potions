@@ -58,7 +58,6 @@ const BASE = {
   "atesbocegi-surubu": { effect: { changes: light(20, 40) } },
   "durust-dil-damlasi": { effect: { changes: [adv.skill("ins")] } },
   "kedi-adimi-iksiri": { effect: { changes: [adv.skill("acr")] } },
-  "kivilcim-yudumu": { effect: { changes: light(20, 40) } },
   "mum-alevi-iksiri": { effect: { changes: light(5, 10) } },
   "tuyhafif-tonik": { effect: { changes: [c("system.attributes.encumbrance.bonuses.overall", MODE.ADD, 50)] } },
 
@@ -91,7 +90,6 @@ const BASE = {
   "sis-pelerini-iksiri": { effect: { changes: [midi("grants.disadvantage.attack.rwak"), midi("grants.disadvantage.attack.rsak")] } },
   "taskalp-iksiri": { heal: { formula: "2d6+4", temp: true }, effect: { changes: cimm("prone") } },
   "yankisiz-adim-iksiri": { effect: { changes: [adv.skill("ste")] } },
-  "zehircicegi-iksiri": { effect: { changes: res("poison") } },
 
   // ---------------- Rare ----------------
   "ay-cekimi-iksiri": {
@@ -211,6 +209,7 @@ const DRAWBACKS = {
   "cuce-midesi-surubu": { changes: [dis.skill("ste")] },
   "durust-dil-damlasi": { changes: [dis.skill("dec")] },
   "kedi-adimi-iksiri": { changes: [dis.skill("ath")] },
+  "kayip-esya-tuzu": { changes: [dis.skill("prc")] },
   "kul-parmagi-yagi": { changes: [skillBonus("slt", -1)] },
   // Uncommon
   "aybaligi-ozutu": { changes: [walk(-10)] },
@@ -222,7 +221,6 @@ const DRAWBACKS = {
   "keskin-zihin-serumu": { changes: [dis.check("wis")] },
   "kozdamari-iksiri": { changes: vuln("cold") },
   "kurt-gulusu-damlasi": { changes: [skillBonus("per", -2)] },
-  "kurtkulak-ozutu": { changes: vuln("thunder") },
   "sis-pelerini-iksiri": { changes: [midi("disadvantage.attack.rwak"), midi("disadvantage.attack.rsak")] },
   "taskalp-iksiri": { changes: [walk(-10)] },
   "yanki-nefesi-iksiri": { statuses: ["deafened"] },

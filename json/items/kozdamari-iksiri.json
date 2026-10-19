@@ -5,7 +5,7 @@
   "img": "icons/consumables/potions/potion-tube-corked-bubbling-green.webp",
   "system": {
     "description": {
-      "value": "<p><em>Koyu turuncu sıvının içinde sönmeyen közler dolaşır.</em></p><p><strong>Etki.</strong> Ateş hasar türüne direnç kazanırsın.</p><p><strong>Süre.</strong> 10 dakika</p><section class=\"secret\"><p><strong>Bedel / Yan Etki.</strong> Soğuk hasar türüne karşı zayıflık kazanırsın.</p></section>",
+      "value": "<p><em>Koyu turuncu sıvının içinde sönmeyen közler dolaşır.</em></p><p><strong>Etki.</strong> Ateş hasar türüne direnç kazanırsın. Ateş hasarı aldığın turda yaptığın bir sonraki silah saldırısı isabet ederse ilave 1d4 ateş hasarı verir.</p><p><strong>Süre.</strong> 10 dakika</p><section class=\"secret\"><p><strong>Bedel / Yan Etki.</strong> Soğuk hasar türüne karşı zayıflık kazanırsın.</p></section>",
       "chat": ""
     },
     "source": {
@@ -22,7 +22,7 @@
       "units": "lb"
     },
     "price": {
-      "value": 150,
+      "value": 225,
       "denomination": "gp"
     },
     "attunement": "",

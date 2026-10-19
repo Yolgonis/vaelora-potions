@@ -5,7 +5,7 @@
   "img": "icons/consumables/potions/bottle-bulb-corked-green.webp",
   "system": {
     "description": {
-      "value": "<p><em>Altın sıvı ten üzerinde ince ışık pulları bırakır.</em></p><p><strong>Etki.</strong> Işınsal hasar türüne direnç kazanırsın.</p><p><strong>Süre.</strong> 10 dakika</p><section class=\"secret\"><p><strong>Bedel / Yan Etki.</strong> 10 ft Parlak Işık ve ilave 10 ft Loş Işık yayarsın; Görünmez olamazsın.</p></section>",
+      "value": "<p><em>Altın sıvı ten üzerinde ince ışık pulları bırakır.</em></p><p><strong>Etki.</strong> Işınsal hasar türüne direnç kazanırsın. 5 ft içindeki büyülü karanlık bastırılır; bu alanda büyülü Darkness ışığı söndüremez.</p><p><strong>Süre.</strong> 10 dakika</p><section class=\"secret\"><p><strong>Bedel / Yan Etki.</strong> 10 ft Parlak Işık ve ilave 10 ft Loş Işık yayarsın; Görünmez olamazsın.</p></section>",
       "chat": ""
     },
     "source": {
@@ -22,7 +22,7 @@
       "units": "lb"
     },
     "price": {
-      "value": 200,
+      "value": 250,
       "denomination": "gp"
     },
     "attunement": "",
