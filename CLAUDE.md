@@ -17,6 +17,8 @@ node tools/apply-automation.cjs
 
 Betik JSON'u, `json/items/*.json` dosyalarını ve `packs/vaelora-potions` compendium'unu yazar; tekrar çalıştırılabilir ve compendium JSON'dan farklıysa durur.
 
+Çalışma zamanı: `scripts/main.js` içince efektleri ve iyileştirmeyi uygular (alıcı seçimi, menzilli iksirlerde hedef zorunluluğu, GM socket yolu). Midi-QOL "Self" menzilde hedefleri `dnd5e.preUseActivity`'den hemen önce temizler; betik bu yüzden son 500 ms'de bırakılan hedefi kullanır. `module.json`'daki `esmodules`/`socket` değişiklikleri ancak dünya yeniden başlatılınca okunur.
+
 Kurallar: yalnızca koşulsuz mekanikler otomatikleşir; koşullu, tur başına bir kez, seçim gerektiren veya etki bittiğinde gelen kısımlar açıklamada GM'e kalır. Bedel ayrı efekt olmaz, iksirin efektine eklenir (ad GM'e özel bölümü ele vermesin). Ek aktiviteli iksirlerde `autoDestroy` kapalıdır.
 
 ## Dağıtım
