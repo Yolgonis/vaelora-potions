@@ -5,8 +5,16 @@ Foundry VTT 13 ve D&D 5e 5.3.3 için hazırlanmış 200 özgün Türkçe iksir i
 - İksir compendium'u Common, Uncommon, Rare, Very Rare ve Legendary klasörlerine ayrılmıştır.
 - Fiyatlar sabit değildir; aynı nadirlikteki iksirler etki gücü, süre, hasar/iyileştirme kapasitesi ve bedeline göre farklı fiyatlandırılır.
 - Uzaklıklar ft, ağırlıklar lb ve fiyatlar gp cinsindendir.
-- Bedel / Yan Etki bölümleri Foundry secret block ile yalnızca GM'e gösterilir.
+- Bedel / Yan Etki bölümleri grup onu öğrenene kadar yalnızca GM'e görünür (aşağıda: Bedelin keşfi).
 - Vaelora Anomali Yan Etki Tablosu ayrı ve GM erişimli compendium içindedir.
+
+## Bedelin keşfi (3.4.0)
+
+Her iksirin Bedel / Yan Etki bölümü, grup onu öğrenene kadar oyunculardan gizlidir; iksir oyuncunun envanterindeyken de. Bedel öğrenilince grubun bütün üyeleri onu hem envanterde hem compendium'da görür.
+
+- **İçerek öğrenme:** Bir iksir ilk kez içildiğinde bedeli açılır ve sohbete yazılır. Kimin içtiği önemli değil; bilgi bütün grup için ortaktır.
+- **GM kararı:** Simya incelemesi, Identify veya bir NPC'nin anlatması gibi durumlarda GM, iksir sayfasının başlık menüsündeki **Bedeli oyunculara aç / gizle** düğmesini kullanır.
+- **Makro API:** `VaeloraPotions.revealCost("goktasi-derisi-iksiri")`, `VaeloraPotions.hideCost(...)`, `VaeloraPotions.isCostKnown(...)`, `VaeloraPotions.knownCosts()`. Bir eşya da verilebilir.
 
 ## Otomasyon (3.3.0)
 

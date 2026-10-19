@@ -12,11 +12,11 @@
  *
  * Oyuncunun sahibi olmadığı bir alıcıda iş aktif GM'e gider; socket üzerinden
  * yalnızca iksir kimliği gönderilir, GM efekti compendium'dan yeniden kurar.
+ *
+ * Bedel / Yan Etki keşfi: ./costs.js
  */
 
-const MODULE_ID = "vaelora-potions";
-const SOCKET_NAME = `module.${MODULE_ID}`;
-const PACK_ID = `${MODULE_ID}.vaelora-potions`;
+import { MODULE_ID, SOCKET_NAME, PACK_ID, isVaeloraPotion, registerCosts, revealOnDrink, onRevealRequest, api } from "./costs.js";
 
 /** activity.uuid -> alıcı aktörün uuid'si (preUse'da belirlenir, postUse'da kullanılır) */
 const pendingRecipients = new Map();
@@ -30,10 +30,6 @@ let recentlyUntargeted = [];
 
 function isEnabled() {
   return game.settings.get(MODULE_ID, "autoApply");
-}
-
-function isVaeloraPotion(item) {
-  return item?.type === "consumable" && Boolean(item.flags?.[MODULE_ID]);
 }
 
 /** İksirin ilk aktivitesi "İç" aktivitesidir; ek aktiviteler (nefes, saldırı) kendi kartlarıyla çalışır. */
@@ -120,7 +116,6 @@ async function requestGmApply(item, drinker, recipient) {
 }
 
 async function onGmApplyRequest(payload, senderId) {
-  if ( (payload?.type !== "apply") || !game.users.activeGM?.isSelf ) return;
   const sender = game.users.get(senderId);
   const [drinker, recipient] = await Promise.all([fromUuid(payload.drinkerUuid), fromUuid(payload.recipientUuid)]);
   if ( !sender || !drinker || !recipient ) return;
@@ -135,6 +130,7 @@ async function onGmApplyRequest(payload, senderId) {
 }
 
 Hooks.once("init", () => {
+  registerCosts();
   game.settings.register(MODULE_ID, "autoApply", {
     name: "İksirleri içince otomatik uygula",
     hint: "Bir Vaelora iksiri içilince efektleri ve iyileştirmesi kendiliğinden uygulanır. Tek bir dost token hedeflenmişse iksir ona içirilir. Kapalıyken efektler sohbet kartındaki düğmeyle uygulanır.",
@@ -145,8 +141,16 @@ Hooks.once("init", () => {
   });
 });
 
+function onSocket(payload, senderId) {
+  if ( !game.users.activeGM?.isSelf ) return;
+  if ( payload?.type === "apply" ) return onGmApplyRequest(payload, senderId);
+  if ( payload?.type === "reveal" ) return onRevealRequest(payload, senderId);
+}
+
 Hooks.once("ready", () => {
-  game.socket.on(SOCKET_NAME, onGmApplyRequest);
+  game.modules.get(MODULE_ID).api = api;
+  globalThis.VaeloraPotions = api;
+  game.socket.on(SOCKET_NAME, onSocket);
 });
 
 Hooks.on("targetToken", (user, token, targeted) => {
@@ -185,4 +189,11 @@ Hooks.on("dnd5e.postUseActivity", (activity) => {
     console.error(`${MODULE_ID} | ${item.name} uygulanamadı`, err);
     ui.notifications.error(`${item.name} otomatik uygulanamadı; sohbet kartındaki düğmeyi kullanın.`);
   });
+});
+
+// İçilen iksirin bedeli grup için öğrenilir (otomatik uygulama kapalı olsa da).
+Hooks.on("dnd5e.postUseActivity", (activity) => {
+  if ( !isDrinkActivity(activity) ) return;
+  Promise.resolve(revealOnDrink(activity.item, activity.actor))
+    .catch(err => console.error(`${MODULE_ID} | bedel açılamadı`, err));
 });
