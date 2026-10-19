@@ -6,7 +6,15 @@ Foundry VTT 13 ve D&D 5e 5.3.3 için hazırlanmış 200 özgün Türkçe iksir i
 - Fiyatlar sabit değildir; aynı nadirlikteki iksirler etki gücü, süre, hasar/iyileştirme kapasitesi ve bedeline göre farklı fiyatlandırılır.
 - Uzaklıklar ft, ağırlıklar lb ve fiyatlar gp cinsindendir.
 - Bedel / Yan Etki bölümleri grup onu öğrenene kadar yalnızca GM'e görünür (aşağıda: Bedelin keşfi).
-- Vaelora Anomali Yan Etki Tablosu ayrı ve GM erişimli compendium içindedir.
+- Vaelora Anomali Yan Etki Tablosu ve Vaelora İksir Karışımı Tablosu ayrı ve GM erişimli compendium içindedir.
+
+## İksir karıştırma (3.6.0)
+
+Bir yaratık üzerinde bir Vaelora iksirinin etkisi sürerken başka bir Vaelora iksiri içilirse **Vaelora İksir Karışımı Tablosu**'nda 1d20 atılır. Herkese "iksirler birbirine karıştı" notu düşer; tablo sonucu yalnızca GM'e fısıldanır ve GM tarafından uygulanır. Sonuçların 17'si kötü ya da tuhaf, 3'ü iyidir. Aynı iksiri yeniden içmek karıştırma sayılmaz.
+
+- Otomasyonu olmayan iksirler de içildiğinde süreleri kadar boş bir takip efekti alır; böylece karıştırma fark edilir ve GM kalan süreyi karakterde görür.
+- Ayar: **İksir karışımı tablosu** (dünya ayarı, varsayılan açık). Otomatik uygulama açıkken çalışır.
+- Anomali Yan Etki Tablosu değişmedi; Anomali Çözücüsü için kullanılmaya devam eder.
 
 ## 3.5.0 değişiklikleri
 

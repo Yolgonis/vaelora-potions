@@ -14,9 +14,13 @@
  * yalnızca iksir kimliği gönderilir, GM efekti compendium'dan yeniden kurar.
  *
  * Bedel / Yan Etki keşfi: ./costs.js
+ * İksir karıştırma: ./mixing.js
  */
 
 import { MODULE_ID, SOCKET_NAME, PACK_ID, isVaeloraPotion, registerCosts, revealOnDrink, onRevealRequest, api } from "./costs.js";
+import { registerMixing, activeOtherPotions, triggerMix, onMixRequest } from "./mixing.js";
+
+const UNIT_SECONDS = { round: 6, turn: 6, minute: 60, hour: 3600, day: 86400 };
 
 /** activity.uuid -> alıcı aktörün uuid'si (preUse'da belirlenir, postUse'da kullanılır) */
 const pendingRecipients = new Map();
@@ -61,9 +65,24 @@ function resolveRecipient(activity) {
   return target.document.disposition === own.disposition ? target.actor : drinker;
 }
 
+/**
+ * Otomasyonu olmayan iksir için süresi kadar, değişikliksiz bir takip efekti.
+ * GM süreyi karakterde görür; karıştırma da bu efektle fark edilir.
+ */
+function trackingEffect(item, activity) {
+  const { value, units } = activity.duration ?? {};
+  const seconds = UNIT_SECONDS[units] * Number(value);
+  if ( !Number.isFinite(seconds) || (seconds <= 0) ) return null;
+  return {
+    name: item.name, img: item.img, origin: item.uuid, transfer: false, disabled: false, changes: [],
+    duration: { seconds, rounds: units === "round" ? Number(value) : null },
+    flags: { [MODULE_ID]: { potion: item.system.identifier, tracking: true } }
+  };
+}
+
 function buildEffectData(item, activity) {
   const identifier = item.system.identifier;
-  return activity.effects
+  const effects = activity.effects
     .map(({ _id }) => item.effects.get(_id))
     .filter(Boolean)
     .map(effect => {
@@ -76,10 +95,16 @@ function buildEffectData(item, activity) {
       foundry.utils.setProperty(data, `flags.${MODULE_ID}.potion`, identifier);
       return data;
     });
+  if ( effects.length ) return effects;
+  const tracking = trackingEffect(item, activity);
+  return tracking ? [tracking] : [];
 }
 
 async function applyPotion({ item, activity, recipient, speakerActor }) {
   const identifier = item.system.identifier;
+
+  // Başka bir iksirin etkisi sürerken içildiyse karışım tablosu atılır.
+  const mixedWith = activeOtherPotions(recipient, identifier);
 
   // Aynı iksir yeniden içilirse eski efekt yenisiyle değişir (süre tazelenir).
   const effects = buildEffectData(item, activity);
@@ -100,6 +125,8 @@ async function applyPotion({ item, activity, recipient, speakerActor }) {
     });
     await recipient.applyDamage([{ value: roll.total, type }]);
   }
+
+  if ( mixedWith.length ) await triggerMix(recipient, item.name, mixedWith);
 }
 
 async function requestGmApply(item, drinker, recipient) {
@@ -131,6 +158,7 @@ async function onGmApplyRequest(payload, senderId) {
 
 Hooks.once("init", () => {
   registerCosts();
+  registerMixing();
   game.settings.register(MODULE_ID, "autoApply", {
     name: "İksirleri içince otomatik uygula",
     hint: "Bir Vaelora iksiri içilince efektleri ve iyileştirmesi kendiliğinden uygulanır. Tek bir dost token hedeflenmişse iksir ona içirilir. Kapalıyken efektler sohbet kartındaki düğmeyle uygulanır.",
@@ -145,6 +173,7 @@ function onSocket(payload, senderId) {
   if ( !game.users.activeGM?.isSelf ) return;
   if ( payload?.type === "apply" ) return onGmApplyRequest(payload, senderId);
   if ( payload?.type === "reveal" ) return onRevealRequest(payload, senderId);
+  if ( payload?.type === "mix" ) return onMixRequest(payload, senderId);
 }
 
 Hooks.once("ready", () => {

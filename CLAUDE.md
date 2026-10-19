@@ -19,6 +19,8 @@ Betik JSON'u, `json/items/*.json` dosyalarını ve `packs/vaelora-potions` compe
 
 Bedel keşfi: `scripts/costs.js` `TextEditor.enrichHTML`'i sarar; Vaelora iksirinde GM olmayan kullanıcı için secret görünürlüğünü sahiplik değil `revealedCosts` dünya ayarı belirler (dnd5e açıklamayı `secrets: item.isOwner` ile işlediğinden oyuncu bedeli kendi envanterinde görüyordu). İlk içişte açılır, GM sayfa başlığı düğmesi veya `VaeloraPotions` API'siyle açar/gizler.
 
+Karıştırma: `scripts/mixing.js`; tablo `json/tables/vaelora-iksir-karisimi-tablosu.json` (VaeTbl0000000002). Tablo JSON'u değişince Foundry kapalıyken `node tools/write-tables.cjs`.
+
 Çalışma zamanı: `scripts/main.js` içince efektleri ve iyileştirmeyi uygular (alıcı seçimi, menzilli iksirlerde hedef zorunluluğu, GM socket yolu). Midi-QOL "Self" menzilde hedefleri `dnd5e.preUseActivity`'den hemen önce temizler; betik bu yüzden son 500 ms'de bırakılan hedefi kullanır. `module.json`'daki `esmodules`/`socket` değişiklikleri ancak dünya yeniden başlatılınca okunur.
 
 Kurallar: yalnızca koşulsuz mekanikler otomatikleşir; koşullu, tur başına bir kez, seçim gerektiren veya etki bittiğinde gelen kısımlar açıklamada GM'e kalır. Bedel ayrı efekt olmaz, iksirin efektine eklenir (ad GM'e özel bölümü ele vermesin). Ek aktiviteli iksirlerde `autoDestroy` kapalıdır.

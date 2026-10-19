@@ -1,0 +1,611 @@
+{
+  "_id": "VaeTbl0000000002",
+  "name": "Vaelora İksir Karışımı Tablosu",
+  "img": "icons/consumables/potions/potion-bottle-skull-label-poison-teal.webp",
+  "description": "<p>Bir yaratık üzerinde bir Vaelora iksirinin etkisi sürerken başka bir Vaelora iksiri içtiğinde bu tabloda 1d20 atılır (modül otomatik atar, sonuç yalnızca GM'e görünür). Sonuçlar GM tarafından uygulanır. Aynı iksiri yeniden içmek karıştırma sayılmaz.</p>",
+  "results": [
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        1,
+        1
+      ],
+      "drawn": false,
+      "_id": "VaeMix0000000001",
+      "img": "icons/svg/d20-black.svg",
+      "name": "Midede Patlama",
+      "description": "Karışım midede patlar. İçen [[/damage 4d10 force]] hasar alır ve iki iksirin etkisi de sona erer.",
+      "flags": {
+        "vaelora-potions": {
+          "version": "3.6.0"
+        }
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      }
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        2,
+        2
+      ],
+      "drawn": false,
+      "_id": "VaeMix0000000002",
+      "img": "icons/svg/d20-black.svg",
+      "name": "Karşılıklı Sönme",
+      "description": "İki iksir birbirini söndürür; ikisinin de etkisi hemen sona erer.",
+      "flags": {
+        "vaelora-potions": {
+          "version": "3.6.0"
+        }
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      }
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        3,
+        3
+      ],
+      "drawn": false,
+      "_id": "VaeMix0000000003",
+      "img": "icons/svg/d20-black.svg",
+      "name": "Bulantı",
+      "description": "İçen 1 dakika boyunca Zehirlenmiş olur. İksirlerin etkileri sürer.",
+      "flags": {
+        "vaelora-potions": {
+          "version": "3.6.0"
+        }
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      }
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        4,
+        4
+      ],
+      "drawn": false,
+      "_id": "VaeMix0000000004",
+      "img": "icons/svg/d20-black.svg",
+      "name": "Zihin Çarpışması",
+      "description": "İçen [[/damage 2d6 psychic]] hasar alır ve bir sonraki turunun sonuna kadar Sersemlemiş olur.",
+      "flags": {
+        "vaelora-potions": {
+          "version": "3.6.0"
+        }
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      }
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        5,
+        5
+      ],
+      "drawn": false,
+      "_id": "VaeMix0000000005",
+      "img": "icons/svg/d20-black.svg",
+      "name": "Düzlem Fısıltısı",
+      "description": "İçen 10 dakika boyunca Sağır olur ve yakın düzlemlerden gelen anlaşılmaz fısıltılar duyar.",
+      "flags": {
+        "vaelora-potions": {
+          "version": "3.6.0"
+        }
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      }
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        6,
+        6
+      ],
+      "drawn": false,
+      "_id": "VaeMix0000000006",
+      "img": "icons/svg/d20-black.svg",
+      "name": "Kopan Gölge",
+      "description": "İçenin gölgesi bedeninden ayrılır ve 1 dakika boyunca düşman bir Shadow olarak hareket eder. Gölge yok edilirse normal hâline döner.",
+      "flags": {
+        "vaelora-potions": {
+          "version": "3.6.0"
+        }
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      }
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        7,
+        7
+      ],
+      "drawn": false,
+      "_id": "VaeMix0000000007",
+      "img": "icons/svg/d20-black.svg",
+      "name": "Savrulan Adım",
+      "description": "İçen, GM’in belirlediği rastgele bir yönde 30 ft ışınlanır. Geçerli bir alan yoksa Yere Düşmüş olur.",
+      "flags": {
+        "vaelora-potions": {
+          "version": "3.6.0"
+        }
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      }
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        8,
+        8
+      ],
+      "drawn": false,
+      "_id": "VaeMix0000000008",
+      "img": "icons/svg/d20-black.svg",
+      "name": "Yabancı Ses",
+      "description": "İçenin sesi 1 saat boyunca bir yabancının sesine dönüşür. Sözel bileşen içeren her büyüde [[/save constitution dc=12]] Kurtarma Atışı yapar; başarısız olursa büyü boşa gider.",
+      "flags": {
+        "vaelora-potions": {
+          "version": "3.6.0"
+        }
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      }
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        9,
+        9
+      ],
+      "drawn": false,
+      "_id": "VaeMix0000000009",
+      "img": "icons/svg/d20-black.svg",
+      "name": "Renkli Ten",
+      "description": "İçenin teni 1 saat boyunca iksirin rengini alır ve 10 ft Loş Işık yayar. Bu süre boyunca Çeviklik (Gizlilik) kontrollerinde dezavantaj alır.",
+      "flags": {
+        "vaelora-potions": {
+          "version": "3.6.0"
+        }
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      }
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        10,
+        10
+      ],
+      "drawn": false,
+      "_id": "VaeMix0000000010",
+      "img": "icons/svg/d20-black.svg",
+      "name": "Baskın İksir",
+      "description": "İlk içilen iksirin etkisi sona erer; ikinci iksirin süresi iki katına çıkar.",
+      "flags": {
+        "vaelora-potions": {
+          "version": "3.6.0"
+        }
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      }
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        11,
+        11
+      ],
+      "drawn": false,
+      "_id": "VaeMix0000000011",
+      "img": "icons/svg/d20-black.svg",
+      "name": "Bulanık Saat",
+      "description": "İçen son 1 saati bulanık hatırlar ve 1 saat boyunca Zekâ ile Bilgelik Yetenek Kontrollerinde dezavantaj alır.",
+      "flags": {
+        "vaelora-potions": {
+          "version": "3.6.0"
+        }
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      }
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        12,
+        12
+      ],
+      "drawn": false,
+      "_id": "VaeMix0000000012",
+      "img": "icons/svg/d20-black.svg",
+      "name": "Hızlanan Zaman",
+      "description": "İçenin biyolojik yaşı [[/roll 1d10]] yıl ilerler. Greater Restoration bu yaşlanmayı 24 saat içinde geri çevirebilir.",
+      "flags": {
+        "vaelora-potions": {
+          "version": "3.6.0"
+        }
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      }
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        13,
+        13
+      ],
+      "drawn": false,
+      "_id": "VaeMix0000000013",
+      "img": "icons/svg/d20-black.svg",
+      "name": "Yankı Beden",
+      "description": "İçenin 1 Can Puanına sahip bir kopyası 5 ft içinde belirir. Kopya içenin oyun istatistiklerini taşır ve 1 dakika sonra dağılır; GM yönetir.",
+      "flags": {
+        "vaelora-potions": {
+          "version": "3.6.0"
+        }
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      }
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        14,
+        14
+      ],
+      "drawn": false,
+      "_id": "VaeMix0000000014",
+      "img": "icons/svg/d20-black.svg",
+      "name": "Davetsiz Misafir",
+      "description": "30 ft içinde boş bir alanda GM’in parti seviyesine uygun seçtiği düşman bir Aberasyon belirir. Yaratık 1 dakika sonra geldiği yere döner.",
+      "flags": {
+        "vaelora-potions": {
+          "version": "3.6.0"
+        }
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      }
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        15,
+        15
+      ],
+      "drawn": false,
+      "_id": "VaeMix0000000015",
+      "img": "icons/svg/d20-black.svg",
+      "name": "Yer Değiştirme",
+      "description": "İçen ile 60 ft içindeki rastgele bir yaratık yer değiştirir. İkisi de [[/save dexterity dc=15]] Kurtarma Atışı yapar; başarısız olan Yere Düşmüş olur.",
+      "flags": {
+        "vaelora-potions": {
+          "version": "3.6.0"
+        }
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      }
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        16,
+        16
+      ],
+      "drawn": false,
+      "_id": "VaeMix0000000016",
+      "img": "icons/svg/d20-black.svg",
+      "name": "Ters Yerçekimi",
+      "description": "İçen 20 ft yukarı savrulur, ardından düşer. Tavan varsa normal biçimde çarpar.",
+      "flags": {
+        "vaelora-potions": {
+          "version": "3.6.0"
+        }
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      }
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        17,
+        17
+      ],
+      "drawn": false,
+      "_id": "VaeMix0000000017",
+      "img": "icons/svg/d20-black.svg",
+      "name": "Kalıcı İşaret",
+      "description": "İçenin teninde kalıcı, hafif parlayan bir işaret oluşur. Aberasyon ve düzlem dışı yaratıklar onu 60 ft içinde fark eder.",
+      "flags": {
+        "vaelora-potions": {
+          "version": "3.6.0"
+        }
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      }
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        18,
+        18
+      ],
+      "drawn": false,
+      "_id": "VaeMix0000000018",
+      "img": "icons/svg/d20-black.svg",
+      "name": "Uzayan Uyum",
+      "description": "İki iksir uyum içinde karışır; ikisinin de kalan süresi iki katına çıkar.",
+      "flags": {
+        "vaelora-potions": {
+          "version": "3.6.0"
+        }
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      }
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        19,
+        19
+      ],
+      "drawn": false,
+      "_id": "VaeMix0000000019",
+      "img": "icons/svg/d20-black.svg",
+      "name": "Şifalı Uyum",
+      "description": "İçen [[/healing 2d8+4 healing]] Can Puanı kazanır. GM bu seferlik iki iksirin bedelini de kaldırır.",
+      "flags": {
+        "vaelora-potions": {
+          "version": "3.6.0"
+        }
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      }
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        20,
+        20
+      ],
+      "drawn": false,
+      "_id": "VaeMix0000000020",
+      "img": "icons/svg/d20-black.svg",
+      "name": "Kararlı Karışım",
+      "description": "Karışım kararlıdır: iki iksirin etkisi bedelleri olmadan sürer ve içen [[/healing 4d6 temp]] Geçici Can Puanı kazanır.",
+      "flags": {
+        "vaelora-potions": {
+          "version": "3.6.0"
+        }
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      }
+    }
+  ],
+  "formula": "1d20",
+  "replacement": true,
+  "displayRoll": true,
+  "flags": {
+    "vaelora-potions": {
+      "version": "3.6.0"
+    }
+  },
+  "sort": 100,
+  "folder": null,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.351",
+    "systemId": "dnd5e",
+    "systemVersion": "5.3.3",
+    "createdTime": 1792411200000,
+    "modifiedTime": 1792411200000,
+    "lastModifiedBy": null,
+    "exportSource": null
+  }
+}
