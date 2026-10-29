@@ -1,0 +1,323 @@
+{
+  "_id": "VaePot0000000212",
+  "name": "Karga Sesi Özütü",
+  "type": "consumable",
+  "img": "icons/consumables/potions/potion-flask-corled-pink-red.webp",
+  "system": {
+    "description": {
+      "value": "<p><em>Şişeyi sallayınca içinden kuş sesi gelir.</em></p><p><strong>Etki.</strong> Duyduğun herhangi bir kuş ya da küçük hayvan sesini kusursuz taklit edebilirsin. Sahte olduğunu yalnızca DC 14 Bilgelik (Algı) kontrolünü geçen yaratıklar anlar.</p><p><strong>Süre.</strong> 10 dakika</p><section class=\"secret\"><p><strong>Bedel / Yan Etki.</strong> Sesin kısık ve boğuk çıkar; Karizma (İkna) kontrollerinde dezavantaj alırsın.</p></section>",
+      "chat": ""
+    },
+    "source": {
+      "custom": "Vaelora İksirleri",
+      "book": "",
+      "page": "",
+      "license": "",
+      "rules": "2024",
+      "revision": 1
+    },
+    "quantity": 1,
+    "weight": {
+      "value": 0.5,
+      "units": "lb"
+    },
+    "price": {
+      "value": 70,
+      "denomination": "gp"
+    },
+    "attunement": "",
+    "equipped": false,
+    "rarity": "common",
+    "identified": true,
+    "uses": {
+      "max": "1",
+      "recovery": [],
+      "autoDestroy": true,
+      "spent": 0
+    },
+    "damage": {
+      "base": {
+        "number": null,
+        "denomination": null,
+        "types": [],
+        "custom": {
+          "enabled": false,
+          "formula": ""
+        },
+        "scaling": {
+          "mode": "",
+          "number": null,
+          "formula": ""
+        }
+      },
+      "replace": false
+    },
+    "type": {
+      "value": "potion",
+      "subtype": ""
+    },
+    "unidentified": {
+      "description": ""
+    },
+    "container": null,
+    "properties": [
+      "mgc"
+    ],
+    "magicalBonus": null,
+    "activities": {
+      "VaeAct0000000212": {
+        "_id": "VaeAct0000000212",
+        "type": "utility",
+        "activation": {
+          "type": "bonus",
+          "value": null,
+          "condition": "",
+          "override": false
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            }
+          ],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": "Karga Sesi Özütü içilir."
+        },
+        "duration": {
+          "concentration": false,
+          "value": "10",
+          "units": "minute",
+          "special": "",
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "VaeEffFXAnulctLF"
+          }
+        ],
+        "range": {
+          "units": "self",
+          "special": "",
+          "override": false
+        },
+        "target": {
+          "template": {
+            "count": "",
+            "contiguous": false,
+            "type": "",
+            "size": "",
+            "width": "",
+            "height": "",
+            "units": "ft",
+            "stationary": false
+          },
+          "affects": {
+            "count": "",
+            "type": "creature",
+            "choice": false,
+            "special": ""
+          },
+          "prompt": true,
+          "override": false
+        },
+        "roll": {
+          "formula": "",
+          "name": "",
+          "prompt": false,
+          "visible": false
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "sort": 0,
+        "name": "İç",
+        "img": "icons/consumables/potions/potion-flask-corled-pink-red.webp",
+        "visibility": {
+          "requireMagic": true,
+          "level": {
+            "min": null,
+            "max": null
+          },
+          "identifier": ""
+        },
+        "appliedEffects": [],
+        "flags": {
+          "vaelora-potions": {
+            "original": {
+              "_id": "VaeAct0000000212",
+              "type": "utility",
+              "activation": {
+                "type": "bonus",
+                "value": null,
+                "condition": "",
+                "override": false
+              },
+              "consumption": {
+                "targets": [
+                  {
+                    "type": "itemUses",
+                    "value": "1",
+                    "target": ""
+                  }
+                ],
+                "scaling": {
+                  "allowed": false,
+                  "max": ""
+                },
+                "spellSlot": true
+              },
+              "description": {
+                "chatFlavor": "Karga Sesi Özütü içilir."
+              },
+              "duration": {
+                "concentration": false,
+                "value": "10",
+                "units": "minute",
+                "special": "",
+                "override": false
+              },
+              "effects": [],
+              "range": {
+                "units": "self",
+                "special": "",
+                "override": false
+              },
+              "target": {
+                "template": {
+                  "count": "",
+                  "contiguous": false,
+                  "type": "",
+                  "size": "",
+                  "width": "",
+                  "height": "",
+                  "units": "ft",
+                  "stationary": false
+                },
+                "affects": {
+                  "count": "",
+                  "type": "creature",
+                  "choice": false,
+                  "special": ""
+                },
+                "prompt": true,
+                "override": false
+              },
+              "roll": {
+                "formula": "",
+                "name": "",
+                "prompt": false,
+                "visible": false
+              },
+              "uses": {
+                "spent": 0,
+                "recovery": [],
+                "max": ""
+              },
+              "sort": 0,
+              "name": "İç",
+              "img": "icons/consumables/potions/potion-flask-corled-pink-red.webp",
+              "visibility": {
+                "requireMagic": true,
+                "level": {
+                  "min": null,
+                  "max": null
+                },
+                "identifier": ""
+              },
+              "appliedEffects": []
+            }
+          }
+        }
+      }
+    },
+    "attuned": false,
+    "identifier": "karga-sesi-ozutu"
+  },
+  "folder": "VaeFldCommon0001",
+  "sort": 12700000,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "vaelora-potions": {
+      "version": "3.7.0",
+      "powerScore": 1.4,
+      "priceBand": 3
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.351",
+    "systemId": "dnd5e",
+    "systemVersion": "5.3.3",
+    "createdTime": 1793282154481,
+    "modifiedTime": 1793282154481,
+    "lastModifiedBy": null,
+    "exportSource": null
+  },
+  "effects": [
+    {
+      "_id": "VaeEffFXAnulctLF",
+      "name": "Karga Sesi Özütü",
+      "img": "icons/consumables/potions/potion-flask-corled-pink-red.webp",
+      "origin": null,
+      "transfer": false,
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.skills.per.roll.mode",
+          "mode": 2,
+          "value": "-1",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 600,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "vaelora-potions": {
+          "auto": true
+        }
+      },
+      "_stats": {
+        "duplicateSource": null,
+        "coreVersion": "13.351",
+        "systemId": "dnd5e",
+        "systemVersion": "5.3.3",
+        "createdTime": 1793282154481,
+        "modifiedTime": 1793282154481,
+        "lastModifiedBy": null,
+        "exportSource": null,
+        "compendiumSource": null
+      }
+    }
+  ]
+}

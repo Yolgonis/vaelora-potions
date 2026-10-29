@@ -1,12 +1,16 @@
 # Vaelora İksirleri
 
-Foundry VTT 13 ve D&D 5e 5.3.3 için hazırlanmış 200 özgün Türkçe iksir içerir.
+Foundry VTT 13 ve D&D 5e 5.3.3 için hazırlanmış 300 özgün Türkçe iksir içerir (Common 100, Uncommon 80, Rare 60, Very Rare 40, Legendary 20).
 
 - İksir compendium'u Common, Uncommon, Rare, Very Rare ve Legendary klasörlerine ayrılmıştır.
 - Fiyatlar sabit değildir; aynı nadirlikteki iksirler etki gücü, süre, hasar/iyileştirme kapasitesi ve bedeline göre farklı fiyatlandırılır.
 - Uzaklıklar ft, ağırlıklar lb ve fiyatlar gp cinsindendir.
 - Bedel / Yan Etki bölümleri grup onu öğrenene kadar yalnızca GM'e görünür (aşağıda: Bedelin keşfi).
 - Vaelora Anomali Yan Etki Tablosu ve Vaelora İksir Karışımı Tablosu ayrı ve GM erişimli compendium içindedir.
+
+## Garip iksirler (3.7.0)
+
+100 yeni iksir eklendi: 70 Common, 20 Uncommon, 10 Very Rare. Etkileri bilerek tuhaftır (taşla konuşmak, gölgeyi kâğıt inceliğine indirmek, tavanda yürümek, zamanı geri sarmak) ve her birinin bir bedeli vardır. Koşulsuz mekanikler (hız, avantaj/dezavantaj, direnç, ışık) içince otomatik uygulanır; kalanı açıklamada GM'e bırakılır. Mevcut 200 iksire dokunulmadı.
 
 ## İksir karıştırma (3.6.0)
 

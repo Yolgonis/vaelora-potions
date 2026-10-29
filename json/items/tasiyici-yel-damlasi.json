@@ -1,0 +1,184 @@
+{
+  "_id": "VaePot0000000238",
+  "name": "Taşıyıcı Yel Damlası",
+  "type": "consumable",
+  "img": "icons/consumables/potions/potion-tube-corked-blue.webp",
+  "system": {
+    "description": {
+      "value": "<p><em>Havada dönen küçük bir girdap gibi görünür.</em></p><p><strong>Etki.</strong> 10 lb'ye kadar bir nesne yanında havada süzülür ve seni takip eder; sana yardımcı bir el gibidir ama kendi başına bir şey kullanamaz.</p><p><strong>Süre.</strong> 1 saat</p><section class=\"secret\"><p><strong>Bedel / Yan Etki.</strong> Nesne bazen rüzgârda yönünü şaşırır: DC 10 Zekâ kontrolü başarısızsa onu yanlış yere bırakır.</p></section>",
+      "chat": ""
+    },
+    "source": {
+      "custom": "Vaelora İksirleri",
+      "book": "",
+      "page": "",
+      "license": "",
+      "rules": "2024",
+      "revision": 1
+    },
+    "quantity": 1,
+    "weight": {
+      "value": 0.5,
+      "units": "lb"
+    },
+    "price": {
+      "value": 80,
+      "denomination": "gp"
+    },
+    "attunement": "",
+    "equipped": false,
+    "rarity": "common",
+    "identified": true,
+    "uses": {
+      "max": "1",
+      "recovery": [],
+      "autoDestroy": true,
+      "spent": 0
+    },
+    "damage": {
+      "base": {
+        "number": null,
+        "denomination": null,
+        "types": [],
+        "custom": {
+          "enabled": false,
+          "formula": ""
+        },
+        "scaling": {
+          "mode": "",
+          "number": null,
+          "formula": ""
+        }
+      },
+      "replace": false
+    },
+    "type": {
+      "value": "potion",
+      "subtype": ""
+    },
+    "unidentified": {
+      "description": ""
+    },
+    "container": null,
+    "properties": [
+      "mgc"
+    ],
+    "magicalBonus": null,
+    "activities": {
+      "VaeAct0000000238": {
+        "_id": "VaeAct0000000238",
+        "type": "utility",
+        "activation": {
+          "type": "bonus",
+          "value": null,
+          "condition": "",
+          "override": false
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            }
+          ],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": "Taşıyıcı Yel Damlası içilir."
+        },
+        "duration": {
+          "concentration": false,
+          "value": "1",
+          "units": "hour",
+          "special": "",
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "units": "self",
+          "special": "",
+          "override": false
+        },
+        "target": {
+          "template": {
+            "count": "",
+            "contiguous": false,
+            "type": "",
+            "size": "",
+            "width": "",
+            "height": "",
+            "units": "ft",
+            "stationary": false
+          },
+          "affects": {
+            "count": "",
+            "type": "creature",
+            "choice": false,
+            "special": ""
+          },
+          "prompt": true,
+          "override": false
+        },
+        "roll": {
+          "formula": "",
+          "name": "",
+          "prompt": false,
+          "visible": false
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "sort": 0,
+        "name": "İç",
+        "img": "icons/consumables/potions/potion-tube-corked-blue.webp",
+        "visibility": {
+          "requireMagic": true,
+          "level": {
+            "min": null,
+            "max": null
+          },
+          "identifier": ""
+        },
+        "appliedEffects": []
+      }
+    },
+    "attuned": false,
+    "identifier": "tasiyici-yel-damlasi"
+  },
+  "folder": "VaeFldCommon0001",
+  "sort": 15300000,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "vaelora-potions": {
+      "version": "3.7.0",
+      "powerScore": 1.7,
+      "priceBand": 4
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.351",
+    "systemId": "dnd5e",
+    "systemVersion": "5.3.3",
+    "createdTime": 1793282154481,
+    "modifiedTime": 1793282154481,
+    "lastModifiedBy": null,
+    "exportSource": null
+  },
+  "effects": []
+}

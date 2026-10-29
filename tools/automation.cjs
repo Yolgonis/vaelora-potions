@@ -243,4 +243,15 @@ for (const [id, drawback] of Object.entries(DRAWBACKS)) {
   BASE[id] = { ...(BASE[id] ?? {}), drawback };
 }
 
+// Garip iksirler (3.7.0): tanımlar tools/garip-*.cjs içindedir; yardımcılar buradan verilir.
+const GARIP = require("./garip-iksirler.cjs")({
+  adv, dis, skillBonus, vuln, setSpeed, res, imm, cimm, walk, move, sense, acBonus, acFlat,
+  weaponDamage, hpMax, light, midi, c, MODE
+});
+for (const potion of GARIP) {
+  if (Object.keys(potion.auto).length) BASE[potion.identifier] = potion.auto;
+}
+// add-garip.cjs listeyi buradan okur; numaralandırılamaz olduğu için anahtar döngülerini bozmaz.
+Object.defineProperty(BASE, "_garip", { value: GARIP, enumerable: false });
+
 module.exports = BASE;

@@ -1,6 +1,6 @@
 # Vaelora İksirleri (vaelora-potions)
 
-Foundry VTT 13 / dnd5e 5.3.3 modülü: Vaelora evrenine özel 200 Türkçe iksir ve GM anomali tablosu. Kullanıcı (Yolgonis) ile Türkçe konuş. Genel kampanya bağlamı: `C:\Claude\Vaelora\CLAUDE.md`.
+Foundry VTT 13 / dnd5e 5.3.3 modülü: Vaelora evrenine özel 300 Türkçe iksir ve GM anomali tablosu. Kullanıcı (Yolgonis) ile Türkçe konuş. Genel kampanya bağlamı: `C:\Claude\Vaelora\CLAUDE.md`.
 
 - Bu klasör Foundry'de `Data\modules\vaelora-potions` junction'ıyla yüklenir; burada yapılan değişikliği Foundry doğrudan görür.
 - GitHub: `Yolgonis/vaelora-potions` (gizli). Her iş bitince commit + push.
@@ -18,6 +18,8 @@ node tools/apply-automation.cjs
 Betik JSON'u, `json/items/*.json` dosyalarını ve `packs/vaelora-potions` compendium'unu yazar; tekrar çalıştırılabilir ve compendium JSON'dan farklıysa durur.
 
 Bedel keşfi: `scripts/costs.js` `TextEditor.enrichHTML`'i sarar; Vaelora iksirinde GM olmayan kullanıcı için secret görünürlüğünü sahiplik değil `revealedCosts` dünya ayarı belirler (dnd5e açıklamayı `secrets: item.isOwner` ile işlediğinden oyuncu bedeli kendi envanterinde görüyordu). İlk içişte açılır, GM sayfa başlığı düğmesi veya `VaeloraPotions` API'siyle açar/gizler.
+
+Yeni iksir ekleme: tanımlar `tools/garip-ortak.cjs` (Common) ve `tools/garip-diger.cjs` (Uncommon, Very Rare) içindedir; `tools/garip-iksirler.cjs` birleştirir ve `tools/automation.cjs` otomasyonu buradan alır. Foundry KAPALIYKEN `node tools/add-garip.cjs --dry-run`, sonra `node tools/add-garip.cjs` (JSON, `json/items` ve compendium'a ekler; yalnızca yeni identifier'ları ekler) ve ardından `node tools/apply-automation.cjs`. Başka nadirlik eklemek için `add-garip.cjs` içindeki `RANGE` tablosuna girdi gerekir.
 
 Karıştırma: `scripts/mixing.js`; tablo `json/tables/vaelora-iksir-karisimi-tablosu.json` (VaeTbl0000000002). Tablo JSON'u değişince Foundry kapalıyken `node tools/write-tables.cjs`.
 
