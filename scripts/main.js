@@ -19,6 +19,7 @@
 
 import { MODULE_ID, SOCKET_NAME, PACK_ID, isVaeloraPotion, registerCosts, revealOnDrink, onRevealRequest, api } from "./costs.js";
 import { registerMixing, activeOtherPotions, triggerMix, onMixRequest } from "./mixing.js";
+import { registerPenalties, hookPenalties, carryOnEnd } from "./penalties.js";
 
 const UNIT_SECONDS = { round: 6, turn: 6, minute: 60, hour: 3600, day: 86400 };
 
@@ -113,9 +114,10 @@ function buildEffectData(item, activity, durationValue) {
       foundry.utils.setProperty(data, `flags.${MODULE_ID}.potion`, identifier);
       return data;
     });
-  if ( effects.length ) return effects;
+  // Etki bitince gelen bedel (onEnd) yalnızca ilk efekte bağlanır.
+  if ( effects.length ) return [carryOnEnd(item, effects[0]), ...effects.slice(1)];
   const tracking = trackingEffect(item, activity, durationValue);
-  return tracking ? [tracking] : [];
+  return tracking ? [carryOnEnd(item, tracking)] : [];
 }
 
 async function applyPotion({ item, activity, recipient, speakerActor }) {
@@ -186,6 +188,7 @@ async function onGmApplyRequest(payload, senderId) {
 Hooks.once("init", () => {
   registerCosts();
   registerMixing();
+  registerPenalties();
   game.settings.register(MODULE_ID, "autoApply", {
     name: "İksirleri içince otomatik uygula",
     hint: "Bir Vaelora iksiri içilince efektleri ve iyileştirmesi kendiliğinden uygulanır. Tek bir dost token hedeflenmişse iksir ona içirilir. Kapalıyken efektler sohbet kartındaki düğmeyle uygulanır.",
@@ -207,6 +210,7 @@ Hooks.once("ready", () => {
   game.modules.get(MODULE_ID).api = api;
   globalThis.VaeloraPotions = api;
   game.socket.on(SOCKET_NAME, onSocket);
+  hookPenalties();
 });
 
 Hooks.on("targetToken", (user, token, targeted) => {

@@ -12,6 +12,17 @@ Foundry VTT 13 ve D&D 5e 5.3.3 için hazırlanmış 300 özgün Türkçe iksir i
 
 100 yeni iksir eklendi: 70 Common, 20 Uncommon, 10 Very Rare. Etkileri bilerek tuhaftır (taşla konuşmak, gölgeyi kâğıt inceliğine indirmek, tavanda yürümek, zamanı geri sarmak) ve her birinin bir bedeli vardır. Koşulsuz mekanikler (hız, avantaj/dezavantaj, direnç, ışık) içince otomatik uygulanır; kalanı açıklamada GM'e bırakılır. Mevcut 200 iksire dokunulmadı.
 
+## Etki bitince gelen bedeller (3.8.0)
+
+Etkinin SÜRESİ DOLUNCA gelen bedeller (23 iksir) artık kendiliğinden uygulanır: Bitkinlik Seviyesi, Can Puanı düşüşü, hasar, durumlar (Sersemlemiş, Zehirlenmiş, Etkisiz), süreli cezalar ve DC'li kurtarma atışları (zar atılır, başarısızsa bedel gelir). Otomatikleştirilemeyen kısımlar (biyolojik yaşlanma, anı kaybı vb.) GM'e hatırlatma olarak düşer.
+
+GM'e her seferinde fısıltıyla bir kart gelir:
+- **Geri al:** uygulanan Bitkinlik, can, hasar ve cezayı geri alır.
+- **Yeniden at:** kurtarma atışlı bedellerde zarı yeniden atar.
+- **Uygula:** onay gerektiren bedellerde (ör. Boşluk Kabı: saklanan büyü kullanılmadıysa hasar) bedeli GM onaylayınca uygular.
+
+GM müdahalesi: Etkiyi süresi dolmadan elle silersen bedel hiç uygulanmaz. Ayar **Etki bitince bedelleri otomatik uygula** kapatılırsa tüm bedeller yalnızca kartın Uygula düğmesiyle uygulanır.
+
 ## Zar süreli iksirler (3.7.1)
 
 Süresi zar formülü olan iksirler (Zamanın Dışında Bir Damla: 1d4+1 tur) artık içilince süre atılıp efekt oluşturuluyor. Bir tur 6 saniye sayılır, atılan süre sohbette duyurulur ve efekt o kadar tur sürer. Formül `scripts/main.js` içindeki `DURATION_FORMULAS` tablosunda tutulur, çünkü dnd5e süre alanı zar formülü kabul etmez.

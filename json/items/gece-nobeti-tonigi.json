@@ -146,7 +146,94 @@
           },
           "identifier": ""
         },
-        "appliedEffects": []
+        "appliedEffects": [],
+        "flags": {
+          "vaelora-potions": {
+            "original": {
+              "_id": "VaeAct0000000023",
+              "type": "utility",
+              "activation": {
+                "type": "bonus",
+                "value": null,
+                "condition": "",
+                "override": false
+              },
+              "consumption": {
+                "targets": [
+                  {
+                    "type": "itemUses",
+                    "value": "1",
+                    "target": ""
+                  }
+                ],
+                "scaling": {
+                  "allowed": false,
+                  "max": ""
+                },
+                "spellSlot": true
+              },
+              "description": {
+                "chatFlavor": "Gece Nöbeti Toniği içilir."
+              },
+              "duration": {
+                "concentration": false,
+                "value": "8",
+                "units": "hour",
+                "special": "",
+                "override": false
+              },
+              "effects": [],
+              "range": {
+                "units": "self",
+                "special": "",
+                "override": false
+              },
+              "target": {
+                "template": {
+                  "count": "",
+                  "contiguous": false,
+                  "type": "",
+                  "size": "",
+                  "width": "",
+                  "height": "",
+                  "units": "ft",
+                  "stationary": false
+                },
+                "affects": {
+                  "count": "",
+                  "type": "creature",
+                  "choice": false,
+                  "special": ""
+                },
+                "prompt": true,
+                "override": false
+              },
+              "roll": {
+                "formula": "",
+                "name": "",
+                "prompt": false,
+                "visible": false
+              },
+              "uses": {
+                "spent": 0,
+                "recovery": [],
+                "max": ""
+              },
+              "sort": 0,
+              "name": "İç",
+              "img": "icons/consumables/potions/potion-tube-corked-red.webp",
+              "visibility": {
+                "requireMagic": true,
+                "level": {
+                  "min": null,
+                  "max": null
+                },
+                "identifier": ""
+              },
+              "appliedEffects": []
+            }
+          }
+        }
       }
     },
     "attuned": false,
@@ -162,7 +249,22 @@
     "vaelora-potions": {
       "version": "3.0.0",
       "powerScore": 1.35,
-      "priceBand": 5
+      "priceBand": 5,
+      "onEnd": {
+        "effect": {
+          "name": "Gece Nöbeti bedeli",
+          "seconds": 3600,
+          "changes": [
+            {
+              "key": "system.skills.prc.roll.mode",
+              "mode": 2,
+              "value": "-1",
+              "priority": null
+            }
+          ]
+        },
+        "note": "İksir Uzun Dinlenme ihtiyacını ortadan kaldırmaz."
+      }
     },
     "dnd5e": {
       "riders": {

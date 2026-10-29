@@ -325,7 +325,11 @@
     "vaelora-potions": {
       "version": "3.0.0",
       "powerScore": 2.4,
-      "priceBand": 4
+      "priceBand": 4,
+      "onEnd": {
+        "hp": 1,
+        "exhaustion": 2
+      }
     },
     "dnd5e": {
       "riders": {

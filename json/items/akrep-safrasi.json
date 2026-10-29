@@ -301,7 +301,19 @@
     "vaelora-potions": {
       "version": "3.0.0",
       "powerScore": 2,
-      "priceBand": 6
+      "priceBand": 6,
+      "onEnd": {
+        "save": {
+          "ability": "con",
+          "dc": 12
+        },
+        "effect": {
+          "seconds": 3600,
+          "statuses": [
+            "poisoned"
+          ]
+        }
+      }
     },
     "dnd5e": {
       "riders": {

@@ -1521,7 +1521,18 @@
       "vaelora-potions": {
         "version": "3.0.0",
         "powerScore": 1.68,
-        "priceBand": 5
+        "priceBand": 5,
+        "onEnd": {
+          "save": {
+            "ability": "wis",
+            "dc": 14
+          },
+          "effect": {
+            "name": "Mor Yankı bedeli",
+            "seconds": 600
+          },
+          "note": "10 dakika boyunca Korkmuş durumuna karşı kurtarma atışlarında dezavantaj (elle)."
+        }
       },
       "dnd5e": {
         "riders": {
@@ -4098,7 +4109,11 @@
       "vaelora-potions": {
         "version": "3.0.0",
         "powerScore": 2.4,
-        "priceBand": 4
+        "priceBand": 4,
+        "onEnd": {
+          "hp": 1,
+          "exhaustion": 2
+        }
       },
       "dnd5e": {
         "riders": {
@@ -5605,7 +5620,94 @@
             },
             "identifier": ""
           },
-          "appliedEffects": []
+          "appliedEffects": [],
+          "flags": {
+            "vaelora-potions": {
+              "original": {
+                "_id": "VaeAct0000000023",
+                "type": "utility",
+                "activation": {
+                  "type": "bonus",
+                  "value": null,
+                  "condition": "",
+                  "override": false
+                },
+                "consumption": {
+                  "targets": [
+                    {
+                      "type": "itemUses",
+                      "value": "1",
+                      "target": ""
+                    }
+                  ],
+                  "scaling": {
+                    "allowed": false,
+                    "max": ""
+                  },
+                  "spellSlot": true
+                },
+                "description": {
+                  "chatFlavor": "Gece Nöbeti Toniği içilir."
+                },
+                "duration": {
+                  "concentration": false,
+                  "value": "8",
+                  "units": "hour",
+                  "special": "",
+                  "override": false
+                },
+                "effects": [],
+                "range": {
+                  "units": "self",
+                  "special": "",
+                  "override": false
+                },
+                "target": {
+                  "template": {
+                    "count": "",
+                    "contiguous": false,
+                    "type": "",
+                    "size": "",
+                    "width": "",
+                    "height": "",
+                    "units": "ft",
+                    "stationary": false
+                  },
+                  "affects": {
+                    "count": "",
+                    "type": "creature",
+                    "choice": false,
+                    "special": ""
+                  },
+                  "prompt": true,
+                  "override": false
+                },
+                "roll": {
+                  "formula": "",
+                  "name": "",
+                  "prompt": false,
+                  "visible": false
+                },
+                "uses": {
+                  "spent": 0,
+                  "recovery": [],
+                  "max": ""
+                },
+                "sort": 0,
+                "name": "İç",
+                "img": "icons/consumables/potions/potion-tube-corked-red.webp",
+                "visibility": {
+                  "requireMagic": true,
+                  "level": {
+                    "min": null,
+                    "max": null
+                  },
+                  "identifier": ""
+                },
+                "appliedEffects": []
+              }
+            }
+          }
         }
       },
       "attuned": false,
@@ -5621,7 +5723,22 @@
       "vaelora-potions": {
         "version": "3.0.0",
         "powerScore": 1.35,
-        "priceBand": 5
+        "priceBand": 5,
+        "onEnd": {
+          "effect": {
+            "name": "Gece Nöbeti bedeli",
+            "seconds": 3600,
+            "changes": [
+              {
+                "key": "system.skills.prc.roll.mode",
+                "mode": 2,
+                "value": "-1",
+                "priority": null
+              }
+            ]
+          },
+          "note": "İksir Uzun Dinlenme ihtiyacını ortadan kaldırmaz."
+        }
       },
       "dnd5e": {
         "riders": {
@@ -9785,7 +9902,14 @@
       "vaelora-potions": {
         "version": "3.0.0",
         "powerScore": 1.25,
-        "priceBand": 4
+        "priceBand": 4,
+        "onEnd": {
+          "effect": {
+            "name": "Rüzgâr Topuğu bedeli",
+            "seconds": 600
+          },
+          "note": "10 dakika boyunca Zorlu Arazi iki kat hareket harcatır."
+        }
       },
       "dnd5e": {
         "riders": {
@@ -10934,7 +11058,94 @@
             },
             "identifier": ""
           },
-          "appliedEffects": []
+          "appliedEffects": [],
+          "flags": {
+            "vaelora-potions": {
+              "original": {
+                "_id": "VaeAct0000000045",
+                "type": "utility",
+                "activation": {
+                  "type": "bonus",
+                  "value": null,
+                  "condition": "",
+                  "override": false
+                },
+                "consumption": {
+                  "targets": [
+                    {
+                      "type": "itemUses",
+                      "value": "1",
+                      "target": ""
+                    }
+                  ],
+                  "scaling": {
+                    "allowed": false,
+                    "max": ""
+                  },
+                  "spellSlot": true
+                },
+                "description": {
+                  "chatFlavor": "Zehirçiçeği İksiri içilir."
+                },
+                "duration": {
+                  "concentration": false,
+                  "value": "1",
+                  "units": "hour",
+                  "special": "",
+                  "override": false
+                },
+                "effects": [],
+                "range": {
+                  "units": "self",
+                  "special": "",
+                  "override": false
+                },
+                "target": {
+                  "template": {
+                    "count": "",
+                    "contiguous": false,
+                    "type": "",
+                    "size": "",
+                    "width": "",
+                    "height": "",
+                    "units": "ft",
+                    "stationary": false
+                  },
+                  "affects": {
+                    "count": "",
+                    "type": "creature",
+                    "choice": false,
+                    "special": ""
+                  },
+                  "prompt": true,
+                  "override": false
+                },
+                "roll": {
+                  "formula": "",
+                  "name": "",
+                  "prompt": false,
+                  "visible": false
+                },
+                "uses": {
+                  "spent": 0,
+                  "recovery": [],
+                  "max": ""
+                },
+                "sort": 0,
+                "name": "İç",
+                "img": "icons/consumables/potions/potion-flask-corked-capped-green.webp",
+                "visibility": {
+                  "requireMagic": true,
+                  "level": {
+                    "min": null,
+                    "max": null
+                  },
+                  "identifier": ""
+                },
+                "appliedEffects": []
+              }
+            }
+          }
         }
       },
       "attuned": false,
@@ -10950,7 +11161,15 @@
       "vaelora-potions": {
         "version": "3.0.0",
         "powerScore": 2,
-        "priceBand": 6
+        "priceBand": 6,
+        "onEnd": {
+          "effect": {
+            "seconds": 6,
+            "statuses": [
+              "poisoned"
+            ]
+          }
+        }
       },
       "dnd5e": {
         "riders": {
@@ -15579,7 +15798,94 @@
             },
             "identifier": ""
           },
-          "appliedEffects": []
+          "appliedEffects": [],
+          "flags": {
+            "vaelora-potions": {
+              "original": {
+                "_id": "VaeAct0000000064",
+                "type": "utility",
+                "activation": {
+                  "type": "bonus",
+                  "value": null,
+                  "condition": "",
+                  "override": false
+                },
+                "consumption": {
+                  "targets": [
+                    {
+                      "type": "itemUses",
+                      "value": "1",
+                      "target": ""
+                    }
+                  ],
+                  "scaling": {
+                    "allowed": false,
+                    "max": ""
+                  },
+                  "spellSlot": true
+                },
+                "description": {
+                  "chatFlavor": "Basamak Bükücü İksir içilir."
+                },
+                "duration": {
+                  "concentration": false,
+                  "value": "1",
+                  "units": "minute",
+                  "special": "",
+                  "override": false
+                },
+                "effects": [],
+                "range": {
+                  "units": "self",
+                  "special": "",
+                  "override": false
+                },
+                "target": {
+                  "template": {
+                    "count": "",
+                    "contiguous": false,
+                    "type": "",
+                    "size": "",
+                    "width": "",
+                    "height": "",
+                    "units": "ft",
+                    "stationary": false
+                  },
+                  "affects": {
+                    "count": "",
+                    "type": "creature",
+                    "choice": false,
+                    "special": ""
+                  },
+                  "prompt": true,
+                  "override": false
+                },
+                "roll": {
+                  "formula": "",
+                  "name": "",
+                  "prompt": false,
+                  "visible": false
+                },
+                "uses": {
+                  "spent": 0,
+                  "recovery": [],
+                  "max": ""
+                },
+                "sort": 0,
+                "name": "İç",
+                "img": "icons/consumables/potions/potion-flask-corked-blue.webp",
+                "visibility": {
+                  "requireMagic": true,
+                  "level": {
+                    "min": null,
+                    "max": null
+                  },
+                  "identifier": ""
+                },
+                "appliedEffects": []
+              }
+            }
+          }
         }
       },
       "attuned": false,
@@ -15595,7 +15901,10 @@
       "vaelora-potions": {
         "version": "3.0.0",
         "powerScore": 0.7,
-        "priceBand": 1
+        "priceBand": 1,
+        "onEnd": {
+          "note": "Havadaysa düşer."
+        }
       },
       "dnd5e": {
         "riders": {
@@ -20610,7 +20919,94 @@
             },
             "identifier": ""
           },
-          "appliedEffects": []
+          "appliedEffects": [],
+          "flags": {
+            "vaelora-potions": {
+              "original": {
+                "_id": "VaeAct0000000085",
+                "type": "utility",
+                "activation": {
+                  "type": "bonus",
+                  "value": null,
+                  "condition": "",
+                  "override": false
+                },
+                "consumption": {
+                  "targets": [
+                    {
+                      "type": "itemUses",
+                      "value": "1",
+                      "target": ""
+                    }
+                  ],
+                  "scaling": {
+                    "allowed": false,
+                    "max": ""
+                  },
+                  "spellSlot": true
+                },
+                "description": {
+                  "chatFlavor": "Kronometre Zehri içilir."
+                },
+                "duration": {
+                  "concentration": false,
+                  "value": "3",
+                  "units": "round",
+                  "special": "",
+                  "override": false
+                },
+                "effects": [],
+                "range": {
+                  "units": "self",
+                  "special": "",
+                  "override": false
+                },
+                "target": {
+                  "template": {
+                    "count": "",
+                    "contiguous": false,
+                    "type": "",
+                    "size": "",
+                    "width": "",
+                    "height": "",
+                    "units": "ft",
+                    "stationary": false
+                  },
+                  "affects": {
+                    "count": "",
+                    "type": "creature",
+                    "choice": false,
+                    "special": ""
+                  },
+                  "prompt": true,
+                  "override": false
+                },
+                "roll": {
+                  "formula": "",
+                  "name": "",
+                  "prompt": false,
+                  "visible": false
+                },
+                "uses": {
+                  "spent": 0,
+                  "recovery": [],
+                  "max": ""
+                },
+                "sort": 0,
+                "name": "İç",
+                "img": "icons/consumables/potions/potion-flask-corked-capped-green.webp",
+                "visibility": {
+                  "requireMagic": true,
+                  "level": {
+                    "min": null,
+                    "max": null
+                  },
+                  "identifier": ""
+                },
+                "appliedEffects": []
+              }
+            }
+          }
         }
       },
       "attuned": false,
@@ -20626,7 +21022,16 @@
       "vaelora-potions": {
         "version": "3.0.0",
         "powerScore": 1,
-        "priceBand": 3
+        "priceBand": 3,
+        "onEnd": {
+          "effect": {
+            "seconds": 6,
+            "statuses": [
+              "stunned"
+            ]
+          },
+          "note": "Biyolojik yaş 1d6 ay ilerler."
+        }
       },
       "dnd5e": {
         "riders": {
@@ -21607,7 +22012,22 @@
       "vaelora-potions": {
         "version": "3.0.0",
         "powerScore": 0,
-        "priceBand": 1
+        "priceBand": 1,
+        "onEnd": {
+          "exhaustion": 2,
+          "effect": {
+            "name": "Titan Kanı bedeli",
+            "seconds": 600,
+            "changes": [
+              {
+                "key": "system.abilities.str.value",
+                "mode": 5,
+                "value": "8",
+                "priority": null
+              }
+            ]
+          }
+        }
       },
       "dnd5e": {
         "riders": {
@@ -23318,7 +23738,94 @@
             },
             "identifier": ""
           },
-          "appliedEffects": []
+          "appliedEffects": [],
+          "flags": {
+            "vaelora-potions": {
+              "original": {
+                "_id": "VaeAct0000000095",
+                "type": "utility",
+                "activation": {
+                  "type": "bonus",
+                  "value": null,
+                  "condition": "",
+                  "override": false
+                },
+                "consumption": {
+                  "targets": [
+                    {
+                      "type": "itemUses",
+                      "value": "1",
+                      "target": ""
+                    }
+                  ],
+                  "scaling": {
+                    "allowed": false,
+                    "max": ""
+                  },
+                  "spellSlot": true
+                },
+                "description": {
+                  "chatFlavor": "Boşluk Kabı İksiri içilir."
+                },
+                "duration": {
+                  "concentration": false,
+                  "value": "1",
+                  "units": "hour",
+                  "special": "",
+                  "override": false
+                },
+                "effects": [],
+                "range": {
+                  "units": "self",
+                  "special": "",
+                  "override": false
+                },
+                "target": {
+                  "template": {
+                    "count": "",
+                    "contiguous": false,
+                    "type": "",
+                    "size": "",
+                    "width": "",
+                    "height": "",
+                    "units": "ft",
+                    "stationary": false
+                  },
+                  "affects": {
+                    "count": "",
+                    "type": "creature",
+                    "choice": false,
+                    "special": ""
+                  },
+                  "prompt": true,
+                  "override": false
+                },
+                "roll": {
+                  "formula": "",
+                  "name": "",
+                  "prompt": false,
+                  "visible": false
+                },
+                "uses": {
+                  "spent": 0,
+                  "recovery": [],
+                  "max": ""
+                },
+                "sort": 0,
+                "name": "İç",
+                "img": "icons/consumables/potions/bottle-bulb-corked-glowing-red.webp",
+                "visibility": {
+                  "requireMagic": true,
+                  "level": {
+                    "min": null,
+                    "max": null
+                  },
+                  "identifier": ""
+                },
+                "appliedEffects": []
+              }
+            }
+          }
         }
       },
       "attuned": false,
@@ -23334,7 +23841,15 @@
       "vaelora-potions": {
         "version": "3.0.0",
         "powerScore": 1,
-        "priceBand": 2
+        "priceBand": 2,
+        "onEnd": {
+          "confirm": true,
+          "damage": {
+            "formula": "5d6",
+            "type": "force"
+          },
+          "note": "Yalnızca saklanan büyü kullanılmadıysa uygula."
+        }
       },
       "dnd5e": {
         "riders": {
@@ -23502,7 +24017,94 @@
             },
             "identifier": ""
           },
-          "appliedEffects": []
+          "appliedEffects": [],
+          "flags": {
+            "vaelora-potions": {
+              "original": {
+                "_id": "VaeAct0000000096",
+                "type": "utility",
+                "activation": {
+                  "type": "bonus",
+                  "value": null,
+                  "condition": "",
+                  "override": false
+                },
+                "consumption": {
+                  "targets": [
+                    {
+                      "type": "itemUses",
+                      "value": "1",
+                      "target": ""
+                    }
+                  ],
+                  "scaling": {
+                    "allowed": false,
+                    "max": ""
+                  },
+                  "spellSlot": true
+                },
+                "description": {
+                  "chatFlavor": "Zamanın Dışında Bir Damla içilir."
+                },
+                "duration": {
+                  "concentration": false,
+                  "value": "1d4+1",
+                  "units": "turn",
+                  "special": "",
+                  "override": false
+                },
+                "effects": [],
+                "range": {
+                  "units": "self",
+                  "special": "",
+                  "override": false
+                },
+                "target": {
+                  "template": {
+                    "count": "",
+                    "contiguous": false,
+                    "type": "",
+                    "size": "",
+                    "width": "",
+                    "height": "",
+                    "units": "ft",
+                    "stationary": false
+                  },
+                  "affects": {
+                    "count": "",
+                    "type": "creature",
+                    "choice": false,
+                    "special": ""
+                  },
+                  "prompt": true,
+                  "override": false
+                },
+                "roll": {
+                  "formula": "",
+                  "name": "",
+                  "prompt": false,
+                  "visible": false
+                },
+                "uses": {
+                  "spent": 0,
+                  "recovery": [],
+                  "max": ""
+                },
+                "sort": 0,
+                "name": "İç",
+                "img": "icons/consumables/potions/bottle-bulb-corked-purple.webp",
+                "visibility": {
+                  "requireMagic": true,
+                  "level": {
+                    "min": null,
+                    "max": null
+                  },
+                  "identifier": ""
+                },
+                "appliedEffects": []
+              }
+            }
+          }
         }
       },
       "attuned": false,
@@ -23518,7 +24120,15 @@
       "vaelora-potions": {
         "version": "3.0.0",
         "powerScore": -0.07,
-        "priceBand": 1
+        "priceBand": 1,
+        "onEnd": {
+          "effect": {
+            "seconds": 6,
+            "statuses": [
+              "stunned"
+            ]
+          }
+        }
       },
       "dnd5e": {
         "riders": {
@@ -24685,7 +25295,94 @@
             },
             "identifier": ""
           },
-          "appliedEffects": []
+          "appliedEffects": [],
+          "flags": {
+            "vaelora-potions": {
+              "original": {
+                "_id": "VaeAct0000000100",
+                "type": "utility",
+                "activation": {
+                  "type": "bonus",
+                  "value": null,
+                  "condition": "",
+                  "override": false
+                },
+                "consumption": {
+                  "targets": [
+                    {
+                      "type": "itemUses",
+                      "value": "1",
+                      "target": ""
+                    }
+                  ],
+                  "scaling": {
+                    "allowed": false,
+                    "max": ""
+                  },
+                  "spellSlot": true
+                },
+                "description": {
+                  "chatFlavor": "Ejderha Çağının Kanı içilir."
+                },
+                "duration": {
+                  "concentration": false,
+                  "value": "1",
+                  "units": "hour",
+                  "special": "",
+                  "override": false
+                },
+                "effects": [],
+                "range": {
+                  "units": "self",
+                  "special": "",
+                  "override": false
+                },
+                "target": {
+                  "template": {
+                    "count": "",
+                    "contiguous": false,
+                    "type": "",
+                    "size": "",
+                    "width": "",
+                    "height": "",
+                    "units": "ft",
+                    "stationary": false
+                  },
+                  "affects": {
+                    "count": "",
+                    "type": "creature",
+                    "choice": false,
+                    "special": ""
+                  },
+                  "prompt": true,
+                  "override": false
+                },
+                "roll": {
+                  "formula": "",
+                  "name": "",
+                  "prompt": false,
+                  "visible": false
+                },
+                "uses": {
+                  "spent": 0,
+                  "recovery": [],
+                  "max": ""
+                },
+                "sort": 0,
+                "name": "İç",
+                "img": "icons/consumables/potions/potion-bottle-skull-label-poison-teal.webp",
+                "visibility": {
+                  "requireMagic": true,
+                  "level": {
+                    "min": null,
+                    "max": null
+                  },
+                  "identifier": ""
+                },
+                "appliedEffects": []
+              }
+            }
+          }
         }
       },
       "attuned": false,
@@ -24701,7 +25398,11 @@
       "vaelora-potions": {
         "version": "3.0.0",
         "powerScore": 0.55,
-        "priceBand": 1
+        "priceBand": 1,
+        "onEnd": {
+          "exhaustion": 3,
+          "note": "Biyolojik yaş 1d10 yıl ilerler."
+        }
       },
       "dnd5e": {
         "riders": {
@@ -30431,7 +31132,19 @@
       "vaelora-potions": {
         "version": "3.0.0",
         "powerScore": 2,
-        "priceBand": 6
+        "priceBand": 6,
+        "onEnd": {
+          "save": {
+            "ability": "con",
+            "dc": 12
+          },
+          "effect": {
+            "seconds": 3600,
+            "statuses": [
+              "poisoned"
+            ]
+          }
+        }
       },
       "dnd5e": {
         "riders": {
@@ -30783,7 +31496,94 @@
             },
             "identifier": ""
           },
-          "appliedEffects": []
+          "appliedEffects": [],
+          "flags": {
+            "vaelora-potions": {
+              "original": {
+                "_id": "VaeAct0000000127",
+                "type": "utility",
+                "activation": {
+                  "type": "bonus",
+                  "value": null,
+                  "condition": "",
+                  "override": false
+                },
+                "consumption": {
+                  "targets": [
+                    {
+                      "type": "itemUses",
+                      "value": "1",
+                      "target": ""
+                    }
+                  ],
+                  "scaling": {
+                    "allowed": false,
+                    "max": ""
+                  },
+                  "spellSlot": true
+                },
+                "description": {
+                  "chatFlavor": "Kâtip Mürekkebi içilir."
+                },
+                "duration": {
+                  "concentration": false,
+                  "value": "8",
+                  "units": "hour",
+                  "special": "",
+                  "override": false
+                },
+                "effects": [],
+                "range": {
+                  "units": "self",
+                  "special": "",
+                  "override": false
+                },
+                "target": {
+                  "template": {
+                    "count": "",
+                    "contiguous": false,
+                    "type": "",
+                    "size": "",
+                    "width": "",
+                    "height": "",
+                    "units": "ft",
+                    "stationary": false
+                  },
+                  "affects": {
+                    "count": "",
+                    "type": "creature",
+                    "choice": false,
+                    "special": ""
+                  },
+                  "prompt": true,
+                  "override": false
+                },
+                "roll": {
+                  "formula": "",
+                  "name": "",
+                  "prompt": false,
+                  "visible": false
+                },
+                "uses": {
+                  "spent": 0,
+                  "recovery": [],
+                  "max": ""
+                },
+                "sort": 0,
+                "name": "İç",
+                "img": "icons/consumables/potions/bottle-round-corked-green.webp",
+                "visibility": {
+                  "requireMagic": true,
+                  "level": {
+                    "min": null,
+                    "max": null
+                  },
+                  "identifier": ""
+                },
+                "appliedEffects": []
+              }
+            }
+          }
         }
       },
       "attuned": false,
@@ -30799,7 +31599,10 @@
       "vaelora-potions": {
         "version": "3.0.0",
         "powerScore": 1.25,
-        "priceBand": 4
+        "priceBand": 4,
+        "onEnd": {
+          "note": "Son bir saat içinde okunan sıradan metinler unutulur."
+        }
       },
       "dnd5e": {
         "riders": {
@@ -33984,7 +34787,94 @@
             },
             "identifier": ""
           },
-          "appliedEffects": []
+          "appliedEffects": [],
+          "flags": {
+            "vaelora-potions": {
+              "original": {
+                "_id": "VaeAct0000000142",
+                "type": "utility",
+                "activation": {
+                  "type": "bonus",
+                  "value": null,
+                  "condition": "",
+                  "override": false
+                },
+                "consumption": {
+                  "targets": [
+                    {
+                      "type": "itemUses",
+                      "value": "1",
+                      "target": ""
+                    }
+                  ],
+                  "scaling": {
+                    "allowed": false,
+                    "max": ""
+                  },
+                  "spellSlot": true
+                },
+                "description": {
+                  "chatFlavor": "Uykusuz Ay Damlası içilir."
+                },
+                "duration": {
+                  "concentration": false,
+                  "value": "8",
+                  "units": "hour",
+                  "special": "",
+                  "override": false
+                },
+                "effects": [],
+                "range": {
+                  "units": "self",
+                  "special": "",
+                  "override": false
+                },
+                "target": {
+                  "template": {
+                    "count": "",
+                    "contiguous": false,
+                    "type": "",
+                    "size": "",
+                    "width": "",
+                    "height": "",
+                    "units": "ft",
+                    "stationary": false
+                  },
+                  "affects": {
+                    "count": "",
+                    "type": "creature",
+                    "choice": false,
+                    "special": ""
+                  },
+                  "prompt": true,
+                  "override": false
+                },
+                "roll": {
+                  "formula": "",
+                  "name": "",
+                  "prompt": false,
+                  "visible": false
+                },
+                "uses": {
+                  "spent": 0,
+                  "recovery": [],
+                  "max": ""
+                },
+                "sort": 0,
+                "name": "İç",
+                "img": "icons/consumables/potions/potion-bottle-corked-labeled-green.webp",
+                "visibility": {
+                  "requireMagic": true,
+                  "level": {
+                    "min": null,
+                    "max": null
+                  },
+                  "identifier": ""
+                },
+                "appliedEffects": []
+              }
+            }
+          }
         }
       },
       "attuned": false,
@@ -34000,7 +34890,21 @@
       "vaelora-potions": {
         "version": "3.0.0",
         "powerScore": 2.55,
-        "priceBand": 6
+        "priceBand": 6,
+        "onEnd": {
+          "effect": {
+            "name": "Uykusuz Ay bedeli",
+            "seconds": 3600,
+            "changes": [
+              {
+                "key": "system.attributes.init.roll.mode",
+                "mode": 2,
+                "value": "-1",
+                "priority": null
+              }
+            ]
+          }
+        }
       },
       "dnd5e": {
         "riders": {
@@ -36836,7 +37740,94 @@
             },
             "identifier": ""
           },
-          "appliedEffects": []
+          "appliedEffects": [],
+          "flags": {
+            "vaelora-potions": {
+              "original": {
+                "_id": "VaeAct0000000153",
+                "type": "utility",
+                "activation": {
+                  "type": "bonus",
+                  "value": null,
+                  "condition": "",
+                  "override": false
+                },
+                "consumption": {
+                  "targets": [
+                    {
+                      "type": "itemUses",
+                      "value": "1",
+                      "target": ""
+                    }
+                  ],
+                  "scaling": {
+                    "allowed": false,
+                    "max": ""
+                  },
+                  "spellSlot": true
+                },
+                "description": {
+                  "chatFlavor": "Zaman Borcu Şurubu içilir."
+                },
+                "duration": {
+                  "concentration": false,
+                  "value": "3",
+                  "units": "round",
+                  "special": "",
+                  "override": false
+                },
+                "effects": [],
+                "range": {
+                  "units": "self",
+                  "special": "",
+                  "override": false
+                },
+                "target": {
+                  "template": {
+                    "count": "",
+                    "contiguous": false,
+                    "type": "",
+                    "size": "",
+                    "width": "",
+                    "height": "",
+                    "units": "ft",
+                    "stationary": false
+                  },
+                  "affects": {
+                    "count": "",
+                    "type": "creature",
+                    "choice": false,
+                    "special": ""
+                  },
+                  "prompt": true,
+                  "override": false
+                },
+                "roll": {
+                  "formula": "",
+                  "name": "",
+                  "prompt": false,
+                  "visible": false
+                },
+                "uses": {
+                  "spent": 0,
+                  "recovery": [],
+                  "max": ""
+                },
+                "sort": 0,
+                "name": "İç",
+                "img": "icons/consumables/potions/bottle-round-corked-yellow.webp",
+                "visibility": {
+                  "requireMagic": true,
+                  "level": {
+                    "min": null,
+                    "max": null
+                  },
+                  "identifier": ""
+                },
+                "appliedEffects": []
+              }
+            }
+          }
         }
       },
       "attuned": false,
@@ -36852,7 +37843,22 @@
       "vaelora-potions": {
         "version": "3.0.0",
         "powerScore": 0.2,
-        "priceBand": 1
+        "priceBand": 1,
+        "onEnd": {
+          "effect": {
+            "name": "Zaman Borcu bedeli",
+            "seconds": 18,
+            "changes": [
+              {
+                "key": "system.attributes.movement.walk",
+                "mode": 1,
+                "value": "0.5",
+                "priority": null
+              }
+            ]
+          },
+          "note": "3 tur boyunca Bonus Aksiyon kullanılamaz."
+        }
       },
       "dnd5e": {
         "riders": {
@@ -46927,7 +47933,11 @@
       "vaelora-potions": {
         "version": "3.0.0",
         "powerScore": 4.65,
-        "priceBand": 6
+        "priceBand": 6,
+        "onEnd": {
+          "exhaustion": 3,
+          "note": "Azami Can Puanı 7 gün boyunca yarıya iner (elle)."
+        }
       },
       "dnd5e": {
         "riders": {
@@ -47279,7 +48289,94 @@
             },
             "identifier": ""
           },
-          "appliedEffects": []
+          "appliedEffects": [],
+          "flags": {
+            "vaelora-potions": {
+              "original": {
+                "_id": "VaeAct0000000193",
+                "type": "utility",
+                "activation": {
+                  "type": "bonus",
+                  "value": null,
+                  "condition": "",
+                  "override": false
+                },
+                "consumption": {
+                  "targets": [
+                    {
+                      "type": "itemUses",
+                      "value": "1",
+                      "target": ""
+                    }
+                  ],
+                  "scaling": {
+                    "allowed": false,
+                    "max": ""
+                  },
+                  "spellSlot": true
+                },
+                "description": {
+                  "chatFlavor": "Bin Yıllık Şafak İksiri içilir."
+                },
+                "duration": {
+                  "concentration": false,
+                  "value": "10",
+                  "units": "minute",
+                  "special": "",
+                  "override": false
+                },
+                "effects": [],
+                "range": {
+                  "units": "self",
+                  "special": "",
+                  "override": false
+                },
+                "target": {
+                  "template": {
+                    "count": "",
+                    "contiguous": false,
+                    "type": "",
+                    "size": "",
+                    "width": "",
+                    "height": "",
+                    "units": "ft",
+                    "stationary": false
+                  },
+                  "affects": {
+                    "count": "",
+                    "type": "creature",
+                    "choice": false,
+                    "special": ""
+                  },
+                  "prompt": true,
+                  "override": false
+                },
+                "roll": {
+                  "formula": "",
+                  "name": "",
+                  "prompt": false,
+                  "visible": false
+                },
+                "uses": {
+                  "spent": 0,
+                  "recovery": [],
+                  "max": ""
+                },
+                "sort": 0,
+                "name": "İç",
+                "img": "icons/consumables/potions/bottle-round-corked-green.webp",
+                "visibility": {
+                  "requireMagic": true,
+                  "level": {
+                    "min": null,
+                    "max": null
+                  },
+                  "identifier": ""
+                },
+                "appliedEffects": []
+              }
+            }
+          }
         }
       },
       "attuned": false,
@@ -47295,7 +48392,14 @@
       "vaelora-potions": {
         "version": "3.0.0",
         "powerScore": 3.65,
-        "priceBand": 5
+        "priceBand": 5,
+        "onEnd": {
+          "effect": {
+            "name": "Güneş körlüğü",
+            "seconds": 2592000
+          },
+          "note": "30 gün boyunca doğal güneş ışığında Kör."
+        }
       },
       "dnd5e": {
         "riders": {
@@ -47831,7 +48935,94 @@
             },
             "identifier": ""
           },
-          "appliedEffects": []
+          "appliedEffects": [],
+          "flags": {
+            "vaelora-potions": {
+              "original": {
+                "_id": "VaeAct0000000196",
+                "type": "utility",
+                "activation": {
+                  "type": "bonus",
+                  "value": null,
+                  "condition": "",
+                  "override": false
+                },
+                "consumption": {
+                  "targets": [
+                    {
+                      "type": "itemUses",
+                      "value": "1",
+                      "target": ""
+                    }
+                  ],
+                  "scaling": {
+                    "allowed": false,
+                    "max": ""
+                  },
+                  "spellSlot": true
+                },
+                "description": {
+                  "chatFlavor": "Ölümsüzlük Borcu İksiri içilir."
+                },
+                "duration": {
+                  "concentration": false,
+                  "value": "7",
+                  "units": "day",
+                  "special": "",
+                  "override": false
+                },
+                "effects": [],
+                "range": {
+                  "units": "self",
+                  "special": "",
+                  "override": false
+                },
+                "target": {
+                  "template": {
+                    "count": "",
+                    "contiguous": false,
+                    "type": "",
+                    "size": "",
+                    "width": "",
+                    "height": "",
+                    "units": "ft",
+                    "stationary": false
+                  },
+                  "affects": {
+                    "count": "",
+                    "type": "creature",
+                    "choice": false,
+                    "special": ""
+                  },
+                  "prompt": true,
+                  "override": false
+                },
+                "roll": {
+                  "formula": "",
+                  "name": "",
+                  "prompt": false,
+                  "visible": false
+                },
+                "uses": {
+                  "spent": 0,
+                  "recovery": [],
+                  "max": ""
+                },
+                "sort": 0,
+                "name": "İç",
+                "img": "icons/consumables/potions/potion-bottle-corked-labeled-green.webp",
+                "visibility": {
+                  "requireMagic": true,
+                  "level": {
+                    "min": null,
+                    "max": null
+                  },
+                  "identifier": ""
+                },
+                "appliedEffects": []
+              }
+            }
+          }
         }
       },
       "attuned": false,
@@ -47847,7 +49038,10 @@
       "vaelora-potions": {
         "version": "3.0.0",
         "powerScore": 2.5,
-        "priceBand": 5
+        "priceBand": 5,
+        "onEnd": {
+          "note": "Her dönüşte kalıcı bir Ölüm Kurtarma Atışı başarısızlığı birikir; üçüncü dönüşten sonra süre bitince ölür."
+        }
       },
       "dnd5e": {
         "riders": {
@@ -48015,7 +49209,94 @@
             },
             "identifier": ""
           },
-          "appliedEffects": []
+          "appliedEffects": [],
+          "flags": {
+            "vaelora-potions": {
+              "original": {
+                "_id": "VaeAct0000000197",
+                "type": "utility",
+                "activation": {
+                  "type": "bonus",
+                  "value": null,
+                  "condition": "",
+                  "override": false
+                },
+                "consumption": {
+                  "targets": [
+                    {
+                      "type": "itemUses",
+                      "value": "1",
+                      "target": ""
+                    }
+                  ],
+                  "scaling": {
+                    "allowed": false,
+                    "max": ""
+                  },
+                  "spellSlot": true
+                },
+                "description": {
+                  "chatFlavor": "Zaman İmparatorunun Şarabı içilir."
+                },
+                "duration": {
+                  "concentration": false,
+                  "value": "3",
+                  "units": "round",
+                  "special": "",
+                  "override": false
+                },
+                "effects": [],
+                "range": {
+                  "units": "self",
+                  "special": "",
+                  "override": false
+                },
+                "target": {
+                  "template": {
+                    "count": "",
+                    "contiguous": false,
+                    "type": "",
+                    "size": "",
+                    "width": "",
+                    "height": "",
+                    "units": "ft",
+                    "stationary": false
+                  },
+                  "affects": {
+                    "count": "",
+                    "type": "creature",
+                    "choice": false,
+                    "special": ""
+                  },
+                  "prompt": true,
+                  "override": false
+                },
+                "roll": {
+                  "formula": "",
+                  "name": "",
+                  "prompt": false,
+                  "visible": false
+                },
+                "uses": {
+                  "spent": 0,
+                  "recovery": [],
+                  "max": ""
+                },
+                "sort": 0,
+                "name": "İç",
+                "img": "icons/consumables/potions/potion-bottle-skull-label-poison-teal.webp",
+                "visibility": {
+                  "requireMagic": true,
+                  "level": {
+                    "min": null,
+                    "max": null
+                  },
+                  "identifier": ""
+                },
+                "appliedEffects": []
+              }
+            }
+          }
         }
       },
       "attuned": false,
@@ -48031,7 +49312,16 @@
       "vaelora-potions": {
         "version": "3.0.0",
         "powerScore": 2.4,
-        "priceBand": 4
+        "priceBand": 4,
+        "onEnd": {
+          "effect": {
+            "seconds": 60,
+            "statuses": [
+              "incapacitated"
+            ]
+          },
+          "note": "Yaş 2d10 yıl ilerler."
+        }
       },
       "dnd5e": {
         "riders": {
@@ -48935,7 +50225,94 @@
             },
             "identifier": ""
           },
-          "appliedEffects": []
+          "appliedEffects": [],
+          "flags": {
+            "vaelora-potions": {
+              "original": {
+                "_id": "VaeAct0000000200",
+                "type": "utility",
+                "activation": {
+                  "type": "bonus",
+                  "value": null,
+                  "condition": "",
+                  "override": false
+                },
+                "consumption": {
+                  "targets": [
+                    {
+                      "type": "itemUses",
+                      "value": "1",
+                      "target": ""
+                    }
+                  ],
+                  "scaling": {
+                    "allowed": false,
+                    "max": ""
+                  },
+                  "spellSlot": true
+                },
+                "description": {
+                  "chatFlavor": "Vaelora’nın Yankısı içilir."
+                },
+                "duration": {
+                  "concentration": false,
+                  "value": "1",
+                  "units": "minute",
+                  "special": "",
+                  "override": false
+                },
+                "effects": [],
+                "range": {
+                  "units": "self",
+                  "special": "",
+                  "override": false
+                },
+                "target": {
+                  "template": {
+                    "count": "",
+                    "contiguous": false,
+                    "type": "",
+                    "size": "",
+                    "width": "",
+                    "height": "",
+                    "units": "ft",
+                    "stationary": false
+                  },
+                  "affects": {
+                    "count": "",
+                    "type": "creature",
+                    "choice": false,
+                    "special": ""
+                  },
+                  "prompt": true,
+                  "override": false
+                },
+                "roll": {
+                  "formula": "",
+                  "name": "",
+                  "prompt": false,
+                  "visible": false
+                },
+                "uses": {
+                  "spent": 0,
+                  "recovery": [],
+                  "max": ""
+                },
+                "sort": 0,
+                "name": "İç",
+                "img": "icons/consumables/potions/bottle-round-corked-red.webp",
+                "visibility": {
+                  "requireMagic": true,
+                  "level": {
+                    "min": null,
+                    "max": null
+                  },
+                  "identifier": ""
+                },
+                "appliedEffects": []
+              }
+            }
+          }
         }
       },
       "attuned": false,
@@ -48951,7 +50328,10 @@
       "vaelora-potions": {
         "version": "3.0.0",
         "powerScore": 0.7,
-        "priceBand": 2
+        "priceBand": 2,
+        "onEnd": {
+          "note": "Kopyalanan iksirin bedeli ile bu iksirin bedeli birlikte uygulanır; ikinci bedeli anomali tablosundan belirle."
+        }
       },
       "dnd5e": {
         "riders": {
@@ -56543,7 +57923,94 @@
             },
             "identifier": ""
           },
-          "appliedEffects": []
+          "appliedEffects": [],
+          "flags": {
+            "vaelora-potions": {
+              "original": {
+                "_id": "VaeAct0000000229",
+                "type": "utility",
+                "activation": {
+                  "type": "bonus",
+                  "value": null,
+                  "condition": "",
+                  "override": false
+                },
+                "consumption": {
+                  "targets": [
+                    {
+                      "type": "itemUses",
+                      "value": "1",
+                      "target": ""
+                    }
+                  ],
+                  "scaling": {
+                    "allowed": false,
+                    "max": ""
+                  },
+                  "spellSlot": true
+                },
+                "description": {
+                  "chatFlavor": "Ağır Göz Kapağı Özütü içilir."
+                },
+                "duration": {
+                  "concentration": false,
+                  "value": "8",
+                  "units": "hour",
+                  "special": "",
+                  "override": false
+                },
+                "effects": [],
+                "range": {
+                  "units": "self",
+                  "special": "",
+                  "override": false
+                },
+                "target": {
+                  "template": {
+                    "count": "",
+                    "contiguous": false,
+                    "type": "",
+                    "size": "",
+                    "width": "",
+                    "height": "",
+                    "units": "ft",
+                    "stationary": false
+                  },
+                  "affects": {
+                    "count": "",
+                    "type": "creature",
+                    "choice": false,
+                    "special": ""
+                  },
+                  "prompt": true,
+                  "override": false
+                },
+                "roll": {
+                  "formula": "",
+                  "name": "",
+                  "prompt": false,
+                  "visible": false
+                },
+                "uses": {
+                  "spent": 0,
+                  "recovery": [],
+                  "max": ""
+                },
+                "sort": 0,
+                "name": "İç",
+                "img": "icons/consumables/potions/potion-flask-corled-pink-red.webp",
+                "visibility": {
+                  "requireMagic": true,
+                  "level": {
+                    "min": null,
+                    "max": null
+                  },
+                  "identifier": ""
+                },
+                "appliedEffects": []
+              }
+            }
+          }
         }
       },
       "attuned": false,
@@ -56558,7 +58025,21 @@
       "vaelora-potions": {
         "version": "3.7.0",
         "powerScore": 2.3,
-        "priceBand": 6
+        "priceBand": 6,
+        "onEnd": {
+          "effect": {
+            "name": "Ağır Göz Kapağı bedeli",
+            "seconds": 3600,
+            "changes": [
+              {
+                "key": "system.skills.prc.roll.mode",
+                "mode": 2,
+                "value": "-1",
+                "priority": null
+              }
+            ]
+          }
+        }
       },
       "dnd5e": {
         "riders": {
@@ -73642,7 +75123,94 @@
             },
             "identifier": ""
           },
-          "appliedEffects": []
+          "appliedEffects": [],
+          "flags": {
+            "vaelora-potions": {
+              "original": {
+                "_id": "VaeAct0000000292",
+                "type": "utility",
+                "activation": {
+                  "type": "bonus",
+                  "value": null,
+                  "condition": "",
+                  "override": false
+                },
+                "consumption": {
+                  "targets": [
+                    {
+                      "type": "itemUses",
+                      "value": "1",
+                      "target": ""
+                    }
+                  ],
+                  "scaling": {
+                    "allowed": false,
+                    "max": ""
+                  },
+                  "spellSlot": true
+                },
+                "description": {
+                  "chatFlavor": "Kırk Gölge Tiryakı içilir."
+                },
+                "duration": {
+                  "concentration": false,
+                  "value": "1",
+                  "units": "hour",
+                  "special": "",
+                  "override": false
+                },
+                "effects": [],
+                "range": {
+                  "units": "self",
+                  "special": "",
+                  "override": false
+                },
+                "target": {
+                  "template": {
+                    "count": "",
+                    "contiguous": false,
+                    "type": "",
+                    "size": "",
+                    "width": "",
+                    "height": "",
+                    "units": "ft",
+                    "stationary": false
+                  },
+                  "affects": {
+                    "count": "",
+                    "type": "creature",
+                    "choice": false,
+                    "special": ""
+                  },
+                  "prompt": true,
+                  "override": false
+                },
+                "roll": {
+                  "formula": "",
+                  "name": "",
+                  "prompt": false,
+                  "visible": false
+                },
+                "uses": {
+                  "spent": 0,
+                  "recovery": [],
+                  "max": ""
+                },
+                "sort": 0,
+                "name": "İç",
+                "img": "icons/consumables/potions/bottle-bulb-corked-green.webp",
+                "visibility": {
+                  "requireMagic": true,
+                  "level": {
+                    "min": null,
+                    "max": null
+                  },
+                  "identifier": ""
+                },
+                "appliedEffects": []
+              }
+            }
+          }
         }
       },
       "attuned": false,
@@ -73657,7 +75225,19 @@
       "vaelora-potions": {
         "version": "3.7.0",
         "powerScore": 1.7,
-        "priceBand": 4
+        "priceBand": 4,
+        "onEnd": {
+          "save": {
+            "ability": "wis",
+            "dc": 16
+          },
+          "effect": {
+            "seconds": 6,
+            "statuses": [
+              "stunned"
+            ]
+          }
+        }
       },
       "dnd5e": {
         "riders": {
@@ -73826,7 +75406,94 @@
             },
             "identifier": ""
           },
-          "appliedEffects": []
+          "appliedEffects": [],
+          "flags": {
+            "vaelora-potions": {
+              "original": {
+                "_id": "VaeAct0000000293",
+                "type": "utility",
+                "activation": {
+                  "type": "bonus",
+                  "value": null,
+                  "condition": "",
+                  "override": false
+                },
+                "consumption": {
+                  "targets": [
+                    {
+                      "type": "itemUses",
+                      "value": "1",
+                      "target": ""
+                    }
+                  ],
+                  "scaling": {
+                    "allowed": false,
+                    "max": ""
+                  },
+                  "spellSlot": true
+                },
+                "description": {
+                  "chatFlavor": "Eşyaların Ruhu Tiryakı içilir."
+                },
+                "duration": {
+                  "concentration": false,
+                  "value": "10",
+                  "units": "minute",
+                  "special": "",
+                  "override": false
+                },
+                "effects": [],
+                "range": {
+                  "units": "self",
+                  "special": "",
+                  "override": false
+                },
+                "target": {
+                  "template": {
+                    "count": "",
+                    "contiguous": false,
+                    "type": "",
+                    "size": "",
+                    "width": "",
+                    "height": "",
+                    "units": "ft",
+                    "stationary": false
+                  },
+                  "affects": {
+                    "count": "",
+                    "type": "creature",
+                    "choice": false,
+                    "special": ""
+                  },
+                  "prompt": true,
+                  "override": false
+                },
+                "roll": {
+                  "formula": "",
+                  "name": "",
+                  "prompt": false,
+                  "visible": false
+                },
+                "uses": {
+                  "spent": 0,
+                  "recovery": [],
+                  "max": ""
+                },
+                "sort": 0,
+                "name": "İç",
+                "img": "icons/consumables/potions/potion-flask-corked-blue.webp",
+                "visibility": {
+                  "requireMagic": true,
+                  "level": {
+                    "min": null,
+                    "max": null
+                  },
+                  "identifier": ""
+                },
+                "appliedEffects": []
+              }
+            }
+          }
         }
       },
       "attuned": false,
@@ -73841,7 +75508,10 @@
       "vaelora-potions": {
         "version": "3.7.0",
         "powerScore": 1.1,
-        "priceBand": 2
+        "priceBand": 2,
+        "onEnd": {
+          "note": "Canlandırılan eşyalar dağılabilir; bazıları düşmanca davranabilir."
+        }
       },
       "dnd5e": {
         "riders": {

@@ -301,7 +301,14 @@
     "vaelora-potions": {
       "version": "3.0.0",
       "powerScore": 1.25,
-      "priceBand": 4
+      "priceBand": 4,
+      "onEnd": {
+        "effect": {
+          "name": "Rüzgâr Topuğu bedeli",
+          "seconds": 600
+        },
+        "note": "10 dakika boyunca Zorlu Arazi iki kat hareket harcatır."
+      }
     },
     "dnd5e": {
       "riders": {

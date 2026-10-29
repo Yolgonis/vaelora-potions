@@ -301,7 +301,18 @@
     "vaelora-potions": {
       "version": "3.0.0",
       "powerScore": 1.68,
-      "priceBand": 5
+      "priceBand": 5,
+      "onEnd": {
+        "save": {
+          "ability": "wis",
+          "dc": 14
+        },
+        "effect": {
+          "name": "Mor Yankı bedeli",
+          "seconds": 600
+        },
+        "note": "10 dakika boyunca Korkmuş durumuna karşı kurtarma atışlarında dezavantaj (elle)."
+      }
     },
     "dnd5e": {
       "riders": {

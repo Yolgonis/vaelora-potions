@@ -307,7 +307,22 @@
     "vaelora-potions": {
       "version": "3.0.0",
       "powerScore": 0,
-      "priceBand": 1
+      "priceBand": 1,
+      "onEnd": {
+        "exhaustion": 2,
+        "effect": {
+          "name": "Titan Kanı bedeli",
+          "seconds": 600,
+          "changes": [
+            {
+              "key": "system.abilities.str.value",
+              "mode": 5,
+              "value": "8",
+              "priority": null
+            }
+          ]
+        }
+      }
     },
     "dnd5e": {
       "riders": {

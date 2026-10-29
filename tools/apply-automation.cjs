@@ -127,6 +127,10 @@ function applyAutomation(item, spec) {
     if (activity.flags?.[MODULE_ID]?.auto) delete item.system.activities[id];
   }
 
+  // Etki bitince gelen bedel tanımı eşyanın bayrağında durur; scripts/penalties.js okur.
+  if (item.flags?.[MODULE_ID]) delete item.flags[MODULE_ID].onEnd;
+  if (spec?.onEnd) item.flags[MODULE_ID] = { ...(item.flags[MODULE_ID] ?? {}), onEnd: spec.onEnd };
+
   const [drinkId, original] = Object.entries(item.system.activities)[0];
   const drink = structuredClone(original.flags?.[MODULE_ID]?.original ?? original);
   const originalSnapshot = structuredClone(drink);

@@ -243,6 +243,62 @@ for (const [id, drawback] of Object.entries(DRAWBACKS)) {
   BASE[id] = { ...(BASE[id] ?? {}), drawback };
 }
 
+// Etki SÜRESİ DOLUNCA gelen bedeller (scripts/penalties.js). Şema o dosyanın başında.
+// Etki süre dolmadan GM tarafından silinirse uygulanmaz.
+const ON_END = {
+  "mor-yanki-damitisi": {
+    save: { ability: "wis", dc: 14 },
+    effect: { name: "Mor Yankı bedeli", seconds: 600 },
+    note: "10 dakika boyunca Korkmuş durumuna karşı kurtarma atışlarında dezavantaj (elle)."
+  },
+  "kizil-tutulma-kani": { hp: 1, exhaustion: 2 },
+  "gece-nobeti-tonigi": { effect: { name: "Gece Nöbeti bedeli", seconds: 3600, changes: [dis.skill("prc")] }, note: "İksir Uzun Dinlenme ihtiyacını ortadan kaldırmaz." },
+  "ruzgar-topugu-iksiri": { effect: { name: "Rüzgâr Topuğu bedeli", seconds: 600 }, note: "10 dakika boyunca Zorlu Arazi iki kat hareket harcatır." },
+  "yalanci-nabiz-damlasi": { effect: { seconds: 6, statuses: ["poisoned"] } },
+  "basamak-bukucu-iksir": { note: "Havadaysa düşer." },
+  "kronometre-zehri": { effect: { seconds: 6, statuses: ["stunned"] }, note: "Biyolojik yaş 1d6 ay ilerler." },
+  "titan-kani-iksiri": {
+    exhaustion: 2,
+    effect: { name: "Titan Kanı bedeli", seconds: 600, changes: [c("system.abilities.str.value", MODE.OVERRIDE, 8)] }
+  },
+  "bosluk-kabi-iksiri": {
+    confirm: true,
+    damage: { formula: "5d6", type: "force" },
+    note: "Yalnızca saklanan büyü kullanılmadıysa uygula."
+  },
+  "zamanin-disinda-bir-damla": { effect: { seconds: 6, statuses: ["stunned"] } },
+  "ejderha-caginin-kani": { exhaustion: 3, note: "Biyolojik yaş 1d10 yıl ilerler." },
+  "akrep-safrasi": { save: { ability: "con", dc: 12 }, effect: { seconds: 3600, statuses: ["poisoned"] } },
+  "katip-murekkebi": { note: "Son bir saat içinde okunan sıradan metinler unutulur." },
+  "uykusuz-ay-damlasi": { effect: { name: "Uykusuz Ay bedeli", seconds: 3600, changes: [dis.init()] } },
+  "zaman-borcu-surubu": {
+    effect: { name: "Zaman Borcu bedeli", seconds: 18, changes: [c("system.attributes.movement.walk", MODE.MULTIPLY, 0.5)] },
+    note: "3 tur boyunca Bonus Aksiyon kullanılamaz."
+  },
+  "dunya-kalbinin-kani": { exhaustion: 3, note: "Azami Can Puanı 7 gün boyunca yarıya iner (elle)." },
+  "bin-yillik-safak-iksiri": {
+    effect: { name: "Güneş körlüğü", seconds: 2592000 },
+    note: "30 gün boyunca doğal güneş ışığında Kör."
+  },
+  "olumsuzluk-borcu-iksiri": {
+    note: "Her dönüşte kalıcı bir Ölüm Kurtarma Atışı başarısızlığı birikir; üçüncü dönüşten sonra süre bitince ölür."
+  },
+  "zaman-imparatorunun-sarabi": { effect: { seconds: 60, statuses: ["incapacitated"] }, note: "Yaş 2d10 yıl ilerler." },
+  "vaelora-nin-yankisi": {
+    note: "Kopyalanan iksirin bedeli ile bu iksirin bedeli birlikte uygulanır; ikinci bedeli anomali tablosundan belirle."
+  },
+  "agir-goz-kapagi-ozutu": { effect: { name: "Ağır Göz Kapağı bedeli", seconds: 3600, changes: [dis.skill("prc")] } },
+  "dilsiz-nobet-iksiri": {
+    effect: { name: "Dilsiz Nöbet bedeli", seconds: 3600, changes: [c("system.abilities.wis.save.roll.mode", MODE.ADD, -1)] }
+  },
+  "kirk-golge-tiryaki": { save: { ability: "wis", dc: 16 }, effect: { seconds: 6, statuses: ["stunned"] } },
+  "esyalarin-ruhu-tiryaki": { note: "Canlandırılan eşyalar dağılabilir; bazıları düşmanca davranabilir." }
+};
+
+for (const [id, onEnd] of Object.entries(ON_END)) {
+  BASE[id] = { ...(BASE[id] ?? {}), onEnd };
+}
+
 // Garip iksirler (3.7.0): tanımlar tools/garip-*.cjs içindedir; yardımcılar buradan verilir.
 const GARIP = require("./garip-iksirler.cjs")({
   adv, dis, skillBonus, vuln, setSpeed, res, imm, cimm, walk, move, sense, acBonus, acFlat,

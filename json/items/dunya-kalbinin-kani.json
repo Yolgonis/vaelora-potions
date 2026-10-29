@@ -313,7 +313,11 @@
     "vaelora-potions": {
       "version": "3.0.0",
       "powerScore": 4.65,
-      "priceBand": 6
+      "priceBand": 6,
+      "onEnd": {
+        "exhaustion": 3,
+        "note": "Azami Can Puanı 7 gün boyunca yarıya iner (elle)."
+      }
     },
     "dnd5e": {
       "riders": {

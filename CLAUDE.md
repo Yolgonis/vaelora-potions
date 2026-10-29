@@ -25,6 +25,8 @@ Karıştırma: `scripts/mixing.js`; tablo `json/tables/vaelora-iksir-karisimi-ta
 
 Çalışma zamanı: `scripts/main.js` içince efektleri ve iyileştirmeyi uygular (zar formüllü süreler `DURATION_FORMULAS` tablosunda; dnd5e süre alanı formülü siler) (alıcı seçimi, menzilli iksirlerde hedef zorunluluğu, GM socket yolu). Midi-QOL "Self" menzilde hedefleri `dnd5e.preUseActivity`'den hemen önce temizler; betik bu yüzden son 500 ms'de bırakılan hedefi kullanır. `module.json`'daki `esmodules`/`socket` değişiklikleri ancak dünya yeniden başlatılınca okunur.
 
+Etki bitince gelen bedeller: `tools/automation.cjs` içindeki `ON_END` tablosu (şema `scripts/penalties.js` başında); `apply-automation` bunu eşyanın `flags.vaelora-potions.onEnd` bayrağına yazar, içince efektin bayrağına kopyalanır. Süre dolarak silinen efektte aktif GM bedeli uygular ve fısıltı kartı yollar (Geri al / Yeniden at / Uygula); süre dolmadan silinirse uygulanmaz. Kurtarma atışı doğrudan D20Roll ile atılır (roll akışları gizli tarayıcı panelinde takılıyor).
+
 Kurallar: yalnızca koşulsuz mekanikler otomatikleşir; koşullu, tur başına bir kez, seçim gerektiren veya etki bittiğinde gelen kısımlar açıklamada GM'e kalır. Bedel ayrı efekt olmaz, iksirin efektine eklenir (ad GM'e özel bölümü ele vermesin). Ek aktiviteli iksirlerde `autoDestroy` kapalıdır.
 
 ## Dağıtım
