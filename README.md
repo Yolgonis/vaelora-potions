@@ -12,6 +12,10 @@ Foundry VTT 13 ve D&D 5e 5.3.3 için hazırlanmış 300 özgün Türkçe iksir i
 
 100 yeni iksir eklendi: 70 Common, 20 Uncommon, 10 Very Rare. Etkileri bilerek tuhaftır (taşla konuşmak, gölgeyi kâğıt inceliğine indirmek, tavanda yürümek, zamanı geri sarmak) ve her birinin bir bedeli vardır. Koşulsuz mekanikler (hız, avantaj/dezavantaj, direnç, ışık) içince otomatik uygulanır; kalanı açıklamada GM'e bırakılır. Mevcut 200 iksire dokunulmadı.
 
+## Zar süreli iksirler (3.7.1)
+
+Süresi zar formülü olan iksirler (Zamanın Dışında Bir Damla: 1d4+1 tur) artık içilince süre atılıp efekt oluşturuluyor. Bir tur 6 saniye sayılır, atılan süre sohbette duyurulur ve efekt o kadar tur sürer. Formül `scripts/main.js` içindeki `DURATION_FORMULAS` tablosunda tutulur, çünkü dnd5e süre alanı zar formülü kabul etmez.
+
 ## İksir karıştırma (3.6.0)
 
 Bir yaratık üzerinde bir Vaelora iksirinin etkisi sürerken başka bir Vaelora iksiri içilirse **Vaelora İksir Karışımı Tablosu**'nda 1d20 atılır. Herkese "iksirler birbirine karıştı" notu düşer; tablo sonucu yalnızca GM'e fısıldanır ve GM tarafından uygulanır. Sonuçların 17'si kötü ya da tuhaf, 3'ü iyidir. Aynı iksiri yeniden içmek karıştırma sayılmaz.

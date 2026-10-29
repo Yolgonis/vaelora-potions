@@ -69,18 +69,36 @@ function resolveRecipient(activity) {
  * Otomasyonu olmayan iksir için süresi kadar, değişikliksiz bir takip efekti.
  * GM süreyi karakterde görür; karıştırma da bu efektle fark edilir.
  */
-function trackingEffect(item, activity) {
-  const { value, units } = activity.duration ?? {};
-  const seconds = UNIT_SECONDS[units] * Number(value);
+function trackingEffect(item, activity, value) {
+  const { units } = activity.duration ?? {};
+  const seconds = UNIT_SECONDS[units] * value;
   if ( !Number.isFinite(seconds) || (seconds <= 0) ) return null;
   return {
     name: item.name, img: item.img, origin: item.uuid, transfer: false, disabled: false, changes: [],
-    duration: { seconds, rounds: units === "round" ? Number(value) : null },
+    duration: { seconds, rounds: ["round", "turn"].includes(units) ? value : null },
     flags: { [MODULE_ID]: { potion: item.system.identifier, tracking: true } }
   };
 }
 
-function buildEffectData(item, activity) {
+/**
+ * Süresi zar formülü olan iksirler (identifier → formül). dnd5e süre alanı zar formülünü kabul
+ * etmeyip temizlediği için formül burada tutulur; birim (tur = 6 sn) iksirin süre biriminden gelir.
+ */
+const DURATION_FORMULAS = { "zamanin-disinda-bir-damla": "1d4+1" };
+
+/**
+ * Süreyi sayıya çevirir; formül varsa atılır. Boş süre NaN döner.
+ */
+async function rollDuration(activity) {
+  const raw = activity.duration?.value || DURATION_FORMULAS[activity.item?.system?.identifier];
+  if ( (raw === "") || (raw === null) || (raw === undefined) ) return { value: NaN, rolled: false };
+  if ( Number.isFinite(Number(raw)) ) return { value: Number(raw), rolled: false };
+  const roll = new Roll(String(raw));
+  await roll.evaluate();
+  return { value: roll.total, rolled: true };
+}
+
+function buildEffectData(item, activity, durationValue) {
   const identifier = item.system.identifier;
   const effects = activity.effects
     .map(({ _id }) => item.effects.get(_id))
@@ -96,7 +114,7 @@ function buildEffectData(item, activity) {
       return data;
     });
   if ( effects.length ) return effects;
-  const tracking = trackingEffect(item, activity);
+  const tracking = trackingEffect(item, activity, durationValue);
   return tracking ? [tracking] : [];
 }
 
@@ -107,7 +125,16 @@ async function applyPotion({ item, activity, recipient, speakerActor }) {
   const mixedWith = activeOtherPotions(recipient, identifier);
 
   // Aynı iksir yeniden içilirse eski efekt yenisiyle değişir (süre tazelenir).
-  const effects = buildEffectData(item, activity);
+  const { value: durationValue, rolled } = await rollDuration(activity);
+  const effects = buildEffectData(item, activity, durationValue);
+  if ( rolled ) {
+    // Zar formülüyle belirlenen süre sohbette duyurulur.
+    const unit = ["round", "turn"].includes(activity.duration.units) ? "tur" : activity.duration.units;
+    await ChatMessage.create({
+      speaker: ChatMessage.getSpeaker({ actor: recipient }),
+      content: `<p><strong>${foundry.utils.escapeHTML(item.name)}</strong>: etki ${durationValue} ${unit} sürer.</p>`
+    });
+  }
   if ( effects.length ) {
     const stale = recipient.effects.filter(e => e.getFlag(MODULE_ID, "potion") === identifier).map(e => e.id);
     if ( stale.length ) await recipient.deleteEmbeddedDocuments("ActiveEffect", stale);
