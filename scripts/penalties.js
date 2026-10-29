@@ -7,6 +7,10 @@
  * bedellerde) ve Uygula (onay gerektirenlerde). GM etkiyi süre dolmadan elle silerse bedel
  * uygulanmaz; yani GM her zaman müdahale edebilir.
  *
+ * Kurtarma atışlı bedellerde, karakterin bağlı bir oyuncu sahibi varsa (ve ayar açıksa) oyuncuya
+ * "Kurtarma atışını at" düğmeli bir kart gider; oyuncu zarı kendi istemcisinde atar, sonucu aktif
+ * GM alır, bedeli uygular ve kartı günceller. Bağlı oyuncu yoksa zar otomatik atılır.
+ *
  * onEnd tanımı:
  *   save:       { ability, dc }  başarısızsa uygulanır; başarılıysa bedel yok
  *   exhaustion: n                Bitkinlik Seviyesi ekler (en çok 6)
@@ -17,14 +21,23 @@
  *   note:       metin            GM'e hatırlatma (otomatikleştirilemeyen kısım)
  */
 
-import { MODULE_ID } from "./costs.js";
+import { MODULE_ID, SOCKET_NAME } from "./costs.js";
 
 const SETTING = "autoPenalties";
+const PLAYER_SAVES = "playerSaves";
 
 export function registerPenalties() {
   game.settings.register(MODULE_ID, SETTING, {
     name: "Etki bitince bedelleri otomatik uygula",
     hint: "İksirin etkisi süresi dolarak bitince Bitkinlik, durum, hasar ve kurtarma atışlı bedeller kendiliğinden uygulanır; GM'e geri alma düğmeli bir kart gelir. Kapalıyken bedeller yalnızca GM kartındaki Uygula düğmesiyle uygulanır. Etki süresi dolmadan elle silinirse bedel hiçbir zaman uygulanmaz.",
+    scope: "world",
+    config: true,
+    type: Boolean,
+    default: true
+  });
+  game.settings.register(MODULE_ID, PLAYER_SAVES, {
+    name: "Bedel kurtarma atışlarını oyuncu atsın",
+    hint: "Açıkken kurtarma atışlı bedellerde karakterin bağlı oyuncusuna 'Kurtarma atışını at' düğmeli bir kart gelir; oyuncu zarı kendisi atar. Bağlı oyuncu yoksa ya da ayar kapalıysa zar otomatik atılır.",
     scope: "world",
     config: true,
     type: Boolean,
@@ -67,26 +80,47 @@ function isExpired(effect) {
   return Number.isFinite(remaining) && (remaining <= 0);
 }
 
-/** Bedeli uygular. Döner: { lines, undo, saved } */
-async function applySpec(actor, name, spec) {
+function formatSeconds(s) {
+  if ( s % 86400 === 0 ) return `${s / 86400} gün`;
+  if ( s % 3600 === 0 ) return `${s / 3600} saat`;
+  if ( s % 60 === 0 ) return `${s / 60} dakika`;
+  return `${s / 6} tur`;
+}
+
+/**
+ * Kurtarma atışını doğrudan zarla atar (iletişim kutusu ve Midi-QOL akışına bağımlı olmadan);
+ * avantaj/dezavantaj ve yetkinlik karakterin kurtarma atışı verisinden gelir.
+ */
+async function rollSave(actor, name, save) {
+  const data = actor.system.abilities?.[save.ability]?.save;
+  const roll = new CONFIG.Dice.D20Roll(`1d20 + ${Number(data?.value ?? 0)}`, actor.getRollData(), {
+    advantageMode: data?.roll?.mode ?? 0
+  });
+  await roll.evaluate();
+  await roll.toMessage({
+    speaker: ChatMessage.getSpeaker({ actor }),
+    flavor: `${name}: bedel kurtarma atışı (${abilityName(save.ability)}, DC ${save.dc})`
+  });
+  return roll.total;
+}
+
+function saveLine(save, total) {
+  const success = total >= save.dc;
+  return `${abilityName(save.ability)} kurtarma atışı (DC ${save.dc}): ${total} — ${success ? "başarılı, bedel yok" : "başarısız"}`;
+}
+
+/**
+ * Bedeli uygular. `saveTotal` verilirse kurtarma atışı yeniden atılmaz (oyuncu attı).
+ * Döner: { lines, undo, saved }
+ */
+async function applySpec(actor, name, spec, saveTotal = null) {
   const lines = [];
   const undo = [];
 
   if ( spec.save ) {
-    // Zar doğrudan atılır (iletişim kutusu ve Midi-QOL akışına bağımlı olmadan); avantaj/dezavantaj
-    // ve yetkinlik, karakterin kurtarma atışı verisinden gelir.
-    const save = actor.system.abilities?.[spec.save.ability]?.save;
-    const roll = new CONFIG.Dice.D20Roll(`1d20 + ${Number(save?.value ?? 0)}`, actor.getRollData(), {
-      advantageMode: save?.roll?.mode ?? 0
-    });
-    await roll.evaluate();
-    await roll.toMessage({
-      speaker: ChatMessage.getSpeaker({ actor }),
-      flavor: `${name}: bedel kurtarma atışı (${abilityName(spec.save.ability)}, DC ${spec.save.dc})`
-    });
-    const success = roll.total >= spec.save.dc;
-    lines.push(`${abilityName(spec.save.ability)} kurtarma atışı (DC ${spec.save.dc}): ${roll.total} — ${success ? "başarılı, bedel yok" : "başarısız"}`);
-    if ( success ) return { lines, undo, saved: true };
+    const total = saveTotal ?? await rollSave(actor, name, spec.save);
+    lines.push(saveLine(spec.save, total));
+    if ( total >= spec.save.dc ) return { lines, undo, saved: true };
   }
 
   if ( spec.exhaustion ) {
@@ -131,13 +165,6 @@ async function applySpec(actor, name, spec) {
   return { lines, undo, saved: false };
 }
 
-function formatSeconds(s) {
-  if ( s % 86400 === 0 ) return `${s / 86400} gün`;
-  if ( s % 3600 === 0 ) return `${s / 3600} saat`;
-  if ( s % 60 === 0 ) return `${s / 60} dakika`;
-  return `${s / 6} tur`;
-}
-
 async function undoAll(actor, undo) {
   for ( const step of [...undo].reverse() ) {
     if ( step.type === "exhaustion" ) await actor.update({ "system.attributes.exhaustion": step.value });
@@ -150,38 +177,7 @@ async function undoAll(actor, undo) {
   }
 }
 
-function cardHtml({ potion, actorName, state, lines, note, spec }) {
-  const stateText = {
-    applied: "Uygulandı",
-    undone: "Geri alındı",
-    pending: "Uygulanmadı (GM onayı bekliyor)",
-    saved: "Kurtarma başarılı"
-  }[state];
-  const buttons = [];
-  if ( state === "pending" ) buttons.push(`<button type="button" data-vp-penalty="apply">Uygula</button>`);
-  if ( state === "applied" ) buttons.push(`<button type="button" data-vp-penalty="undo">Geri al</button>`);
-  if ( (state === "applied" || state === "saved" || state === "undone") && spec.save ) {
-    buttons.push(`<button type="button" data-vp-penalty="reroll">Yeniden at</button>`);
-  }
-  return `<div class="vp-penalty">
-    <p><strong>${esc(potion)}</strong> — ${esc(actorName)}: etki bitti, bedel. <em>${stateText}</em></p>
-    ${lines.length ? `<ul>${lines.map(l => `<li>${esc(l)}</li>`).join("")}</ul>` : ""}
-    ${note ? `<p><em>GM: ${esc(note)}</em></p>` : ""}
-    ${buttons.join(" ")}
-  </div>`;
-}
-
-async function postCard(actor, potion, spec, result, state) {
-  const flagData = { actorUuid: actor.uuid, potion, spec, undo: result?.undo ?? [], state };
-  return ChatMessage.create({
-    whisper: game.users.filter(u => u.isGM).map(u => u.id),
-    speaker: ChatMessage.getSpeaker({ actor }),
-    content: cardHtml({ potion, actorName: actor.name, state, lines: result?.lines ?? describe(spec), note: spec.note, spec }),
-    flags: { [MODULE_ID]: { penalty: flagData } }
-  });
-}
-
-/** Uygulanmamış bedelin kısa özeti (onay bekleyen kart için). */
+/** Uygulanmamış bedelin kısa özeti (onay ya da zar bekleyen kart için). */
 function describe(spec) {
   const lines = [];
   if ( spec.save ) lines.push(`${abilityName(spec.save.ability)} kurtarma atışı, DC ${spec.save.dc}`);
@@ -193,6 +189,49 @@ function describe(spec) {
     lines.push(`${statuses.length ? statuses.map(statusName).join(", ") : (name ?? "Ceza efekti")} (${formatSeconds(seconds)})`);
   }
   return lines;
+}
+
+function cardHtml({ potion, actorName, state, lines, note, spec }) {
+  const stateText = {
+    applied: "Uygulandı",
+    undone: "Geri alındı",
+    pending: "Uygulanmadı (GM onayı bekliyor)",
+    saved: "Kurtarma başarılı",
+    awaiting: "Kurtarma atışı bekleniyor"
+  }[state];
+  const buttons = [];
+  if ( state === "awaiting" ) buttons.push(`<button type="button" data-vp-penalty="roll">Kurtarma atışını at</button>`);
+  if ( state === "pending" ) buttons.push(`<button type="button" data-vp-penalty="apply">Uygula</button>`);
+  if ( state === "applied" ) buttons.push(`<button type="button" data-vp-penalty="undo">Geri al</button>`);
+  if ( ["applied", "saved", "undone"].includes(state) && spec.save ) {
+    buttons.push(`<button type="button" data-vp-penalty="reroll">Yeniden at</button>`);
+  }
+  return `<div class="vp-penalty">
+    <p><strong>${esc(potion)}</strong> — ${esc(actorName)}: etki bitti, bedel. <em>${stateText}</em></p>
+    ${lines.length ? `<ul>${lines.map(l => `<li>${esc(l)}</li>`).join("")}</ul>` : ""}
+    ${note ? `<p><em>GM: ${esc(note)}</em></p>` : ""}
+    ${buttons.join(" ")}
+  </div>`;
+}
+
+/** Kartı kimler görür: GM'ler; zar bekleniyorsa karakterin sahipleri de. */
+function recipients(actor, includeOwners) {
+  return game.users.filter(u => u.isGM || (includeOwners && actor.testUserPermission(u, "OWNER"))).map(u => u.id);
+}
+
+async function postCard(actor, potion, spec, result, state) {
+  const flagData = { actorUuid: actor.uuid, potion, spec, undo: result?.undo ?? [], state };
+  return ChatMessage.create({
+    whisper: recipients(actor, state === "awaiting"),
+    speaker: ChatMessage.getSpeaker({ actor }),
+    content: cardHtml({ potion, actorName: actor.name, state, lines: result?.lines ?? describe(spec), note: spec.note, spec }),
+    flags: { [MODULE_ID]: { penalty: flagData } }
+  });
+}
+
+/** Zarı atabilecek bağlı bir oyuncu sahip var mı? */
+function hasOnlineOwner(actor) {
+  return game.users.some(u => !u.isGM && u.active && actor.testUserPermission(u, "OWNER"));
 }
 
 async function onEffectDeleted(effect) {
@@ -207,11 +246,24 @@ async function onEffectDeleted(effect) {
   if ( !hasMechanics ) return postCard(actor, potion, spec, { lines: [], undo: [] }, "applied");
   if ( !auto ) return postCard(actor, potion, spec, null, "pending");
 
+  // Kurtarma atışını bağlı bir oyuncu kendisi atar; yoksa otomatik atılır.
+  if ( spec.save && game.settings.get(MODULE_ID, PLAYER_SAVES) && hasOnlineOwner(actor) ) {
+    return postCard(actor, potion, spec, null, "awaiting");
+  }
+
   const result = await applySpec(actor, potion, spec);
   return postCard(actor, potion, spec, result, result.saved ? "saved" : "applied");
 }
 
-async function onCardClick(message, action) {
+async function updateCard(message, actor, data, lines) {
+  await message.update({
+    content: cardHtml({ potion: data.potion, actorName: actor.name, state: data.state, lines, note: data.spec.note, spec: data.spec }),
+    flags: { [MODULE_ID]: { penalty: data } }
+  });
+}
+
+/** GM kartı düğmeleri: Geri al, Yeniden at, Uygula, (GM adına) zar at. */
+async function onGmAction(message, action) {
   const data = message.getFlag(MODULE_ID, "penalty");
   const actor = await fromUuid(data.actorUuid);
   if ( !actor ) return ui.notifications.warn("Karakter bulunamadı.");
@@ -220,18 +272,42 @@ async function onCardClick(message, action) {
     await undoAll(actor, data.undo);
     data.undo = [];
     data.state = "undone";
+    data.lines = undefined;
   }
-  if ( (action === "apply") || (action === "reroll") ) {
+  if ( ["apply", "reroll", "roll"].includes(action) ) {
     const result = await applySpec(actor, data.potion, data.spec);
     data.undo = result.undo;
     data.state = result.saved ? "saved" : "applied";
     data.lines = result.lines;
   }
   const lines = data.lines ?? (data.state === "undone" ? ["Bedel geri alındı."] : describe(data.spec));
-  await message.update({
-    content: cardHtml({ potion: data.potion, actorName: actor.name, state: data.state, lines, note: data.spec.note, spec: data.spec }),
-    flags: { [MODULE_ID]: { penalty: data } }
-  });
+  await updateCard(message, actor, data, lines);
+}
+
+/** Oyuncu düğmesi: zarı kendi istemcisinde atar, sonucu aktif GM'e iletir. */
+async function onPlayerRoll(message) {
+  const data = message.getFlag(MODULE_ID, "penalty");
+  const actor = await fromUuid(data.actorUuid);
+  if ( !actor?.isOwner || (data.state !== "awaiting") ) return;
+  if ( !game.users.activeGM ) return ui.notifications.warn("Zarı işleyecek bağlı bir GM yok.");
+  const total = await rollSave(actor, data.potion, data.spec.save);
+  game.socket.emit(SOCKET_NAME, { type: "penaltyRoll", messageId: message.id, total });
+}
+
+/** Aktif GM: oyuncunun attığı zarı alır, bedeli uygular, kartı günceller. */
+export async function onPenaltyRollRequest(payload, senderId) {
+  const message = game.messages.get(payload.messageId);
+  const data = message?.getFlag(MODULE_ID, "penalty");
+  const sender = game.users.get(senderId);
+  if ( !data || !sender || (data.state !== "awaiting") || !Number.isFinite(payload.total) ) return;
+  const actor = await fromUuid(data.actorUuid);
+  if ( !actor?.testUserPermission(sender, "OWNER") ) return;
+
+  const result = await applySpec(actor, data.potion, data.spec, payload.total);
+  data.undo = result.undo;
+  data.state = result.saved ? "saved" : "applied";
+  data.lines = result.lines;
+  await updateCard(message, actor, data, result.lines);
 }
 
 export function hookPenalties() {
@@ -239,14 +315,25 @@ export function hookPenalties() {
     onEffectDeleted(effect).catch(err => console.error(`${MODULE_ID} | bedel uygulanamadı`, err));
   });
   Hooks.on("renderChatMessageHTML", (message, html) => {
-    if ( !game.user.isGM || !message.getFlag(MODULE_ID, "penalty") ) return;
+    if ( !message.getFlag(MODULE_ID, "penalty") ) return;
     html.querySelectorAll("[data-vp-penalty]").forEach(button => {
+      const action = button.dataset.vpPenalty;
+      const playerButton = action === "roll";
+      // Zar düğmesini sahibi ya da GM, diğer düğmeleri yalnızca GM görür.
+      const data = message.getFlag(MODULE_ID, "penalty");
+      const owner = fromUuidSync(data.actorUuid)?.isOwner;
+      if ( !(game.user.isGM || (playerButton && owner)) ) { button.remove(); return; }
       button.addEventListener("click", async event => {
         event.preventDefault();
         const buttons = html.querySelectorAll("[data-vp-penalty]");
         buttons.forEach(b => { b.disabled = true; });
-        try { await onCardClick(message, button.dataset.vpPenalty); }
-        catch (err) { console.error(`${MODULE_ID} | bedel kartı`, err); buttons.forEach(b => { b.disabled = false; }); }
+        try {
+          if ( playerButton && !game.user.isGM ) await onPlayerRoll(message);
+          else await onGmAction(message, action);
+        } catch (err) {
+          console.error(`${MODULE_ID} | bedel kartı`, err);
+          buttons.forEach(b => { b.disabled = false; });
+        }
       });
     });
   });

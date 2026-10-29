@@ -19,7 +19,7 @@
 
 import { MODULE_ID, SOCKET_NAME, PACK_ID, isVaeloraPotion, registerCosts, revealOnDrink, onRevealRequest, api } from "./costs.js";
 import { registerMixing, activeOtherPotions, triggerMix, onMixRequest } from "./mixing.js";
-import { registerPenalties, hookPenalties, carryOnEnd } from "./penalties.js";
+import { registerPenalties, hookPenalties, carryOnEnd, onPenaltyRollRequest } from "./penalties.js";
 
 const UNIT_SECONDS = { round: 6, turn: 6, minute: 60, hour: 3600, day: 86400 };
 
@@ -204,6 +204,7 @@ function onSocket(payload, senderId) {
   if ( payload?.type === "apply" ) return onGmApplyRequest(payload, senderId);
   if ( payload?.type === "reveal" ) return onRevealRequest(payload, senderId);
   if ( payload?.type === "mix" ) return onMixRequest(payload, senderId);
+  if ( payload?.type === "penaltyRoll" ) return onPenaltyRollRequest(payload, senderId);
 }
 
 Hooks.once("ready", () => {

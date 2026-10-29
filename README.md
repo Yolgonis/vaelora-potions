@@ -23,6 +23,10 @@ GM'e her seferinde fısıltıyla bir kart gelir:
 
 GM müdahalesi: Etkiyi süresi dolmadan elle silersen bedel hiç uygulanmaz. Ayar **Etki bitince bedelleri otomatik uygula** kapatılırsa tüm bedeller yalnızca kartın Uygula düğmesiyle uygulanır.
 
+### Kurtarma atışını oyuncu atar (3.8.1)
+
+Kurtarma atışlı bedellerde (Akrep Safrası, Mor Yankı Damıtısı, Kırk Gölge Tiryakı) karakterin sahibi bağlı bir oyuncuysa ona **Kurtarma atışını at** düğmeli bir kart gelir. Oyuncu zarı kendi istemcisinde atar; sonucu aktif GM alır, bedeli uygular ve kartı günceller. Karta oyuncu yalnızca bu düğmeyi görür, Geri al ve Yeniden at GM'e kalır. Bağlı oyuncu yoksa ya da ayar **Bedel kurtarma atışlarını oyuncu atsın** kapalıysa zar otomatik atılır.
+
 ## Zar süreli iksirler (3.7.1)
 
 Süresi zar formülü olan iksirler (Zamanın Dışında Bir Damla: 1d4+1 tur) artık içilince süre atılıp efekt oluşturuluyor. Bir tur 6 saniye sayılır, atılan süre sohbette duyurulur ve efekt o kadar tur sürer. Formül `scripts/main.js` içindeki `DURATION_FORMULAS` tablosunda tutulur, çünkü dnd5e süre alanı zar formülü kabul etmez.
