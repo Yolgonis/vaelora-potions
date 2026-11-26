@@ -84,3 +84,14 @@ Her iksirin Bedel / Yan Etki bölümü, grup onu öğrenene kadar oyunculardan g
 Koşullu ("zehre karşı", "açık gökyüzü altındayken"), tur başına bir kez, seçim gerektiren veya anlatısal kısımlar açıklamada kalır ve GM tarafından yönetilir. Işık efektleri ATL (Active Token Effects), bazı efektler Midi-QOL bayrakları kullanır.
 
 Not: Karakterlerin envanterinde zaten bulunan iksir kopyaları otomatik güncellenmez; compendium'dan yeniden sürüklenmelidir.
+## Kurulum
+
+Foundry'de **Add-on Modules → Install Module** ekranında, alttaki **Manifest URL** alanına şunu yapıştırın:
+
+```
+https://github.com/Yolgonis/vaelora-potions/releases/latest/download/module.json
+```
+
+## Lisans
+
+MIT — ayrıntılar için `LICENSE` dosyasına bakın.

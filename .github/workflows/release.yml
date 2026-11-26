@@ -1,0 +1,54 @@
+name: Release
+
+# Publish a GitHub release whose tag is v<version> (for example v1.2.0).
+# This workflow points module.json at that release and attaches
+# module.json + module.zip, so Foundry can install and update from:
+#   https://github.com/<owner>/<repo>/releases/latest/download/module.json
+
+on:
+  release:
+    types: [published]
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    env:
+      INCLUDE: "module.json README.md LICENSE scripts packs"
+      EXCLUDE: "packs/*/LOCK packs/*/LOG packs/*/LOG.old"
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check tag matches module.json version
+        run: |
+          TAG_VERSION="${GITHUB_REF_NAME#v}"
+          FILE_VERSION="$(jq -r .version module.json)"
+          if [ "$TAG_VERSION" != "$FILE_VERSION" ]; then
+            echo "::error::Tag $GITHUB_REF_NAME does not match module.json version $FILE_VERSION"
+            exit 1
+          fi
+
+      - name: Point manifest and download at this release
+        run: |
+          REPO="${GITHUB_REPOSITORY}"
+          jq --arg url "https://github.com/$REPO" \
+             --arg manifest "https://github.com/$REPO/releases/latest/download/module.json" \
+             --arg download "https://github.com/$REPO/releases/download/$GITHUB_REF_NAME/module.zip" \
+             '.url = $url | .manifest = $manifest | .download = $download' \
+             module.json > module.tmp.json
+          mv module.tmp.json module.json
+
+      - name: Build module.zip
+        run: |
+          if [ -n "$EXCLUDE" ]; then
+            zip -r module.zip $INCLUDE -x $EXCLUDE
+          else
+            zip -r module.zip $INCLUDE
+          fi
+
+      - name: Attach files to the release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release upload "$GITHUB_REF_NAME" module.json module.zip --clobber
